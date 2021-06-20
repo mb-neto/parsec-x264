@@ -1,0 +1,15 @@
+[PARSEC] [========== PARSEC 3.0-beta-20150206 BUILD LOGFILE ==========]
+
+[PARSEC] Build amd64-linux.gcc started on Sáb Jun 19 18:34:35 -03 2021.
+[PARSEC] Packages to build:  parsec.x264
+
+[PARSEC] [========== Building package parsec.x264 [1] ==========]
+[PARSEC] [---------- Analyzing package parsec.x264 ----------]
+[PARSEC] parsec.x264 depends on: yasm
+[PARSEC] [---------- Analyzing package parsec.yasm ----------]
+[PARSEC] Package parsec.yasm already exists, proceeding.
+[PARSEC] [---------- Building package parsec.x264 ----------]
+[PARSEC] Removing old build directory.
+[PARSEC] Copying source code of package parsec.x264.
+[PARSEC] Running 'env PATH=/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/pkgs/tools/yasm/inst/amd64-linux.gcc/bin:/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/bin:/home/manoel/bin:/home/manoel/.local/bin:/home/manoel/Downloads/anaconda3/condabin:/home/manoel/.nvm/versions/node/v14.15.0/bin:/home/manoel/bin:/home/manoel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/bin ./configure --enable-pthread --extra-asflags= --extra-cflags= -O2 -g -funroll-loops -fprefetch-loop-arrays -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206 --extra-ldflags=-L/usr/lib64 -L/usr/lib  --prefix=/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/pkgs/apps/x264/inst/amd64-linux.gcc':
+[PARSEC] Error: 'env PATH=/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/pkgs/tools/yasm/inst/amd64-linux.gcc/bin:/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/bin:/home/manoel/bin:/home/manoel/.local/bin:/home/manoel/Downloads/anaconda3/condabin:/home/manoel/.nvm/versions/node/v14.15.0/bin:/home/manoel/bin:/home/manoel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/bin ./configure --enable-pthread --extra-asflags= --extra-cflags= -O2 -g -funroll-loops -fprefetch-loop-arrays -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206 --extra-ldflags=-L/usr/lib64 -L/usr/lib  --prefix=/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/pkgs/apps/x264/inst/amd64-linux.gcc' failed.

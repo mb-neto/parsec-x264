@@ -1,0 +1,32 @@
+[PARSEC] [========== PARSEC 3.0-beta-20150206 BUILD LOGFILE ==========]
+
+[PARSEC] Build amd64-linux.gcc started on Sáb Jun 19 19:32:08 -03 2021.
+[PARSEC] Packages to build:  parsec.x264
+
+[PARSEC] [========== Building package parsec.x264 [1] ==========]
+[PARSEC] [---------- Analyzing package parsec.x264 ----------]
+[PARSEC] parsec.x264 depends on: yasm
+[PARSEC] [---------- Analyzing package parsec.yasm ----------]
+[PARSEC] Package parsec.yasm already exists, proceeding.
+[PARSEC] [---------- Building package parsec.x264 ----------]
+[PARSEC] Removing old build directory.
+[PARSEC] Copying source code of package parsec.x264.
+[PARSEC] Running 'env PATH=/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/pkgs/tools/yasm/inst/amd64-linux.gcc/bin:/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/bin:/home/manoel/bin:/home/manoel/.local/bin:/home/manoel/Downloads/anaconda3/condabin:/home/manoel/.nvm/versions/node/v14.15.0/bin:/home/manoel/bin:/home/manoel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/bin:/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/bin ./configure --enable-pthread --extra-asflags= --extra-cflags= -O2 -g -funroll-loops -fprefetch-loop-arrays -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206 --extra-ldflags=-L/usr/lib64 -L/usr/lib  --prefix=/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/pkgs/apps/x264/inst/amd64-linux.gcc':
+Platform:   X86_64
+System:     LINUX
+asm:        yes
+avis input: no
+mp4 output: no
+pthread:    yes
+debug:      no
+gprof:      no
+PIC:        no
+shared:     no
+visualize:  no
+
+You can run 'make' or 'make fprofiled' now.
+[PARSEC] Running 'env PATH=/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/pkgs/tools/yasm/inst/amd64-linux.gcc/bin:/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/bin:/home/manoel/bin:/home/manoel/.local/bin:/home/manoel/Downloads/anaconda3/condabin:/home/manoel/.nvm/versions/node/v14.15.0/bin:/home/manoel/bin:/home/manoel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/bin:/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/bin /usr/bin/make':
+rm -f .depend
+( echo -n "`dirname common/mc.c`/" && /usr/bin/gcc -pg  common/mc.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname common/predict.c`/" && /usr/bin/gcc -pg  common/predict.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname common/pixel.c`/" && /usr/bin/gcc -pg  common/pixel.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname common/macroblock.c`/" && /usr/bin/gcc -pg  common/macroblock.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname common/frame.c`/" && /usr/bin/gcc -pg  common/frame.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname common/dct.c`/" && /usr/bin/gcc -pg  common/dct.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname common/cpu.c`/" && /usr/bin/gcc -pg  common/cpu.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname common/cabac.c`/" && /usr/bin/gcc -pg  common/cabac.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname common/common.c`/" && /usr/bin/gcc -pg  common/common.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname common/mdate.c`/" && /usr/bin/gcc -pg  common/mdate.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname common/set.c`/" && /usr/bin/gcc -pg  common/set.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname common/quant.c`/" && /usr/bin/gcc -pg  common/quant.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname common/vlc.c`/" && /usr/bin/gcc -pg  common/vlc.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname encoder/analyse.c`/" && /usr/bin/gcc -pg  encoder/analyse.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname encoder/me.c`/" && /usr/bin/gcc -pg  encoder/me.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname encoder/ratecontrol.c`/" && /usr/bin/gcc -pg  encoder/ratecontrol.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname encoder/set.c`/" && /usr/bin/gcc -pg  encoder/set.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname encoder/macroblock.c`/" && /usr/bin/gcc -pg  encoder/macroblock.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname encoder/cabac.c`/" && /usr/bin/gcc -pg  encoder/cabac.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname encoder/cavlc.c`/" && /usr/bin/gcc -pg  encoder/cavlc.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname encoder/encoder.c`/" && /usr/bin/gcc -pg  encoder/encoder.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname common/x86/mc-c.c`/" && /usr/bin/gcc -pg  common/x86/mc-c.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname common/x86/predict-c.c`/" && /usr/bin/gcc -pg  common/x86/predict-c.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname x264.c`/" && /usr/bin/gcc -pg  x264.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname matroska.c`/" && /usr/bin/gcc -pg  matroska.c -MM -g0 ) 1>> .depend;  ( echo -n "`dirname muxers.c`/" && /usr/bin/gcc -pg  muxers.c -MM -g0 ) 1>> .depend;
+Makefile:97: recipe for target '.depend' failed
+[PARSEC] Error: 'env PATH=/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/pkgs/tools/yasm/inst/amd64-linux.gcc/bin:/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/bin:/home/manoel/bin:/home/manoel/.local/bin:/home/manoel/Downloads/anaconda3/condabin:/home/manoel/.nvm/versions/node/v14.15.0/bin:/home/manoel/bin:/home/manoel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/bin:/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/bin /usr/bin/make' failed.

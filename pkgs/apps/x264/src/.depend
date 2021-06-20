@@ -1,0 +1,4 @@
+common/mc.o: common/mc.c common/common.h common/osdep.h x264.h common/bs.h \
+ common/set.h common/predict.h common/pixel.h common/mc.h common/frame.h \
+ common/dct.h common/cabac.h common/quant.h common/macroblock.h \
+ common/x86/util.h common/x86/mc.h

@@ -1,0 +1,40 @@
+PARSEC Compile Information
+==========================
+Package 'parsec.x264'
+Built on Sáb Jun 19 19:49:43 -03 2021
+
+Configure arguments: --enable-pthread --extra-asflags="" --extra-cflags=" -O2 -g -funroll-loops -fprefetch-loop-arrays -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206" --extra-ldflags="-L/usr/lib64 -L/usr/lib " --prefix=/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/pkgs/apps/x264/inst/amd64-linux.gcc
+
+Environment modifications: PATH="/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/pkgs/tools/yasm/inst/amd64-linux.gcc/bin:/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/bin:/home/manoel/bin:/home/manoel/.local/bin:/home/manoel/Downloads/anaconda3/condabin:/home/manoel/.nvm/versions/node/v14.15.0/bin:/home/manoel/bin:/home/manoel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/bin:/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/bin"
+
+CC: /usr/bin/gcc
+Version: gcc (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 20160609
+Copyright (C) 2015 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+CFLAGS:  -O2 -g -funroll-loops -fprefetch-loop-arrays -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206
+
+CXX: /usr/bin/g++
+Version: g++ (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 20160609
+Copyright (C) 2015 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+CXXFLAGS: -O2 -g -funroll-loops -fprefetch-loop-arrays -fpermissive -fno-exceptions -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206
+
+CCAS: 
+Version: 
+CCASFLAGS: 
+
+LD: /usr/bin/ld
+Version: GNU ld (GNU Binutils for Ubuntu) 2.26.1
+Copyright (C) 2015 Free Software Foundation, Inc.
+Este programa é software livre; você pode redistribuí-lo sob os termos da 
+GNU General Public License versão 3 ou (a seu critério) uma versão mais recente.
+Este programa não possui nenhuma garantia.
+LDFLAGS: -L/usr/lib64 -L/usr/lib
+
+JAVAC: /usr/bin/javac
+Version: javac 1.8.0_292
+JFLAGS: 
+
+[EOF]

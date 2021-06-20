@@ -1,0 +1,40 @@
+PARSEC Compile Information
+==========================
+Package 'parsec.yasm'
+Built on Sáb Jun 19 16:19:45 -03 2021
+
+Configure arguments:  --prefix=/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/pkgs/tools/yasm/inst/amd64-linux.gcc
+
+Environment modifications: LIBS="-L/usr/lib64 -L/usr/lib "
+
+CC: /usr/bin/gcc
+Version: gcc (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 20160609
+Copyright (C) 2015 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+CFLAGS:  -O3 -g -funroll-loops -fprefetch-loop-arrays -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206
+
+CXX: /usr/bin/g++
+Version: g++ (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 20160609
+Copyright (C) 2015 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+CXXFLAGS: -O3 -g -funroll-loops -fprefetch-loop-arrays -fpermissive -fno-exceptions -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206
+
+CCAS: 
+Version: 
+CCASFLAGS: 
+
+LD: /usr/bin/ld
+Version: GNU ld (GNU Binutils for Ubuntu) 2.26.1
+Copyright (C) 2015 Free Software Foundation, Inc.
+Este programa é software livre; você pode redistribuí-lo sob os termos da 
+GNU General Public License versão 3 ou (a seu critério) uma versão mais recente.
+Este programa não possui nenhuma garantia.
+LDFLAGS: -L/usr/lib64 -L/usr/lib
+
+JAVAC: /usr/bin/javac
+Version: javac 1.8.0_292
+JFLAGS: 
+
+[EOF]

@@ -1,0 +1,9 @@
+[PARSEC] [========== PARSEC 3.0-beta-20150206 BUILD LOGFILE ==========]
+
+[PARSEC] Build amd64-linux.gcc started on Sáb Jun 19 17:34:04 -03 2021.
+[PARSEC] Packages to build:  parsec.x264
+
+[PARSEC] [========== Building package parsec.x264 [1] ==========]
+[PARSEC] [---------- Analyzing package parsec.x264 ----------]
+[PARSEC] Package parsec.x264 already exists, proceeding.
+[PARSEC] Done.
