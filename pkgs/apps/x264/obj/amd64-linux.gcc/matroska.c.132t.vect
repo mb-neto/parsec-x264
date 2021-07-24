@@ -1,0 +1,1053 @@
+
+;; Function mk_destroyContexts (mk_destroyContexts, funcdef_no=74, decl_uid=4203, cgraph_uid=74, symbol_order=74)
+
+
+Analyzing loop at matroska.c:200
+matroska.c:200:3: note: ===== analyze_loop_nest =====
+matroska.c:200:3: note: === vect_analyze_loop_form ===
+split exit edge.
+matroska.c:200:3: note: === get_loop_niters ===
+matroska.c:200:3: note: not vectorized: number of iterations cannot be computed.
+matroska.c:200:3: note: bad loop form.
+
+Analyzing loop at matroska.c:194
+matroska.c:194:3: note: ===== analyze_loop_nest =====
+matroska.c:194:3: note: === vect_analyze_loop_form ===
+split exit edge.
+matroska.c:194:3: note: === get_loop_niters ===
+matroska.c:194:3: note: not vectorized: number of iterations cannot be computed.
+matroska.c:194:3: note: bad loop form.
+matroska.c:191:15: note: vectorized 0 loops in function.
+mk_destroyContexts (struct mk_Writer * w)
+{
+  struct mk_Context * cur;
+  void * _9;
+  void * _14;
+
+  <bb 2>:
+  cur_7 = w_6(D)->freelist;
+  # DEBUG cur => cur_7
+  # DEBUG cur => cur_7
+  if (cur_7 != 0B)
+    goto <bb 4>;
+  else
+    goto <bb 3>;
+
+  <bb 3>:
+  cur_12 = w_6(D)->actlist;
+  # DEBUG cur => cur_12
+  # DEBUG cur => cur_12
+  if (cur_12 != 0B)
+    goto <bb 8>;
+  else
+    goto <bb 7>;
+
+  <bb 4>:
+
+  <bb 5>:
+  # cur_24 = PHI <cur_7(4), cur_8(6)>
+  # DEBUG cur => cur_24
+  cur_8 = cur_24->next;
+  # DEBUG next => cur_8
+  _9 = cur_24->data;
+  free (_9);
+  free (cur_24);
+  # DEBUG cur => cur_8
+  # DEBUG cur => cur_8
+  if (cur_8 != 0B)
+    goto <bb 6>;
+  else
+    goto <bb 12>;
+
+  <bb 12>:
+  goto <bb 3>;
+
+  <bb 6>:
+  goto <bb 5>;
+
+  <bb 11>:
+
+  <bb 7>:
+  w_6(D)->root = 0B;
+  w_6(D)->actlist = 0B;
+  w_6(D)->freelist = 0B;
+  return;
+
+  <bb 8>:
+
+  <bb 9>:
+  # cur_25 = PHI <cur_12(8), cur_13(10)>
+  # DEBUG cur => cur_25
+  cur_13 = cur_25->next;
+  # DEBUG next => cur_13
+  _14 = cur_25->data;
+  free (_14);
+  free (cur_25);
+  # DEBUG cur => cur_13
+  # DEBUG cur => cur_13
+  if (cur_13 != 0B)
+    goto <bb 10>;
+  else
+    goto <bb 11>;
+
+  <bb 10>:
+  goto <bb 9>;
+
+}
+
+
+
+;; Function mk_appendContextData (mk_appendContextData, funcdef_no=68, decl_uid=4173, cgraph_uid=68, symbol_order=68)
+
+
+Analyzing loop at matroska.c:90
+matroska.c:90:11: note: ===== analyze_loop_nest =====
+matroska.c:90:11: note: === vect_analyze_loop_form ===
+matroska.c:90:11: note: === get_loop_niters ===
+matroska.c:90:11: note: not vectorized: number of iterations cannot be computed.
+matroska.c:90:11: note: bad loop form.
+matroska.c:84:14: note: vectorized 0 loops in function.
+mk_appendContextData (struct mk_Context * c, const void * data, unsigned int size)
+{
+  unsigned int dn;
+  void * dp;
+  unsigned int ns;
+  int _3;
+  unsigned int _8;
+  unsigned int _11;
+  long unsigned int _14;
+  void * _15;
+  long unsigned int _20;
+  sizetype _23;
+  char * _24;
+  void * pretmp_30;
+  unsigned int prephitmp_35;
+  void * prephitmp_37;
+  unsigned int pretmp_38;
+
+  <bb 2>:
+  _8 = c_7(D)->d_cur;
+  ns_10 = _8 + size_9(D);
+  # DEBUG ns => ns_10
+  _11 = c_7(D)->d_max;
+  if (ns_10 > _11)
+    goto <bb 4>;
+  else
+    goto <bb 3>;
+
+  <bb 3>:
+  pretmp_30 = c_7(D)->data;
+  goto <bb 13>;
+
+  <bb 4>:
+  if (_11 != 0)
+    goto <bb 5>;
+  else
+    goto <bb 6>;
+
+  <bb 5>:
+  dn_12 = _11 << 1;
+
+  <bb 6>:
+  # dn_2 = PHI <dn_12(5), 16(4)>
+  # DEBUG dn => dn_2
+  if (dn_2 < ns_10)
+    goto <bb 7>;
+  else
+    goto <bb 11>;
+
+  <bb 7>:
+
+  <bb 8>:
+  # dn_28 = PHI <dn_2(7), dn_13(10)>
+  # DEBUG dn => dn_28
+  dn_13 = dn_28 << 1;
+  # DEBUG dn => dn_13
+  # DEBUG dn => dn_13
+  if (ns_10 > dn_13)
+    goto <bb 10>;
+  else
+    goto <bb 9>;
+
+  <bb 9>:
+  # dn_33 = PHI <dn_13(8)>
+  goto <bb 11>;
+
+  <bb 10>:
+  goto <bb 8>;
+
+  <bb 11>:
+  # dn_39 = PHI <dn_33(9), dn_2(6)>
+  _14 = (long unsigned int) dn_39;
+  _15 = c_7(D)->data;
+  dp_17 = realloc (_15, _14);
+  # DEBUG dp => dp_17
+  if (dp_17 == 0B)
+    goto <bb 14>;
+  else
+    goto <bb 12>;
+
+  <bb 12>:
+  c_7(D)->data = dp_17;
+  c_7(D)->d_max = dn_39;
+  pretmp_38 = c_7(D)->d_cur;
+
+  <bb 13>:
+  # prephitmp_37 = PHI <pretmp_30(3), dp_17(12)>
+  # prephitmp_35 = PHI <_8(3), pretmp_38(12)>
+  _20 = (long unsigned int) size_9(D);
+  _23 = (sizetype) prephitmp_35;
+  _24 = prephitmp_37 + _23;
+  # DEBUG __dest => _24
+  # DEBUG __src => data_25(D)
+  # DEBUG __len => _20
+  __builtin_memcpy (_24, data_25(D), _20);
+  # DEBUG __dest => NULL
+  # DEBUG __src => NULL
+  # DEBUG __len => NULL
+  c_7(D)->d_cur = ns_10;
+
+  <bb 14>:
+  # _3 = PHI <-1(11), 0(13)>
+  return _3;
+
+}
+
+
+
+;; Function mk_writeUInt (mk_writeUInt, funcdef_no=77, decl_uid=4228, cgraph_uid=77, symbol_order=77)
+
+
+Analyzing loop at matroska.c:230
+matroska.c:230:23: note: ===== analyze_loop_nest =====
+matroska.c:230:23: note: === vect_analyze_loop_form ===
+matroska.c:230:23: note: not vectorized: control flow in loop.
+matroska.c:230:23: note: bad loop form.
+matroska.c:225:14: note: vectorized 0 loops in function.
+mk_writeUInt (struct mk_Context * c, unsigned int id, int64_t ui)
+{
+  unsigned int i;
+  unsigned char c_ui[8];
+  int _1;
+  int _2;
+  long int _5;
+  unsigned char _6;
+  long int _9;
+  unsigned char _10;
+  long int _12;
+  unsigned char _13;
+  long int _15;
+  unsigned char _16;
+  long int _18;
+  unsigned char _19;
+  long int _21;
+  unsigned char _22;
+  long int _24;
+  unsigned char _25;
+  unsigned char _27;
+  int _32;
+  unsigned char _33;
+  int _37;
+  int _38;
+  sizetype _39;
+  const void * _40;
+  int _42;
+  _Bool _45;
+  unsigned int pretmp_47;
+  unsigned int prephitmp_48;
+  unsigned int ivtmp_49;
+  unsigned int ivtmp_51;
+
+  <bb 2>:
+  _5 = ui_4(D) >> 56;
+  _6 = (unsigned char) _5;
+  c_ui[0] = _6;
+  _9 = ui_4(D) >> 48;
+  _10 = (unsigned char) _9;
+  c_ui[1] = _10;
+  _12 = ui_4(D) >> 40;
+  _13 = (unsigned char) _12;
+  c_ui[2] = _13;
+  _15 = ui_4(D) >> 32;
+  _16 = (unsigned char) _15;
+  c_ui[3] = _16;
+  _18 = ui_4(D) >> 24;
+  _19 = (unsigned char) _18;
+  c_ui[4] = _19;
+  _21 = ui_4(D) >> 16;
+  _22 = (unsigned char) _21;
+  c_ui[5] = _22;
+  _24 = ui_4(D) >> 8;
+  _25 = (unsigned char) _24;
+  c_ui[6] = _25;
+  _27 = (unsigned char) ui_4(D);
+  c_ui[7] = _27;
+  # DEBUG i => 0
+  _32 = mk_writeID (c_29(D), id_30(D));
+  if (_32 < 0)
+    goto <bb 3>;
+  else
+    goto <bb 6>;
+
+  <bb 3>:
+  goto <bb 11>;
+
+  <bb 4>:
+  i_34 = i_46 + 1;
+  # DEBUG i => i_34
+  # DEBUG i => i_34
+  ivtmp_51 = ivtmp_49 - 1;
+  if (ivtmp_51 != 0)
+    goto <bb 5>;
+  else
+    goto <bb 9>;
+
+  <bb 5>:
+  goto <bb 7>;
+
+  <bb 6>:
+
+  <bb 7>:
+  # i_46 = PHI <0(6), i_34(5)>
+  # ivtmp_49 = PHI <7(6), ivtmp_51(5)>
+  # DEBUG i => i_46
+  _33 = c_ui[i_46];
+  if (_33 == 0)
+    goto <bb 4>;
+  else
+    goto <bb 8>;
+
+  <bb 8>:
+  # i_50 = PHI <i_46(7)>
+  pretmp_47 = 8 - i_50;
+
+  <bb 9>:
+  # i_44 = PHI <7(4), i_50(8)>
+  # prephitmp_48 = PHI <1(4), pretmp_47(8)>
+  _37 = mk_writeSize (c_29(D), prephitmp_48);
+  if (_37 < 0)
+    goto <bb 3>;
+  else
+    goto <bb 10>;
+
+  <bb 10>:
+  _39 = (sizetype) i_44;
+  _40 = &c_ui + _39;
+  _42 = mk_appendContextData (c_29(D), _40, prephitmp_48);
+  _45 = _42 < 0;
+  _1 = (int) _45;
+  _38 = -_1;
+
+  <bb 11>:
+  # _2 = PHI <-1(3), _38(10)>
+  c_ui ={v} {CLOBBER};
+  return _2;
+
+}
+
+
+
+;; Function mk_flushFrame.part.2 (mk_flushFrame.part.2, funcdef_no=93, decl_uid=4993, cgraph_uid=81, symbol_order=105)
+
+
+Analyzing loop at matroska.c:243
+matroska.c:243:25: note: ===== analyze_loop_nest =====
+matroska.c:243:25: note: === vect_analyze_loop_form ===
+matroska.c:243:25: note: not vectorized: control flow in loop.
+matroska.c:243:25: note: bad loop form.
+
+Analyzing loop at matroska.c:246
+matroska.c:246:25: note: ===== analyze_loop_nest =====
+matroska.c:246:25: note: === vect_analyze_loop_form ===
+matroska.c:246:25: note: not vectorized: control flow in loop.
+matroska.c:246:25: note: bad loop form.
+
+Analyzing loop at matroska.c:293
+matroska.c:293:25: note: ===== analyze_loop_nest =====
+matroska.c:293:25: note: === vect_analyze_loop_form ===
+matroska.c:293:25: note: not vectorized: control flow in loop.
+matroska.c:293:25: note: bad loop form.
+
+Analyzing loop at matroska.c:296
+matroska.c:296:25: note: ===== analyze_loop_nest =====
+matroska.c:296:25: note: === vect_analyze_loop_form ===
+matroska.c:296:25: note: not vectorized: control flow in loop.
+matroska.c:296:25: note: bad loop form.
+matroska.c:410:12: note: vectorized 0 loops in function.
+mk_flushFrame.part.2 (struct mk_Writer * w)
+{
+  unsigned int i;
+  unsigned char c_si[8];
+  int D.5137;
+  unsigned char c_si[8];
+  unsigned int i;
+  unsigned int D.5131;
+  int64_t delta;
+  int64_t ref;
+  unsigned int fsize;
+  unsigned int bgsize;
+  unsigned char c_delta_flags[3];
+  long int _2;
+  long int _3;
+  long int _4;
+  long int _5;
+  unsigned long delta.1_7;
+  unsigned long _8;
+  struct mk_Context * * _9;
+  struct mk_Context * * _10;
+  int _11;
+  struct mk_Context * _12;
+  long int _13;
+  long int _14;
+  long int _15;
+  struct mk_Context * _16;
+  struct mk_Context * _17;
+  long int _18;
+  int _19;
+  struct mk_Context * _20;
+  struct mk_Context * prephitmp_22;
+  unsigned int _23;
+  unsigned int ivtmp_24;
+  unsigned int ivtmp_26;
+  char _27;
+  long int _28;
+  long int _29;
+  long int _30;
+  unsigned int pretmp_33;
+  unsigned int ivtmp_36;
+  int _37;
+  struct mk_Context * _38;
+  int _40;
+  struct mk_Context * _41;
+  int _42;
+  struct mk_Context * _43;
+  int _44;
+  struct mk_Context * _45;
+  int _46;
+  long int _47;
+  unsigned char _48;
+  unsigned char _49;
+  struct mk_Context * _50;
+  int _51;
+  struct mk_Context * _52;
+  unsigned int _53;
+  void * _54;
+  struct mk_Context * _55;
+  int _56;
+  struct mk_Context * _57;
+  char _58;
+  struct mk_Context * _59;
+  unsigned int pretmp_61;
+  long int _62;
+  long int _63;
+  struct mk_Context * _64;
+  unsigned int _65;
+  struct mk_Context * * _66;
+  struct mk_Context * * _67;
+  int _68;
+  int _69;
+  unsigned int ivtmp_70;
+  long int _97;
+  unsigned char _98;
+  long int _99;
+  unsigned char _100;
+  long int _101;
+  unsigned char _102;
+  long int _103;
+  unsigned char _104;
+  long int _105;
+  unsigned char _106;
+  long int _107;
+  unsigned char _108;
+  long int _109;
+  unsigned char _110;
+  unsigned char _111;
+  int _112;
+  unsigned char _113;
+  unsigned char _115;
+  signed char _116;
+  unsigned char _118;
+  unsigned char _120;
+  signed char _121;
+  unsigned int pretmp_123;
+  long int _126;
+  unsigned char _127;
+  long int _128;
+  unsigned char _129;
+  long int _130;
+  unsigned char _131;
+  long int _132;
+  unsigned char _133;
+  long int _134;
+  unsigned char _135;
+  long int _136;
+  unsigned char _137;
+  long int _138;
+  unsigned char _139;
+  unsigned char _140;
+  int _141;
+  unsigned int _142;
+  unsigned char _143;
+  unsigned char _145;
+  signed char _146;
+  struct mk_Context * pretmp_147;
+  unsigned char _148;
+  unsigned char _150;
+  signed char _151;
+  int _154;
+  sizetype _155;
+  const void * _156;
+  int _157;
+  unsigned int prephitmp_158;
+  unsigned int pretmp_159;
+  unsigned int _160;
+  unsigned int pretmp_161;
+  unsigned int pretmp_171;
+  unsigned int pretmp_183;
+  unsigned int prephitmp_184;
+  unsigned int pretmp_192;
+  unsigned int pretmp_193;
+  unsigned int ivtmp_194;
+  unsigned int ivtmp_195;
+  unsigned int pretmp_200;
+  unsigned int pretmp_201;
+  unsigned int prephitmp_203;
+  unsigned int ivtmp_206;
+  int _207;
+  unsigned int ivtmp_208;
+  unsigned int pretmp_213;
+  _Bool _214;
+  unsigned int pretmp_216;
+
+  <bb 2>:
+  _2 = w_1(D)->frame_tc;
+  _3 = w_1(D)->timescale;
+  _4 = _2 / _3;
+  _5 = w_1(D)->cluster_tc_scaled;
+  delta_6 = _4 - _5;
+  # DEBUG delta => delta_6
+  delta.1_7 = (unsigned long) delta_6;
+  _8 = delta.1_7 + 32768;
+  if (_8 > 65535)
+    goto <bb 4>;
+  else
+    goto <bb 3>;
+
+  <bb 3>:
+  _12 = w_1(D)->cluster;
+  if (_12 == 0B)
+    goto <bb 6>;
+  else
+    goto <bb 9>;
+
+  <bb 4>:
+  _9 = &MEM[(struct mk_Context * *)w_1(D) + 16B];
+  # DEBUG D#3 => w_1(D)
+  _10 = &MEM[(struct mk_Context * *)w_1(D) + 24B];
+  # DEBUG D#3 => w_1(D)
+  _11 = mk_closeCluster.isra.1 (_9, _10);
+  if (_11 < 0)
+    goto <bb 5>;
+  else
+    goto <bb 3>;
+
+  <bb 5>:
+  goto <bb 66>;
+
+  <bb 6>:
+  _13 = w_1(D)->frame_tc;
+  _14 = w_1(D)->timescale;
+  _15 = _13 / _14;
+  w_1(D)->cluster_tc_scaled = _15;
+  _16 = w_1(D)->root;
+  _17 = mk_createContext (w_1(D), _16, 524531317);
+  w_1(D)->cluster = _17;
+  if (_17 == 0B)
+    goto <bb 5>;
+  else
+    goto <bb 7>;
+
+  <bb 7>:
+  _18 = w_1(D)->cluster_tc_scaled;
+  _19 = mk_writeUInt (_17, 231, _18);
+  if (_19 < 0)
+    goto <bb 5>;
+  else
+    goto <bb 8>;
+
+  <bb 8>:
+  pretmp_147 = w_1(D)->cluster;
+
+  <bb 9>:
+  # delta_31 = PHI <delta_6(3), 0(8)>
+  # prephitmp_22 = PHI <_12(3), pretmp_147(8)>
+  # DEBUG delta => delta_31
+  _20 = w_1(D)->frame;
+  if (_20 != 0B)
+    goto <bb 10>;
+  else
+    goto <bb 19>;
+
+  <bb 10>:
+  fsize_21 = _20->d_cur;
+  # DEBUG fsize => fsize_21
+  _23 = fsize_21 + 4;
+  # DEBUG s => _23
+  if (_23 <= 126)
+    goto <bb 11>;
+  else
+    goto <bb 12>;
+
+  <bb 11>:
+  pretmp_61 = fsize_21 + 1;
+  pretmp_161 = pretmp_61 + 5;
+  goto <bb 19>;
+
+  <bb 12>:
+  if (_23 <= 16382)
+    goto <bb 13>;
+  else
+    goto <bb 14>;
+
+  <bb 13>:
+  pretmp_159 = fsize_21 + 2;
+  pretmp_33 = pretmp_159 + 5;
+  goto <bb 19>;
+
+  <bb 14>:
+  if (_23 <= 2097150)
+    goto <bb 15>;
+  else
+    goto <bb 16>;
+
+  <bb 15>:
+  pretmp_213 = fsize_21 + 3;
+  pretmp_171 = pretmp_213 + 5;
+  goto <bb 19>;
+
+  <bb 16>:
+  if (_23 <= 268435454)
+    goto <bb 18>;
+  else
+    goto <bb 17>;
+
+  <bb 17>:
+  pretmp_216 = fsize_21 + 5;
+  pretmp_183 = pretmp_216 + 5;
+  goto <bb 19>;
+
+  <bb 18>:
+  pretmp_123 = _23 + 5;
+
+  <bb 19>:
+  # _160 = PHI <4(9), _23(13), _23(15), _23(18), _23(17), _23(11)>
+  # prephitmp_184 = PHI <1(9), pretmp_159(13), pretmp_213(15), _23(18), pretmp_216(17), pretmp_61(11)>
+  # prephitmp_158 = PHI <6(9), pretmp_33(13), pretmp_171(15), pretmp_123(18), pretmp_183(17), pretmp_161(11)>
+  # DEBUG s => NULL
+  # DEBUG D#4 => NULL
+  # DEBUG bgsize => D#4 + 5
+  _27 = w_1(D)->keyframe;
+  if (_27 == 0)
+    goto <bb 20>;
+  else
+    goto <bb 36>;
+
+  <bb 20>:
+  _28 = w_1(D)->prev_frame_tc_scaled;
+  _29 = w_1(D)->cluster_tc_scaled;
+  _30 = _28 - _29;
+  ref_32 = _30 - delta_31;
+  # DEBUG ref => ref_32
+  # DEBUG si => ref_32
+  _97 = ref_32 >> 56;
+  _98 = (unsigned char) _97;
+  c_si[0] = _98;
+  _99 = ref_32 >> 48;
+  _100 = (unsigned char) _99;
+  c_si[1] = _100;
+  _101 = ref_32 >> 40;
+  _102 = (unsigned char) _101;
+  c_si[2] = _102;
+  _103 = ref_32 >> 32;
+  _104 = (unsigned char) _103;
+  c_si[3] = _104;
+  _105 = ref_32 >> 24;
+  _106 = (unsigned char) _105;
+  c_si[4] = _106;
+  _107 = ref_32 >> 16;
+  _108 = (unsigned char) _107;
+  c_si[5] = _108;
+  _109 = ref_32 >> 8;
+  _110 = (unsigned char) _109;
+  c_si[6] = _110;
+  _111 = (unsigned char) ref_32;
+  c_si[7] = _111;
+  # DEBUG i => 0
+  if (ref_32 < 0)
+    goto <bb 23>;
+  else
+    goto <bb 30>;
+
+  <bb 21>:
+  # DEBUG i => i_114
+  ivtmp_208 = ivtmp_70 - 1;
+  if (ivtmp_208 != 0)
+    goto <bb 22>;
+  else
+    goto <bb 35>;
+
+  <bb 22>:
+  goto <bb 24>;
+
+  <bb 23>:
+
+  <bb 24>:
+  # i_199 = PHI <0(23), i_114(22)>
+  # ivtmp_70 = PHI <7(23), ivtmp_208(22)>
+  # DEBUG i => i_199
+  _113 = c_si[i_199];
+  if (_113 == 255)
+    goto <bb 26>;
+  else
+    goto <bb 25>;
+
+  <bb 25>:
+  # i_197 = PHI <i_199(24)>
+  goto <bb 35>;
+
+  <bb 26>:
+  i_114 = i_199 + 1;
+  _115 = c_si[i_114];
+  _116 = (signed char) _115;
+  if (_116 < 0)
+    goto <bb 21>;
+  else
+    goto <bb 27>;
+
+  <bb 27>:
+  # i_25 = PHI <i_199(26)>
+  goto <bb 35>;
+
+  <bb 28>:
+  # DEBUG i => i_119
+  ivtmp_36 = ivtmp_26 - 1;
+  if (ivtmp_36 != 0)
+    goto <bb 29>;
+  else
+    goto <bb 35>;
+
+  <bb 29>:
+  goto <bb 31>;
+
+  <bb 30>:
+
+  <bb 31>:
+  # i_191 = PHI <0(30), i_119(29)>
+  # ivtmp_26 = PHI <7(30), ivtmp_36(29)>
+  # DEBUG i => i_191
+  _118 = c_si[i_191];
+  if (_118 == 0)
+    goto <bb 33>;
+  else
+    goto <bb 32>;
+
+  <bb 32>:
+  # i_34 = PHI <i_191(31)>
+  goto <bb 35>;
+
+  <bb 33>:
+  i_119 = i_191 + 1;
+  _120 = c_si[i_119];
+  _121 = (signed char) _120;
+  if (_121 >= 0)
+    goto <bb 28>;
+  else
+    goto <bb 34>;
+
+  <bb 34>:
+  # i_205 = PHI <i_191(33)>
+
+  <bb 35>:
+  # i_122 = PHI <7(28), i_197(25), i_25(27), i_205(34), i_34(32), 7(21)>
+  # DEBUG i => i_122
+  c_si ={v} {CLOBBER};
+  # DEBUG si => NULL
+  # DEBUG i => NULL
+  _142 = prephitmp_184 + 15;
+  bgsize_35 = _142 - i_122;
+  # DEBUG bgsize => bgsize_35
+
+  <bb 36>:
+  # ref_60 = PHI <0(19), ref_32(35)>
+  # bgsize_39 = PHI <prephitmp_158(19), bgsize_35(35)>
+  # DEBUG bgsize => bgsize_39
+  # DEBUG ref => ref_60
+  _37 = mk_writeID (prephitmp_22, 160);
+  if (_37 < 0)
+    goto <bb 5>;
+  else
+    goto <bb 37>;
+
+  <bb 37>:
+  _38 = w_1(D)->cluster;
+  _40 = mk_writeSize (_38, bgsize_39);
+  if (_40 < 0)
+    goto <bb 5>;
+  else
+    goto <bb 38>;
+
+  <bb 38>:
+  _41 = w_1(D)->cluster;
+  _42 = mk_writeID (_41, 161);
+  if (_42 < 0)
+    goto <bb 5>;
+  else
+    goto <bb 39>;
+
+  <bb 39>:
+  _43 = w_1(D)->cluster;
+  _44 = mk_writeSize (_43, _160);
+  if (_44 < 0)
+    goto <bb 5>;
+  else
+    goto <bb 40>;
+
+  <bb 40>:
+  _45 = w_1(D)->cluster;
+  _46 = mk_writeSize (_45, 1);
+  if (_46 < 0)
+    goto <bb 5>;
+  else
+    goto <bb 41>;
+
+  <bb 41>:
+  _47 = delta_31 >> 8;
+  _48 = (unsigned char) _47;
+  c_delta_flags[0] = _48;
+  _49 = (unsigned char) delta_31;
+  c_delta_flags[1] = _49;
+  c_delta_flags[2] = 0;
+  _50 = w_1(D)->cluster;
+  _51 = mk_appendContextData (_50, &c_delta_flags, 3);
+  if (_51 < 0)
+    goto <bb 5>;
+  else
+    goto <bb 42>;
+
+  <bb 42>:
+  _52 = w_1(D)->frame;
+  if (_52 != 0B)
+    goto <bb 43>;
+  else
+    goto <bb 45>;
+
+  <bb 43>:
+  _53 = _52->d_cur;
+  _54 = _52->data;
+  _55 = w_1(D)->cluster;
+  _56 = mk_appendContextData (_55, _54, _53);
+  if (_56 < 0)
+    goto <bb 5>;
+  else
+    goto <bb 44>;
+
+  <bb 44>:
+  _57 = w_1(D)->frame;
+  _57->d_cur = 0;
+
+  <bb 45>:
+  _58 = w_1(D)->keyframe;
+  if (_58 == 0)
+    goto <bb 46>;
+  else
+    goto <bb 64>;
+
+  <bb 46>:
+  _59 = w_1(D)->cluster;
+  # DEBUG c => _59
+  # DEBUG si => ref_60
+  # DEBUG id => 251
+  _126 = ref_60 >> 56;
+  _127 = (unsigned char) _126;
+  c_si[0] = _127;
+  _128 = ref_60 >> 48;
+  _129 = (unsigned char) _128;
+  c_si[1] = _129;
+  _130 = ref_60 >> 40;
+  _131 = (unsigned char) _130;
+  c_si[2] = _131;
+  _132 = ref_60 >> 32;
+  _133 = (unsigned char) _132;
+  c_si[3] = _133;
+  _134 = ref_60 >> 24;
+  _135 = (unsigned char) _134;
+  c_si[4] = _135;
+  _136 = ref_60 >> 16;
+  _137 = (unsigned char) _136;
+  c_si[5] = _137;
+  _138 = ref_60 >> 8;
+  _139 = (unsigned char) _138;
+  c_si[6] = _139;
+  _140 = (unsigned char) ref_60;
+  c_si[7] = _140;
+  # DEBUG i => 0
+  _141 = mk_writeID (_59, 251);
+  if (_141 < 0)
+    goto <bb 68>;
+  else
+    goto <bb 47>;
+
+  <bb 47>:
+  if (ref_60 < 0)
+    goto <bb 49>;
+  else
+    goto <bb 48>;
+
+  <bb 48>:
+  goto <bb 58>;
+
+  <bb 49>:
+  goto <bb 52>;
+
+  <bb 50>:
+  # DEBUG i => i_144
+  ivtmp_24 = ivtmp_206 - 1;
+  if (ivtmp_24 != 0)
+    goto <bb 51>;
+  else
+    goto <bb 62>;
+
+  <bb 51>:
+
+  <bb 52>:
+  # i_198 = PHI <0(49), i_144(51)>
+  # ivtmp_206 = PHI <7(49), ivtmp_24(51)>
+  # DEBUG i => i_198
+  _143 = c_si[i_198];
+  if (_143 == 255)
+    goto <bb 54>;
+  else
+    goto <bb 53>;
+
+  <bb 53>:
+  # i_204 = PHI <i_198(52)>
+  pretmp_201 = 8 - i_204;
+  goto <bb 62>;
+
+  <bb 54>:
+  i_144 = i_198 + 1;
+  _145 = c_si[i_144];
+  _146 = (signed char) _145;
+  if (_146 < 0)
+    goto <bb 50>;
+  else
+    goto <bb 55>;
+
+  <bb 55>:
+  # i_202 = PHI <i_198(54)>
+  pretmp_193 = 8 - i_202;
+  goto <bb 62>;
+
+  <bb 56>:
+  # DEBUG i => i_149
+  ivtmp_194 = ivtmp_195 - 1;
+  if (ivtmp_194 != 0)
+    goto <bb 57>;
+  else
+    goto <bb 62>;
+
+  <bb 57>:
+
+  <bb 58>:
+  # i_190 = PHI <0(48), i_149(57)>
+  # ivtmp_195 = PHI <7(48), ivtmp_194(57)>
+  # DEBUG i => i_190
+  _148 = c_si[i_190];
+  if (_148 == 0)
+    goto <bb 60>;
+  else
+    goto <bb 59>;
+
+  <bb 59>:
+  # i_209 = PHI <i_190(58)>
+  pretmp_200 = 8 - i_209;
+  goto <bb 62>;
+
+  <bb 60>:
+  i_149 = i_190 + 1;
+  _150 = c_si[i_149];
+  _151 = (signed char) _150;
+  if (_151 >= 0)
+    goto <bb 56>;
+  else
+    goto <bb 61>;
+
+  <bb 61>:
+  # i_117 = PHI <i_190(60)>
+  pretmp_192 = 8 - i_117;
+
+  <bb 62>:
+  # i_152 = PHI <7(56), i_204(53), i_202(55), i_117(61), i_209(59), 7(50)>
+  # prephitmp_203 = PHI <1(56), pretmp_201(53), pretmp_193(55), pretmp_192(61), pretmp_200(59), 1(50)>
+  # DEBUG i => i_152
+  _154 = mk_writeSize (_59, prephitmp_203);
+  if (_154 < 0)
+    goto <bb 68>;
+  else
+    goto <bb 63>;
+
+  <bb 63>:
+  _155 = (sizetype) i_152;
+  _156 = &c_si + _155;
+  _157 = mk_appendContextData (_59, _156, prephitmp_203);
+  if (_157 < 0)
+    goto <bb 68>;
+  else
+    goto <bb 67>;
+
+  <bb 64>:
+  w_1(D)->in_frame = 0;
+  _62 = w_1(D)->cluster_tc_scaled;
+  _63 = delta_31 + _62;
+  w_1(D)->prev_frame_tc_scaled = _63;
+  _64 = w_1(D)->cluster;
+  _65 = _64->d_cur;
+  if (_65 > 1048576)
+    goto <bb 65>;
+  else
+    goto <bb 66>;
+
+  <bb 65>:
+  _66 = &MEM[(struct mk_Context * *)w_1(D) + 16B];
+  # DEBUG D#3 => w_1(D)
+  _67 = &MEM[(struct mk_Context * *)w_1(D) + 24B];
+  # DEBUG D#3 => w_1(D)
+  _68 = mk_closeCluster.isra.1 (_66, _67);
+  _214 = _68 < 0;
+  _207 = (int) _214;
+  _112 = -_207;
+
+  <bb 66>:
+  # _69 = PHI <-1(5), _112(65), 0(64), -1(68)>
+  c_delta_flags ={v} {CLOBBER};
+  return _69;
+
+  <bb 67>:
+  c_si ={v} {CLOBBER};
+  # DEBUG c => NULL
+  # DEBUG si => NULL
+  # DEBUG i => NULL
+  # DEBUG id => NULL
+  goto <bb 64>;
+
+  <bb 68>:
+  c_si ={v} {CLOBBER};
+  # DEBUG c => NULL
+  # DEBUG si => NULL
+  # DEBUG i => NULL
+  # DEBUG id => NULL
+  goto <bb 66>;
+
+}
+
+

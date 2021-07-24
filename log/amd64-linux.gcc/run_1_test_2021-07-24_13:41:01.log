@@ -1,0 +1,7 @@
+[PARSEC] [========== PARSEC 3.0-beta-20150206 RUN LOGFILE ==========]
+
+[PARSEC] Run with amd64-linux.gcc binaries and input test started on Sáb Jul 24 13:41:01 -03 2021.
+[PARSEC] Benchmarks to run:  parsec.x264
+
+[PARSEC] [========== Running benchmark parsec.x264 [1] ==========]
+[PARSEC] Error: Binary '/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/pkgs/apps/x264/inst/amd64-linux.gcc/bin/x264' of package 'parsec.x264' cannot be found.

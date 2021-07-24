@@ -1,0 +1,799 @@
+
+;; Function open_file_y4m (open_file_y4m, funcdef_no=120, decl_uid=5793, cgraph_uid=120, symbol_order=163)
+
+
+Analyzing loop at muxers.c:178
+muxers.c:178:21: note: ===== analyze_loop_nest =====
+muxers.c:178:21: note: === vect_analyze_loop_form ===
+muxers.c:178:21: note: not vectorized: control flow in loop.
+muxers.c:178:21: note: bad loop form.
+
+Analyzing loop at muxers.c:160
+muxers.c:160:21: note: ===== analyze_loop_nest =====
+muxers.c:160:21: note: === vect_analyze_loop_form ===
+muxers.c:160:21: note: not vectorized: control flow in loop.
+muxers.c:160:21: note: bad loop form.
+muxers.c:138:5: note: vectorized 0 loops in function.
+open_file_y4m (char * psz_filename, void * * p_handle, struct x264_param_t * p_param)
+{
+  int __result;
+  struct y4m_input_t * h;
+  char * header_end;
+  char * tokend;
+  char * tokstart;
+  char header[90];
+  int d;
+  int n;
+  int i;
+  struct FILE * prephitmp_1;
+  struct FILE * prephitmp_4;
+  int _6;
+  struct FILE * pretmp_13;
+  unsigned char _20;
+  unsigned char _23;
+  unsigned int ivtmp_24;
+  struct _IO_FILE * stdin.3_26;
+  struct FILE * _29;
+  int _35;
+  char _36;
+  int _39;
+  int _41;
+  int _43;
+  char _47;
+  long int _51;
+  int _52;
+  long int _58;
+  int _59;
+  char _64;
+  struct _IO_FILE * stderr.5_65;
+  int _67;
+  int n.7_68;
+  int d.8_69;
+  int n.7_71;
+  int d.8_73;
+  int _77;
+  int n.7_78;
+  int d.8_79;
+  signed long _80;
+  int n.7_82;
+  int d.8_84;
+  int _87;
+  int _89;
+  int _90;
+  int _91;
+  struct _IO_FILE * stderr.5_92;
+  int _94;
+  struct _IO_FILE * stderr.5_96;
+  int _97;
+  int _98;
+  int _99;
+  int _100;
+  int _101;
+  int _102;
+  struct _IO_FILE * stderr.5_103;
+  unsigned int ivtmp_130;
+
+  <bb 2>:
+  h_17 = malloc (32);
+  # DEBUG h => h_17
+  h_17->next_frame = 0;
+  # DEBUG __s2_len => 1
+  # DEBUG __s2 => psz_filename_19(D)
+  _20 = MEM[(const unsigned char *)psz_filename_19(D)];
+  # DEBUG D#9 => (int) _20
+  # DEBUG __result => 45 - D#9
+  if (_20 == 45)
+    goto <bb 3>;
+  else
+    goto <bb 5>;
+
+  <bb 3>:
+  _23 = MEM[(const unsigned char *)psz_filename_19(D) + 1B];
+  # DEBUG D#11 => (int) _23
+  # DEBUG D#10 => -D#11
+  # DEBUG __result => D#10
+  # DEBUG __result => D#10
+  if (_23 == 0)
+    goto <bb 4>;
+  else
+    goto <bb 5>;
+
+  <bb 4>:
+  stdin.3_26 = stdin;
+  h_17->fh = stdin.3_26;
+  goto <bb 6>;
+
+  <bb 5>:
+  # DEBUG __result => NULL
+  _29 = fopen (psz_filename_19(D), "rb");
+  h_17->fh = _29;
+
+  <bb 6>:
+  # prephitmp_4 = PHI <stdin.3_26(4), _29(5)>
+  if (prephitmp_4 == 0B)
+    goto <bb 7>;
+  else
+    goto <bb 8>;
+
+  <bb 7>:
+  goto <bb 44>;
+
+  <bb 8>:
+  h_17->frame_header_len = 6;
+  # DEBUG i => 0
+  # DEBUG i => 0
+
+  <bb 9>:
+  # i_135 = PHI <i_38(12), 0(8)>
+  # prephitmp_1 = PHI <pretmp_13(12), prephitmp_4(8)>
+  # ivtmp_24 = PHI <ivtmp_130(12), 80(8)>
+  # DEBUG i => i_135
+  _35 = fgetc (prephitmp_1);
+  _36 = (char) _35;
+  header[i_135] = _36;
+  if (_36 == 10)
+    goto <bb 10>;
+  else
+    goto <bb 11>;
+
+  <bb 10>:
+  # i_22 = PHI <i_135(9)>
+  _39 = i_22 + 1;
+  header[_39] = 32;
+  _41 = i_22 + 2;
+  header[_41] = 0;
+  _43 = strncmp (&header, "YUV4MPEG2", 9);
+  if (_43 != 0)
+    goto <bb 7>;
+  else
+    goto <bb 13>;
+
+  <bb 11>:
+  i_38 = i_135 + 1;
+  # DEBUG i => i_38
+  # DEBUG i => i_38
+  ivtmp_130 = ivtmp_24 - 1;
+  if (ivtmp_130 != 0)
+    goto <bb 12>;
+  else
+    goto <bb 7>;
+
+  <bb 12>:
+  pretmp_13 = h_17->fh;
+  goto <bb 9>;
+
+  <bb 13>:
+  header_end_45 = &header[_39];
+  # DEBUG header_end => header_end_45
+  h_17->seq_header_len = _39;
+  # DEBUG tokstart => &header[10]
+  # DEBUG tokstart => &header[10]
+  if (&header[10] < header_end_45)
+    goto <bb 15>;
+  else
+    goto <bb 14>;
+
+  <bb 14>:
+  _97 = p_param_53(D)->vui.i_sar_height;
+  _98 = p_param_53(D)->vui.i_sar_width;
+  _99 = p_param_53(D)->i_fps_den;
+  _100 = p_param_53(D)->i_fps_num;
+  _101 = h_17->height;
+  _102 = h_17->width;
+  stderr.5_103 = stderr;
+  # DEBUG __stream => stderr.5_103
+  # DEBUG __fmt => "yuv4mpeg: %ix%i@%i/%ifps, %i:%i\n"
+  __fprintf_chk (stderr.5_103, 1, "yuv4mpeg: %ix%i@%i/%ifps, %i:%i\n", _102, _101, _100, _99, _98, _97);
+  # DEBUG __stream => NULL
+  # DEBUG __fmt => NULL
+  *p_handle_105(D) = h_17;
+  goto <bb 44>;
+
+  <bb 15>:
+
+  <bb 16>:
+  # tokstart_137 = PHI <&header[10](15), tokstart_48(43)>
+  # DEBUG tokstart => tokstart_137
+  _47 = *tokstart_137;
+  if (_47 == 32)
+    goto <bb 42> (<L63>);
+  else
+    goto <bb 17>;
+
+  <bb 17>:
+  tokstart_49 = tokstart_137 + 1;
+  # DEBUG tokstart => tokstart_49
+  switch (_47) <default: <L63>, case 65: <L45>, case 67: <L27>, case 70: <L38>, case 72: <L26>, case 73: <L30>, case 87: <L25>, case 88: <L54>>
+
+<L25>:
+  _51 = strtol (tokstart_49, &tokend, 10);
+  _52 = (int) _51;
+  p_param_53(D)->i_width = _52;
+  h_17->width = _52;
+  tokstart_56 = tokend;
+  # DEBUG tokstart => tokstart_56
+  goto <bb 42> (<L63>);
+
+<L26>:
+  _58 = strtol (tokstart_49, &tokend, 10);
+  _59 = (int) _58;
+  p_param_53(D)->i_height = _59;
+  h_17->height = _59;
+  tokstart_62 = tokend;
+  # DEBUG tokstart => tokstart_62
+  goto <bb 42> (<L63>);
+
+<L27>:
+  _94 = strncmp ("420", tokstart_49, 3);
+  if (_94 != 0)
+    goto <bb 21>;
+  else
+    goto <bb 22>;
+
+  <bb 21>:
+  stderr.5_96 = stderr;
+  # DEBUG __stream => stderr.5_96
+  # DEBUG __fmt => "Colorspace unhandled\n"
+  __builtin_fwrite ("Colorspace unhandled\n", 1, 21, stderr.5_96);
+  # DEBUG __stream => NULL
+  # DEBUG __fmt => NULL
+  goto <bb 44>;
+
+  <bb 22>:
+  tokstart_95 = __builtin_strchr (tokstart_49, 32);
+  # DEBUG tokstart => tokstart_95
+  goto <bb 42> (<L63>);
+
+<L30>:
+  tokstart_63 = &MEM[(void *)tokstart_137 + 2B];
+  # DEBUG tokstart => tokstart_63
+  _64 = MEM[(char *)tokstart_137 + 1B];
+  switch (_64) <default: <L32>, case 112: <L63>>
+
+<L32>:
+  # DEBUG interlaced => 1
+  stderr.5_65 = stderr;
+  # DEBUG __stream => stderr.5_65
+  # DEBUG __fmt => "Warning, this sequence might be interlaced\n"
+  __builtin_fwrite ("Warning, this sequence might be interlaced\n", 1, 43, stderr.5_65);
+  goto <bb 42> (<L63>);
+
+<L38>:
+  _67 = sscanf (tokstart_49, "%d:%d", &n, &d);
+  if (_67 == 2)
+    goto <bb 26>;
+  else
+    goto <bb 29>;
+
+  <bb 26>:
+  n.7_68 = n;
+  if (n.7_68 != 0)
+    goto <bb 27>;
+  else
+    goto <bb 29>;
+
+  <bb 27>:
+  d.8_69 = d;
+  if (d.8_69 != 0)
+    goto <bb 28>;
+  else
+    goto <bb 29>;
+
+  <bb 28>:
+  x264_reduce_fraction (&n, &d);
+  n.7_71 = n;
+  p_param_53(D)->i_fps_num = n.7_71;
+  d.8_73 = d;
+  p_param_53(D)->i_fps_den = d.8_73;
+
+  <bb 29>:
+  tokstart_75 = __builtin_strchr (tokstart_49, 32);
+  # DEBUG tokstart => tokstart_75
+  goto <bb 42> (<L63>);
+
+<L45>:
+  _77 = sscanf (tokstart_49, "%d:%d", &n, &d);
+  if (_77 == 2)
+    goto <bb 31>;
+  else
+    goto <bb 35>;
+
+  <bb 31>:
+  n.7_78 = n;
+  if (n.7_78 != 0)
+    goto <bb 32>;
+  else
+    goto <bb 35>;
+
+  <bb 32>:
+  d.8_79 = d;
+  if (d.8_79 != 0)
+    goto <bb 33>;
+  else
+    goto <bb 35>;
+
+  <bb 33>:
+  _80 = BIT_FIELD_REF <*p_param_53(D), 64, 256>;
+  if (_80 == 0)
+    goto <bb 34>;
+  else
+    goto <bb 35>;
+
+  <bb 34>:
+  x264_reduce_fraction (&n, &d);
+  n.7_82 = n;
+  p_param_53(D)->vui.i_sar_width = n.7_82;
+  d.8_84 = d;
+  p_param_53(D)->vui.i_sar_height = d.8_84;
+
+  <bb 35>:
+  tokstart_86 = __builtin_strchr (tokstart_49, 32);
+  # DEBUG tokstart => tokstart_86
+  goto <bb 42> (<L63>);
+
+<L54>:
+  _87 = strncmp ("YSCSS=", tokstart_49, 6);
+  if (_87 == 0)
+    goto <bb 37>;
+  else
+    goto <bb 41>;
+
+  <bb 37>:
+  tokstart_88 = &MEM[(void *)tokstart_137 + 7B];
+  # DEBUG tokstart => tokstart_88
+  _89 = strncmp ("420JPEG", tokstart_88, 7);
+  if (_89 != 0)
+    goto <bb 38>;
+  else
+    goto <bb 41>;
+
+  <bb 38>:
+  _90 = strncmp ("420MPEG2", tokstart_88, 8);
+  if (_90 != 0)
+    goto <bb 39>;
+  else
+    goto <bb 41>;
+
+  <bb 39>:
+  _91 = strncmp ("420PALDV", tokstart_88, 8);
+  if (_91 != 0)
+    goto <bb 40>;
+  else
+    goto <bb 41>;
+
+  <bb 40>:
+  stderr.5_92 = stderr;
+  # DEBUG __stream => stderr.5_92
+  # DEBUG __fmt => "Unsupported extended colorspace\n"
+  __builtin_fwrite ("Unsupported extended colorspace\n", 1, 32, stderr.5_92);
+  # DEBUG __stream => NULL
+  # DEBUG __fmt => NULL
+  goto <bb 44>;
+
+  <bb 41>:
+  # tokstart_2 = PHI <tokstart_49(36), tokstart_88(37), tokstart_88(38), tokstart_88(39)>
+  # DEBUG tokstart => tokstart_2
+  tokstart_93 = __builtin_strchr (tokstart_2, 32);
+  # DEBUG tokstart => tokstart_93
+
+  # tokstart_3 = PHI <tokstart_137(16), tokstart_49(17), tokstart_56(18), tokstart_62(19), tokstart_95(22), tokstart_63(24), tokstart_75(29), tokstart_86(35), tokstart_93(41), tokstart_63(23)>
+<L63>:
+  # DEBUG tokstart => tokstart_3
+  tokstart_48 = tokstart_3 + 1;
+  # DEBUG tokstart => tokstart_48
+  # DEBUG tokstart => tokstart_48
+  if (header_end_45 > tokstart_48)
+    goto <bb 43>;
+  else
+    goto <bb 14>;
+
+  <bb 43>:
+  goto <bb 16>;
+
+  <bb 44>:
+  # _6 = PHI <-1(7), 0(14), -1(21), -1(40)>
+  n ={v} {CLOBBER};
+  d ={v} {CLOBBER};
+  header ={v} {CLOBBER};
+  tokend ={v} {CLOBBER};
+  return _6;
+
+}
+
+
+
+;; Function read_frame_y4m (read_frame_y4m, funcdef_no=122, decl_uid=5799, cgraph_uid=122, symbol_order=165)
+
+
+Analyzing loop at muxers.c:299
+muxers.c:299:34: note: ===== analyze_loop_nest =====
+muxers.c:299:34: note: === vect_analyze_loop_form ===
+muxers.c:299:34: note: not vectorized: control flow in loop.
+muxers.c:299:34: note: bad loop form.
+muxers.c:272:5: note: vectorized 0 loops in function.
+read_frame_y4m (struct x264_picture_t * p_pic, void * handle, int i_frame)
+{
+  char header[16];
+  int i;
+  int _2;
+  unsigned int ivtmp_4;
+  int _11;
+  long unsigned int _13;
+  int _14;
+  int _15;
+  int _16;
+  int _17;
+  int _18;
+  int _19;
+  int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  int _23;
+  long unsigned int _24;
+  long unsigned int _25;
+  long int _26;
+  struct FILE * _27;
+  int _29;
+  struct FILE * _30;
+  int _33;
+  unsigned int _35;
+  struct _IO_FILE * stderr.13_36;
+  struct FILE * _37;
+  int _39;
+  struct _IO_FILE * stderr.13_41;
+  int _43;
+  struct FILE * _45;
+  int _46;
+  int _47;
+  int _48;
+  long unsigned int _49;
+  uint8_t * _51;
+  struct FILE * _53;
+  int _54;
+  int _55;
+  int _56;
+  int _57;
+  long unsigned int _58;
+  uint8_t * _59;
+  struct FILE * _61;
+  int _62;
+  int _63;
+  int _64;
+  int _65;
+  long unsigned int _66;
+  uint8_t * _67;
+  int _68;
+  long unsigned int _71;
+  long unsigned int _76;
+  long unsigned int _82;
+  unsigned int ivtmp_84;
+  long unsigned int _88;
+
+  <bb 2>:
+  # DEBUG slen => 5
+  # DEBUG i => 0
+  # DEBUG h => handle_9(D)
+  _11 = MEM[(struct y4m_input_t *)handle_9(D)].next_frame;
+  if (_11 != i_frame_12(D))
+    goto <bb 4>;
+  else
+    goto <bb 3>;
+
+  <bb 3>:
+  _30 = MEM[(struct y4m_input_t *)handle_9(D)].fh;
+  # DEBUG __ptr => &header
+  # DEBUG __size => 1
+  # DEBUG __n => 5
+  # DEBUG __stream => _30
+  _71 = __fread_alias (&header, 1, 5, _30);
+  # DEBUG __ptr => NULL
+  # DEBUG __size => NULL
+  # DEBUG __n => NULL
+  # DEBUG __stream => NULL
+  if (_71 != 5)
+    goto <bb 5>;
+  else
+    goto <bb 6>;
+
+  <bb 4>:
+  _13 = (long unsigned int) i_frame_12(D);
+  _14 = MEM[(struct y4m_input_t *)handle_9(D)].width;
+  _15 = MEM[(struct y4m_input_t *)handle_9(D)].height;
+  _16 = _14 * _15;
+  _17 = _16 * 3;
+  _18 = _17 / 2;
+  _19 = MEM[(struct y4m_input_t *)handle_9(D)].frame_header_len;
+  _20 = _18 + _19;
+  _21 = (long unsigned int) _20;
+  _22 = _13 * _21;
+  _23 = MEM[(struct y4m_input_t *)handle_9(D)].seq_header_len;
+  _24 = (long unsigned int) _23;
+  _25 = _22 + _24;
+  _26 = (long int) _25;
+  _27 = MEM[(struct y4m_input_t *)handle_9(D)].fh;
+  _29 = fseeko (_27, _26, 0);
+  if (_29 != 0)
+    goto <bb 5>;
+  else
+    goto <bb 3>;
+
+  <bb 5>:
+  goto <bb 15>;
+
+  <bb 6>:
+  header[5] = 0;
+  _33 = strncmp (&header, "FRAME", 5);
+  if (_33 != 0)
+    goto <bb 8>;
+  else
+    goto <bb 7>;
+
+  <bb 7>:
+  goto <bb 11>;
+
+  <bb 8>:
+  _35 = MEM[(uint32_t *)&header];
+  stderr.13_36 = stderr;
+  # DEBUG __stream => stderr.13_36
+  # DEBUG __fmt => "Bad header magic (%08X <=> %s)\n"
+  __fprintf_chk (stderr.13_36, 1, "Bad header magic (%08X <=> %s)\n", _35, &header);
+  # DEBUG __stream => NULL
+  # DEBUG __fmt => NULL
+  goto <bb 15>;
+
+  <bb 9>:
+  i_40 = i_86 + 1;
+  # DEBUG i => i_40
+  # DEBUG i => i_40
+  ivtmp_84 = ivtmp_4 - 1;
+  if (ivtmp_84 != 0)
+    goto <bb 10>;
+  else
+    goto <bb 16>;
+
+  <bb 10>:
+
+  <bb 11>:
+  # i_86 = PHI <0(7), i_40(10)>
+  # ivtmp_4 = PHI <80(7), ivtmp_84(10)>
+  # DEBUG i => i_86
+  _37 = MEM[(struct y4m_input_t *)handle_9(D)].fh;
+  _39 = fgetc (_37);
+  if (_39 != 10)
+    goto <bb 9>;
+  else
+    goto <bb 17>;
+
+  <bb 12>:
+  _53 = MEM[(struct y4m_input_t *)handle_9(D)].fh;
+  _54 = MEM[(struct y4m_input_t *)handle_9(D)].width;
+  _55 = MEM[(struct y4m_input_t *)handle_9(D)].height;
+  _56 = _54 * _55;
+  _57 = _56 / 4;
+  _58 = (long unsigned int) _57;
+  _59 = p_pic_50(D)->img.plane[1];
+  # DEBUG __ptr => _59
+  # DEBUG __size => 1
+  # DEBUG __n => _58
+  # DEBUG __stream => _53
+  _82 = __fread_alias (_59, 1, _58, _53);
+  # DEBUG __ptr => NULL
+  # DEBUG __size => NULL
+  # DEBUG __n => NULL
+  # DEBUG __stream => NULL
+  if (_82 == 0)
+    goto <bb 5>;
+  else
+    goto <bb 13>;
+
+  <bb 13>:
+  _61 = MEM[(struct y4m_input_t *)handle_9(D)].fh;
+  _62 = MEM[(struct y4m_input_t *)handle_9(D)].width;
+  _63 = MEM[(struct y4m_input_t *)handle_9(D)].height;
+  _64 = _62 * _63;
+  _65 = _64 / 4;
+  _66 = (long unsigned int) _65;
+  _67 = p_pic_50(D)->img.plane[2];
+  # DEBUG __ptr => _67
+  # DEBUG __size => 1
+  # DEBUG __n => _66
+  # DEBUG __stream => _61
+  _88 = __fread_alias (_67, 1, _66, _61);
+  # DEBUG __ptr => NULL
+  # DEBUG __size => NULL
+  # DEBUG __n => NULL
+  # DEBUG __stream => NULL
+  if (_88 == 0)
+    goto <bb 5>;
+  else
+    goto <bb 14>;
+
+  <bb 14>:
+  _68 = i_frame_12(D) + 1;
+  MEM[(struct y4m_input_t *)handle_9(D)].next_frame = _68;
+
+  <bb 15>:
+  # _2 = PHI <-1(5), 0(14), -1(8), -1(16)>
+  header ={v} {CLOBBER};
+  return _2;
+
+  <bb 16>:
+  stderr.13_41 = stderr;
+  # DEBUG __stream => stderr.13_41
+  # DEBUG __fmt => "Bad frame header!\n"
+  __builtin_fwrite ("Bad frame header!\n", 1, 18, stderr.13_41);
+  # DEBUG __stream => NULL
+  # DEBUG __fmt => NULL
+  goto <bb 15>;
+
+  <bb 17>:
+  # i_1 = PHI <i_86(11)>
+  _43 = i_1 + 6;
+  MEM[(struct y4m_input_t *)handle_9(D)].frame_header_len = _43;
+  _45 = MEM[(struct y4m_input_t *)handle_9(D)].fh;
+  _46 = MEM[(struct y4m_input_t *)handle_9(D)].width;
+  _47 = MEM[(struct y4m_input_t *)handle_9(D)].height;
+  _48 = _46 * _47;
+  _49 = (long unsigned int) _48;
+  _51 = p_pic_50(D)->img.plane[0];
+  # DEBUG __ptr => _51
+  # DEBUG __size => 1
+  # DEBUG __n => _49
+  # DEBUG __stream => _45
+  _76 = __fread_alias (_51, 1, _49, _45);
+  # DEBUG __ptr => NULL
+  # DEBUG __size => NULL
+  # DEBUG __n => NULL
+  # DEBUG __stream => NULL
+  if (_76 == 0)
+    goto <bb 5>;
+  else
+    goto <bb 12>;
+
+}
+
+
+
+;; Function set_param_mkv (set_param_mkv, funcdef_no=136, decl_uid=5861, cgraph_uid=136, symbol_order=179)
+
+
+Analyzing loop at muxers.c:49
+muxers.c:49:11: note: ===== analyze_loop_nest =====
+muxers.c:49:11: note: === vect_analyze_loop_form ===
+muxers.c:49:11: note: === get_loop_niters ===
+muxers.c:49:11: note: not vectorized: number of iterations cannot be computed.
+muxers.c:49:11: note: bad loop form.
+muxers.c:885:5: note: vectorized 0 loops in function.
+set_param_mkv (void * handle, struct x264_param_t * p_param)
+{
+  int64_t dh;
+  int _10;
+  int _11;
+  long int _12;
+  long int _13;
+  long int _15;
+  long int _16;
+  long int cstore_19;
+  int cstore_20;
+  int _21;
+  int _23;
+  int _25;
+  int _26;
+  long int _27;
+  long int _28;
+  long int _30;
+  long int _31;
+  _Bool _35;
+  _Bool _36;
+  _Bool _37;
+  int _41;
+  int _43;
+
+  <bb 2>:
+  # DEBUG p_mkv => handle_6(D)
+  _10 = p_param_9(D)->i_fps_num;
+  if (_10 > 0)
+    goto <bb 3>;
+  else
+    goto <bb 4>;
+
+  <bb 3>:
+  _11 = p_param_9(D)->i_fps_den;
+  _12 = (long int) _11;
+  _13 = _12 * 1000000000;
+  _15 = (long int) _10;
+  _16 = _13 / _15;
+
+  <bb 4>:
+  # cstore_19 = PHI <_16(3), 0(2)>
+  # cstore_20 = PHI <_10(3), 1(2)>
+  MEM[(struct mkv_t *)handle_6(D)].fps_num = cstore_20;
+  MEM[(struct mkv_t *)handle_6(D)].frame_duration = cstore_19;
+  _21 = p_param_9(D)->i_width;
+  MEM[(struct mkv_t *)handle_6(D)].width = _21;
+  _23 = p_param_9(D)->i_height;
+  MEM[(struct mkv_t *)handle_6(D)].height = _23;
+  _25 = p_param_9(D)->vui.i_sar_width;
+  if (_25 != 0)
+    goto <bb 5>;
+  else
+    goto <bb 7>;
+
+  <bb 5>:
+  _26 = p_param_9(D)->vui.i_sar_height;
+  if (_26 != 0)
+    goto <bb 6>;
+  else
+    goto <bb 7>;
+
+  <bb 6>:
+  _27 = (long int) _21;
+  _28 = (long int) _25;
+  dh_29 = _27 * _28;
+  # DEBUG dw => dh_29
+  _30 = (long int) _23;
+  _31 = (long int) _26;
+  dh_32 = _30 * _31;
+  # DEBUG dh => dh_32
+  goto <bb 8>;
+
+  <bb 7>:
+  dh_33 = (int64_t) _21;
+  # DEBUG dw => dh_33
+  dh_34 = (int64_t) _23;
+  # DEBUG dh => dh_34
+
+  <bb 8>:
+  # dh_1 = PHI <dh_29(6), dh_33(7)>
+  # dh_3 = PHI <dh_32(6), dh_34(7)>
+  # DEBUG dh => dh_3
+  # DEBUG dw => dh_1
+  _35 = dh_1 > 0;
+  _36 = dh_3 > 0;
+  _37 = _35 & _36;
+  if (_37 != 0)
+    goto <bb 9>;
+  else
+    goto <bb 13>;
+
+  <bb 9>:
+
+  <bb 10>:
+  # dh_38 = PHI <dh_1(9), dh_45(11)>
+  # dh_45 = PHI <dh_3(9), dh_46(11)>
+  # DEBUG b => dh_45
+  # DEBUG a => dh_38
+  dh_46 = dh_38 % dh_45;
+  # DEBUG c => dh_46
+  if (dh_46 == 0)
+    goto <bb 12>;
+  else
+    goto <bb 11>;
+
+  <bb 11>:
+  goto <bb 10>;
+
+  <bb 12>:
+  # dh_58 = PHI <dh_45(10)>
+  # DEBUG a => NULL
+  # DEBUG b => NULL
+  # DEBUG x => NULL
+  dh_39 = dh_1 / dh_58;
+  # DEBUG dw => dh_39
+  dh_40 = dh_3 / dh_58;
+  # DEBUG dh => dh_40
+
+  <bb 13>:
+  # dh_2 = PHI <dh_1(8), dh_39(12)>
+  # dh_4 = PHI <dh_3(8), dh_40(12)>
+  # DEBUG dh => dh_4
+  # DEBUG dw => dh_2
+  _41 = (int) dh_2;
+  MEM[(struct mkv_t *)handle_6(D)].d_width = _41;
+  _43 = (int) dh_4;
+  MEM[(struct mkv_t *)handle_6(D)].d_height = _43;
+  return 0;
+
+}
+
+

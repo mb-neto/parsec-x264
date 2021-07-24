@@ -1,0 +1,3938 @@
+
+;; Function parse_enum (parse_enum, funcdef_no=118, decl_uid=5954, cgraph_uid=118, symbol_order=161)
+
+
+Analyzing loop at common/common.c:151
+common/common.c:151:14: note: ===== analyze_loop_nest =====
+common/common.c:151:14: note: === vect_analyze_loop_form ===
+common/common.c:151:14: note: not vectorized: control flow in loop.
+common/common.c:151:14: note: bad loop form.
+common/common.c:147:12: note: vectorized 0 loops in function.
+parse_enum (const char * arg, const char * const * names, int * dst)
+{
+  int i;
+  int _2;
+  long unsigned int _4;
+  long unsigned int _5;
+  const char * const * _7;
+  const char * _9;
+  int _11;
+  const char * _19;
+  const char * _21;
+
+  <bb 2>:
+  # DEBUG i => 0
+  # DEBUG i => 0
+  _19 = *names_6(D);
+  if (_19 != 0B)
+    goto <bb 3>;
+  else
+    goto <bb 8>;
+
+  <bb 3>:
+
+  <bb 4>:
+  # i_20 = PHI <0(3), i_12(7)>
+  # _21 = PHI <_19(3), _9(7)>
+  # DEBUG i => i_20
+  _11 = __builtin_strcmp (arg_10(D), _21);
+  if (_11 == 0)
+    goto <bb 5>;
+  else
+    goto <bb 6>;
+
+  <bb 5>:
+  # i_16 = PHI <i_20(4)>
+  *dst_13(D) = i_16;
+  goto <bb 8>;
+
+  <bb 6>:
+  i_12 = i_20 + 1;
+  # DEBUG i => i_12
+  # DEBUG i => i_12
+  _4 = (long unsigned int) i_12;
+  _5 = _4 * 8;
+  _7 = names_6(D) + _5;
+  _9 = *_7;
+  if (_9 != 0B)
+    goto <bb 7>;
+  else
+    goto <bb 8>;
+
+  <bb 7>:
+  goto <bb 4>;
+
+  <bb 8>:
+  # _2 = PHI <0(5), -1(6), -1(2)>
+  return _2;
+
+}
+
+
+
+;; Function parse_cqm (parse_cqm, funcdef_no=119, decl_uid=5972, cgraph_uid=119, symbol_order=162) (unlikely executed)
+
+common/common.c:159:12: note: vectorized 0 loops in function.
+parse_cqm (const char * str, uint8_t * cqm, int length)
+{
+  int coef;
+  int i;
+  int _3;
+  int _9;
+  int coef.145_10;
+  sizetype _12;
+  uint8_t * _14;
+  unsigned char _15;
+  unsigned int _22;
+  _Bool _26;
+  int _27;
+  unsigned int _28;
+  int _29;
+
+  <bb 2>:
+  # DEBUG i => 0
+
+  <bb 3>:
+  # str_1 = PHI <str_6(D)(2), str_20(8)>
+  # i_2 = PHI <0(2), i_11(8)>
+  # DEBUG i => i_2
+  # DEBUG str => str_1
+  _9 = sscanf (str_1, "%d", &coef);
+  if (_9 == 0)
+    goto <bb 5>;
+  else
+    goto <bb 4>;
+
+  <bb 4>:
+  coef.145_10 = coef;
+  _22 = (unsigned int) coef.145_10;
+  _28 = _22 + 4294967295;
+  if (_28 > 254)
+    goto <bb 5>;
+  else
+    goto <bb 6>;
+
+  <bb 5>:
+  coef ={v} {CLOBBER};
+  goto <bb 10>;
+
+  <bb 6>:
+  i_11 = i_2 + 1;
+  # DEBUG i => i_11
+  _12 = (sizetype) i_2;
+  _14 = cqm_13(D) + _12;
+  _15 = (unsigned char) coef.145_10;
+  *_14 = _15;
+  coef ={v} {CLOBBER};
+  if (i_11 < length_18(D))
+    goto <bb 7>;
+  else
+    goto <bb 9>;
+
+  <bb 7>:
+  str_19 = __builtin_strchr (str_1, 44);
+  # DEBUG str => str_19
+  if (str_19 != 0B)
+    goto <bb 8>;
+  else
+    goto <bb 10>;
+
+  <bb 8>:
+  str_20 = str_19 + 1;
+  # DEBUG str => str_20
+  goto <bb 3>;
+
+  <bb 9>:
+  # i_25 = PHI <i_11(6)>
+  _26 = i_25 != length_18(D);
+  _29 = (int) _26;
+  _27 = -_29;
+
+  <bb 10>:
+  # _3 = PHI <-1(5), -1(7), _27(9)>
+  return _3;
+
+}
+
+
+
+;; Function x264_param_parse (x264_param_parse, funcdef_no=123, decl_uid=4458, cgraph_uid=123, symbol_order=166)
+
+
+Analyzing loop at /usr/include/x86_64-linux-gnu/bits/string2.h:1157
+/usr/include/x86_64-linux-gnu/bits/string2.h:1157:6: note: ===== analyze_loop_nest =====
+/usr/include/x86_64-linux-gnu/bits/string2.h:1157:6: note: === vect_analyze_loop_form ===
+/usr/include/x86_64-linux-gnu/bits/string2.h:1157:6: note: not vectorized: multiple nested loops.
+/usr/include/x86_64-linux-gnu/bits/string2.h:1157:6: note: bad loop form.
+
+Analyzing loop at common/common.c:255
+common/common.c:255:70: note: ===== analyze_loop_nest =====
+common/common.c:255:70: note: === vect_analyze_loop_form ===
+common/common.c:255:70: note: not vectorized: control flow in loop.
+common/common.c:255:70: note: bad loop form.
+
+Analyzing loop at /usr/include/x86_64-linux-gnu/bits/string2.h:1160
+/usr/include/x86_64-linux-gnu/bits/string2.h:1160:19: note: ===== analyze_loop_nest =====
+/usr/include/x86_64-linux-gnu/bits/string2.h:1160:19: note: === vect_analyze_loop_form ===
+/usr/include/x86_64-linux-gnu/bits/string2.h:1160:19: note: not vectorized: control flow in loop.
+/usr/include/x86_64-linux-gnu/bits/string2.h:1160:19: note: bad loop form.
+
+Analyzing loop at /usr/include/x86_64-linux-gnu/bits/string2.h:1154
+/usr/include/x86_64-linux-gnu/bits/string2.h:1154:9: note: ===== analyze_loop_nest =====
+/usr/include/x86_64-linux-gnu/bits/string2.h:1154:9: note: === vect_analyze_loop_form ===
+/usr/include/x86_64-linux-gnu/bits/string2.h:1154:9: note: === get_loop_niters ===
+/usr/include/x86_64-linux-gnu/bits/string2.h:1154:9: note: not vectorized: number of iterations cannot be computed.
+/usr/include/x86_64-linux-gnu/bits/string2.h:1154:9: note: bad loop form.
+
+Analyzing loop at common/common.c:227
+common/common.c:227:14: note: ===== analyze_loop_nest =====
+common/common.c:227:14: note: === vect_analyze_loop_form ===
+common/common.c:227:14: note: not vectorized: latch block not empty.
+common/common.c:227:14: note: bad loop form.
+common/common.c:207:5: note: vectorized 0 loops in function.
+x264_param_parse (struct x264_param_t * p, const char * name, const char * value)
+{
+  char * end;
+  double v;
+  char * end;
+  double v;
+  char * end;
+  double v;
+  char * end;
+  double v;
+  char * end;
+  double v;
+  char * end;
+  double v;
+  char * end;
+  double v;
+  char * end;
+  double v;
+  char * end;
+  double v;
+  char * end;
+  double v;
+  char * end;
+  double v;
+  char * end;
+  double v;
+  int __result;
+  int __result;
+  int __result;
+  int __result;
+  int __result;
+  int __result;
+  int __result;
+  int __result;
+  int __result;
+  float fps;
+  int __result;
+  int __result;
+  char * init;
+  char * saveptr;
+  int __result;
+  char * p;
+  int i;
+  int name_was_bool;
+  int b_error;
+  int _26;
+  uint32_t iftmp.3_28;
+  int _29;
+  int iftmp.15_30;
+  float iftmp.118_31;
+  _Bool _54;
+  char _56;
+  char * _58;
+  int _63;
+  int _64;
+  int _68;
+  unsigned char _69;
+  int _70;
+  unsigned char _72;
+  unsigned char _75;
+  unsigned char _78;
+  int iftmp.8_81;
+  int iftmp.10_82;
+  int iftmp.11_83;
+  int iftmp.12_84;
+  int iftmp.13_85;
+  unsigned char _87;
+  unsigned char _90;
+  unsigned char _93;
+  int iftmp.16_96;
+  int iftmp.18_97;
+  int iftmp.20_98;
+  int iftmp.22_99;
+  int iftmp.24_100;
+  int iftmp.26_101;
+  int iftmp.28_102;
+  unsigned char _104;
+  unsigned char _107;
+  unsigned char _110;
+  unsigned char _114;
+  unsigned char _117;
+  unsigned char _120;
+  int iftmp.32_123;
+  int iftmp.33_124;
+  int iftmp.34_125;
+  int iftmp.35_126;
+  int iftmp.36_127;
+  int iftmp.37_128;
+  int iftmp.38_129;
+  int iftmp.39_130;
+  int iftmp.40_131;
+  int iftmp.41_132;
+  unsigned char _134;
+  unsigned char _137;
+  int iftmp.43_140;
+  int iftmp.44_141;
+  int iftmp.45_142;
+  int iftmp.46_143;
+  int iftmp.47_144;
+  unsigned char _146;
+  unsigned char _149;
+  unsigned char _152;
+  int iftmp.49_155;
+  int iftmp.50_156;
+  int iftmp.55_157;
+  int iftmp.58_158;
+  int iftmp.61_159;
+  int iftmp.64_160;
+  int iftmp.66_161;
+  int iftmp.68_162;
+  int iftmp.70_163;
+  int iftmp.72_164;
+  int iftmp.74_165;
+  unsigned char _167;
+  unsigned char _170;
+  unsigned char _173;
+  int iftmp.77_176;
+  int iftmp.78_177;
+  int iftmp.79_178;
+  int iftmp.80_179;
+  int iftmp.81_180;
+  int iftmp.82_181;
+  int iftmp.83_182;
+  int iftmp.84_183;
+  int iftmp.86_184;
+  int iftmp.87_185;
+  unsigned char _187;
+  unsigned char _190;
+  int iftmp.90_193;
+  int iftmp.91_194;
+  int iftmp.92_195;
+  int iftmp.93_196;
+  int iftmp.94_197;
+  int iftmp.95_198;
+  int iftmp.96_199;
+  int iftmp.97_200;
+  int iftmp.98_201;
+  int iftmp.99_202;
+  int iftmp.100_203;
+  int iftmp.101_204;
+  int iftmp.102_205;
+  int iftmp.103_206;
+  int iftmp.104_207;
+  int iftmp.105_208;
+  unsigned char _209;
+  unsigned char _212;
+  int iftmp.107_215;
+  unsigned char _217;
+  unsigned char _220;
+  int iftmp.109_223;
+  unsigned char _224;
+  unsigned char _227;
+  unsigned char _230;
+  int iftmp.111_233;
+  int iftmp.112_234;
+  int iftmp.113_235;
+  int iftmp.114_236;
+  int iftmp.115_237;
+  int iftmp.116_238;
+  int iftmp.117_239;
+  int iftmp.119_240;
+  int iftmp.120_241;
+  int iftmp.121_242;
+  int iftmp.122_243;
+  int iftmp.123_244;
+  int iftmp.124_245;
+  int iftmp.125_246;
+  int iftmp.126_247;
+  int iftmp.127_248;
+  int iftmp.128_249;
+  int iftmp.129_250;
+  int iftmp.130_251;
+  int iftmp.131_252;
+  int iftmp.132_253;
+  int iftmp.133_254;
+  int iftmp.134_255;
+  int iftmp.135_256;
+  int iftmp.136_257;
+  unsigned char _258;
+  unsigned char _261;
+  unsigned char _264;
+  short unsigned int _267;
+  int iftmp.138_268;
+  int iftmp.139_269;
+  int iftmp.140_270;
+  int _272;
+  int _276;
+  _Bool _277;
+  int _278;
+  int _281;
+  int _284;
+  int _287;
+  int _290;
+  char * _293;
+  float _296;
+  float _299;
+  float _302;
+  char * _305;
+  char * _308;
+  int _311;
+  int _312;
+  int _314;
+  int iftmp.149_316;
+  float _317;
+  int _320;
+  float _323;
+  float _326;
+  float _329;
+  int _332;
+  int _335;
+  int _337;
+  float iftmp.118_339;
+  int _342;
+  int _345;
+  int _348;
+  float _351;
+  int _355;
+  int _359;
+  int _363;
+  int _366;
+  int _369;
+  int _372;
+  int _375;
+  int _378;
+  int _381;
+  int _384;
+  float * _386;
+  float * _387;
+  int _389;
+  int _391;
+  int _393;
+  int _398;
+  int _401;
+  int _404;
+  int _407;
+  int * _409;
+  int _411;
+  int b_error.6_412;
+  int b_error.89_413;
+  int _416;
+  int _419;
+  int * _421;
+  int _423;
+  int b_error.6_424;
+  int b_error.85_425;
+  int _428;
+  int _431;
+  char * _434;
+  char * _436;
+  unsigned int _437;
+  unsigned int _438;
+  char * _440;
+  unsigned int _441;
+  unsigned int _442;
+  char * _444;
+  unsigned int _445;
+  unsigned int _446;
+  char * _448;
+  unsigned int _449;
+  unsigned int _450;
+  char * _452;
+  unsigned int _453;
+  unsigned int _454;
+  char * _457;
+  int _460;
+  uint8_t[64] * _463;
+  int _465;
+  int b_error.6_466;
+  int b_error.75_467;
+  uint8_t[64] * _470;
+  int _472;
+  int b_error.6_473;
+  int b_error.73_474;
+  uint8_t[16] * _477;
+  int _479;
+  int b_error.6_480;
+  int b_error.71_481;
+  uint8_t[16] * _484;
+  int _486;
+  int b_error.6_487;
+  int b_error.69_488;
+  uint8_t[16] * _491;
+  int _493;
+  int b_error.6_494;
+  int b_error.67_495;
+  uint8_t[16] * _498;
+  int _500;
+  int b_error.6_501;
+  int b_error.65_502;
+  uint8_t[16] * _505;
+  int _507;
+  int b_error.6_508;
+  int b_error.62_509;
+  uint8_t[16] * _511;
+  int _513;
+  int b_error.6_514;
+  int b_error.63_515;
+  uint8_t[16] * _518;
+  int _520;
+  int b_error.6_521;
+  int b_error.59_522;
+  uint8_t[16] * _524;
+  int _526;
+  int b_error.6_527;
+  int b_error.60_528;
+  uint8_t[64] * _531;
+  int _533;
+  int b_error.6_534;
+  int b_error.56_535;
+  uint8_t[64] * _537;
+  int _539;
+  int b_error.6_540;
+  int b_error.57_541;
+  uint8_t[16] * _544;
+  int _546;
+  int b_error.6_547;
+  int b_error.51_548;
+  uint8_t[16] * _550;
+  int _552;
+  int b_error.6_553;
+  int b_error.52_554;
+  uint8_t[16] * _556;
+  int _558;
+  int b_error.6_559;
+  int b_error.53_560;
+  uint8_t[16] * _562;
+  int _564;
+  int b_error.6_565;
+  int b_error.54_566;
+  char * _569;
+  char * _571;
+  char * _572;
+  char * _575;
+  int _579;
+  int _582;
+  int _585;
+  int * _587;
+  int * _588;
+  int _590;
+  int _592;
+  int _594;
+  int _596;
+  int _599;
+  int _603;
+  _Bool _604;
+  int _605;
+  int _608;
+  int _611;
+  int _614;
+  int b_error.6_616;
+  int _619;
+  int _622;
+  int _625;
+  int _628;
+  int _631;
+  int _633;
+  int _636;
+  int _638;
+  int _641;
+  int * _643;
+  int * _644;
+  int _646;
+  float _649;
+  double _650;
+  double _651;
+  int _652;
+  int _656;
+  unsigned int _658;
+  _Bool _659;
+  int b_error.29_660;
+  int * _662;
+  int _664;
+  int b_error.6_665;
+  int b_error.27_666;
+  int * _668;
+  int _670;
+  int b_error.6_671;
+  int b_error.25_672;
+  int * _674;
+  int _676;
+  int b_error.6_677;
+  int b_error.23_678;
+  int * _680;
+  int _682;
+  int b_error.6_683;
+  int b_error.21_684;
+  int * _686;
+  int _688;
+  int b_error.6_689;
+  int b_error.19_690;
+  int * _692;
+  int _694;
+  int b_error.6_695;
+  int b_error.17_696;
+  int * _698;
+  int * _699;
+  int _701;
+  int _703;
+  int _707;
+  double _710;
+  double _711;
+  int _712;
+  int _715;
+  int iftmp.9_717;
+  int _719;
+  const short unsigned int * * _722;
+  const short unsigned int * _723;
+  char _724;
+  long unsigned int _725;
+  long unsigned int _726;
+  const short unsigned int * _727;
+  short unsigned int _728;
+  int _730;
+  uint32_t iftmp.3_731;
+  int iftmp.5_732;
+  int _734;
+  uint32_t iftmp.4_736;
+  int b_error.6_738;
+  int _744;
+  const char[16] * _745;
+  int _746;
+  int prephitmp_751;
+  int b_error.141_760;
+  char _764;
+  char _768;
+  int prephitmp_770;
+  char * end.150_771;
+  char _772;
+  char * end.150_773;
+  char _774;
+  char * end.150_775;
+  char _776;
+  char * end.150_777;
+  char _778;
+  char * end.150_779;
+  char _780;
+  char * end.150_781;
+  char _782;
+  char * end.150_783;
+  char _784;
+  char * end.150_785;
+  char _786;
+  char * end.150_787;
+  char _788;
+  char * end.150_791;
+  char _792;
+  char * end.150_793;
+  char _794;
+  char * end.150_795;
+  char _796;
+  int iftmp.149_848;
+  _Bool _849;
+  int _850;
+  int _851;
+  int pretmp_852;
+  int pretmp_853;
+  char _854;
+  int pretmp_864;
+  int pretmp_865;
+  int pretmp_866;
+  int pretmp_867;
+  int pretmp_868;
+  int pretmp_869;
+  int pretmp_870;
+  int pretmp_871;
+  int pretmp_885;
+  int pretmp_886;
+  int pretmp_887;
+  int pretmp_888;
+  int pretmp_889;
+  int pretmp_890;
+  int pretmp_891;
+  unsigned int _892;
+  unsigned int _893;
+  int pretmp_894;
+  int pretmp_895;
+  int pretmp_896;
+  int pretmp_897;
+  int pretmp_898;
+  int pretmp_899;
+  int pretmp_900;
+  int pretmp_901;
+  int pretmp_903;
+  int pretmp_956;
+  char _981;
+  int _984;
+  int pretmp_987;
+  int pretmp_988;
+  int pretmp_989;
+  int pretmp_990;
+  int pretmp_991;
+  int pretmp_992;
+  int pretmp_993;
+  int pretmp_994;
+  int pretmp_995;
+  char _1004;
+  unsigned int _1005;
+  int pretmp_1007;
+  int pretmp_1008;
+  int pretmp_1009;
+  int pretmp_1010;
+  int pretmp_1011;
+  int pretmp_1012;
+  int pretmp_1013;
+  int pretmp_1014;
+  int pretmp_1015;
+  int pretmp_1016;
+  int pretmp_1017;
+  int pretmp_1018;
+  int pretmp_1019;
+  int pretmp_1020;
+  int pretmp_1021;
+  int pretmp_1022;
+  int pretmp_1023;
+  int pretmp_1024;
+  int pretmp_1025;
+  int pretmp_1026;
+  int pretmp_1027;
+  int pretmp_1028;
+  int pretmp_1029;
+  int pretmp_1030;
+  int pretmp_1031;
+  int pretmp_1032;
+  int pretmp_1033;
+  int pretmp_1034;
+  int pretmp_1035;
+  int pretmp_1036;
+  int pretmp_1037;
+  int pretmp_1038;
+  int pretmp_1040;
+  int pretmp_1041;
+  int pretmp_1042;
+  int pretmp_1043;
+  int pretmp_1044;
+  int pretmp_1045;
+  int pretmp_1046;
+  int pretmp_1047;
+  int pretmp_1048;
+  int pretmp_1049;
+  int pretmp_1050;
+  int pretmp_1051;
+  int prephitmp_1052;
+  int pretmp_1053;
+  int pretmp_1054;
+  int pretmp_1055;
+  int pretmp_1056;
+  int pretmp_1057;
+  int pretmp_1059;
+  int pretmp_1060;
+  int pretmp_1061;
+  int pretmp_1062;
+  int pretmp_1063;
+  int pretmp_1064;
+  int pretmp_1065;
+  int pretmp_1066;
+  int pretmp_1067;
+  int pretmp_1068;
+  int pretmp_1069;
+  int pretmp_1070;
+  int pretmp_1071;
+  int pretmp_1072;
+  int pretmp_1073;
+  int pretmp_1074;
+  int pretmp_1075;
+  int pretmp_1076;
+  int pretmp_1077;
+  int pretmp_1078;
+  int pretmp_1079;
+  int pretmp_1080;
+  int pretmp_1081;
+  int pretmp_1082;
+  int pretmp_1083;
+  int pretmp_1084;
+  int pretmp_1085;
+  int pretmp_1086;
+  int pretmp_1087;
+  int pretmp_1088;
+  int pretmp_1089;
+  int pretmp_1090;
+  int pretmp_1091;
+  int pretmp_1092;
+  int pretmp_1093;
+  int pretmp_1094;
+  int pretmp_1095;
+  int pretmp_1096;
+  int pretmp_1098;
+  int pretmp_1099;
+  int pretmp_1100;
+  int pretmp_1102;
+  int pretmp_1103;
+  int pretmp_1107;
+  int pretmp_1109;
+  int pretmp_1110;
+  int pretmp_1114;
+  int pretmp_1115;
+  int pretmp_1116;
+  int pretmp_1117;
+  int pretmp_1118;
+  int pretmp_1119;
+  int pretmp_1120;
+  int pretmp_1122;
+  int pretmp_1123;
+  int pretmp_1124;
+  int pretmp_1125;
+  int pretmp_1126;
+  int pretmp_1127;
+  int pretmp_1128;
+  int pretmp_1129;
+  int pretmp_1130;
+  int pretmp_1131;
+  int pretmp_1132;
+  int prephitmp_1133;
+  int pretmp_1134;
+  int prephitmp_1135;
+  int pretmp_1136;
+  int prephitmp_1137;
+  int pretmp_1138;
+  int prephitmp_1139;
+  int pretmp_1140;
+  int prephitmp_1141;
+  int pretmp_1142;
+  int prephitmp_1143;
+  int pretmp_1144;
+  int prephitmp_1145;
+  int pretmp_1146;
+  int prephitmp_1147;
+  int pretmp_1148;
+  int prephitmp_1149;
+  int pretmp_1150;
+  int prephitmp_1151;
+  int pretmp_1152;
+  int prephitmp_1153;
+  int pretmp_1154;
+  int prephitmp_1155;
+  int pretmp_1163;
+  int prephitmp_1165;
+  int pretmp_1170;
+  int prephitmp_1171;
+  sizetype prephitmp_1172;
+  int prephitmp_1175;
+  int prephitmp_1176;
+  int pretmp_1178;
+  int prephitmp_1179;
+
+  <bb 2>:
+  # DEBUG name_buf => 0B
+  b_error = 0;
+  _54 = value_53(D) == 0B;
+  # DEBUG value_was_null => (int) _54
+  if (name_55(D) == 0B)
+    goto <bb 3>;
+  else
+    goto <bb 4>;
+
+  <bb 3>:
+  goto <bb 349>;
+
+  <bb 4>:
+  if (value_53(D) == 0B)
+    goto <bb 6>;
+  else
+    goto <bb 5>;
+
+  <bb 5>:
+
+  <bb 6>:
+  # value_3 = PHI <value_53(D)(5), "true"(4)>
+  # DEBUG value => value_3
+  _56 = *value_3;
+  if (_56 == 61)
+    goto <bb 7>;
+  else
+    goto <bb 8>;
+
+  <bb 7>:
+  value_57 = value_3 + 1;
+  # DEBUG value => value_57
+
+  <bb 8>:
+  # value_4 = PHI <value_3(6), value_57(7)>
+  # DEBUG value => value_4
+  _58 = __builtin_strchr (name_55(D), 95);
+  if (_58 != 0B)
+    goto <bb 9>;
+  else
+    goto <bb 12>;
+
+  <bb 9>:
+  name_60 = __strdup (name_55(D));
+  # DEBUG name_buf => name_60
+  goto <bb 11>;
+
+  <bb 10>:
+  *p_61 = 45;
+
+  <bb 11>:
+  p_61 = __builtin_strchr (name_60, 95);
+  # DEBUG p => p_61
+  if (p_61 != 0B)
+    goto <bb 10>;
+  else
+    goto <bb 12>;
+
+  <bb 12>:
+  # name_1 = PHI <name_55(D)(8), name_60(11)>
+  # name_6 = PHI <0B(8), name_60(11)>
+  # DEBUG name_buf => name_6
+  # DEBUG name => name_1
+  _63 = strncmp (name_1, "no-", 3);
+  if (_63 == 0)
+    goto <bb 14>;
+  else
+    goto <bb 13>;
+
+  <bb 13>:
+  _64 = strncmp (name_1, "no", 2);
+  if (_64 == 0)
+    goto <bb 14>;
+  else
+    goto <bb 16>;
+
+  <bb 14>:
+  # prephitmp_1172 = PHI <3(12), 2(13)>
+  # DEBUG i => NULL
+  name_66 = name_1 + prephitmp_1172;
+  # DEBUG name => name_66
+  # DEBUG name_was_bool => 1
+  _68 = x264_atobool (value_4, &b_error);
+  if (_68 != 0)
+    goto <bb 16>;
+  else
+    goto <bb 15>;
+
+  <bb 15>:
+
+  <bb 16>:
+  # name_2 = PHI <name_1(13), name_66(15), name_66(14)>
+  # value_5 = PHI <value_4(13), "true"(15), "false"(14)>
+  # DEBUG value => value_5
+  # DEBUG name => name_2
+  # DEBUG name_was_bool => 0
+  # DEBUG __s2_len => 3
+  # DEBUG __s2 => name_2
+  _69 = MEM[(const unsigned char *)name_2];
+  _70 = (int) _69;
+  __result_71 = 97 - _70;
+  # DEBUG __result => __result_71
+  if (__result_71 == 0)
+    goto <bb 17>;
+  else
+    goto <bb 46>;
+
+  <bb 17>:
+  _72 = MEM[(const unsigned char *)name_2 + 1B];
+  # DEBUG D#20 => (int) _72
+  # DEBUG __result => 115 - D#20
+  if (_72 == 115)
+    goto <bb 18>;
+  else
+    goto <bb 46>;
+
+  <bb 18>:
+  _75 = MEM[(const unsigned char *)name_2 + 2B];
+  # DEBUG D#21 => (int) _75
+  # DEBUG __result => 109 - D#21
+  if (_75 == 109)
+    goto <bb 19>;
+  else
+    goto <bb 46>;
+
+  <bb 19>:
+  _78 = MEM[(const unsigned char *)name_2 + 3B];
+  # DEBUG D#23 => (int) _78
+  # DEBUG D#22 => -D#23
+  # DEBUG __result => D#22
+  # DEBUG __result => D#22
+  if (_78 == 0)
+    goto <bb 20>;
+  else
+    goto <bb 46>;
+
+  <bb 20>:
+  _722 = __ctype_b_loc ();
+  _723 = *_722;
+  _724 = *value_5;
+  _725 = (long unsigned int) _724;
+  _726 = _725 * 2;
+  _727 = _723 + _726;
+  _728 = *_727;
+  _267 = _728 & 2048;
+  if (_267 != 0)
+    goto <bb 21>;
+  else
+    goto <bb 22>;
+
+  <bb 21>:
+  _730 = x264_atoi (value_5, &b_error);
+  iftmp.3_731 = (uint32_t) _730;
+  pretmp_1163 = (int) _54;
+  goto <bb 26>;
+
+  <bb 22>:
+  # DEBUG __s2_len => 4
+  iftmp.5_732 = __builtin_strcmp (value_5, "auto");
+  if (iftmp.5_732 == 0)
+    goto <bb 23>;
+  else
+    goto <bb 24>;
+
+  <bb 23>:
+  pretmp_1170 = (int) _54;
+  goto <bb 25>;
+
+  <bb 24>:
+  # DEBUG name_was_bool => 1
+  _734 = x264_atobool (value_5, &b_error);
+  if (_734 != 0)
+    goto <bb 25>;
+  else
+    goto <bb 26>;
+
+  <bb 25>:
+  # prephitmp_1171 = PHI <pretmp_1170(23), 0(24)>
+  # DEBUG name_was_bool => NULL
+  iftmp.4_736 = x264_cpu_detect ();
+
+  <bb 26>:
+  # iftmp.3_28 = PHI <iftmp.3_731(21), 0(24), iftmp.4_736(25)>
+  # prephitmp_1165 = PHI <pretmp_1163(21), 0(24), prephitmp_1171(25)>
+  # DEBUG name_was_bool => NULL
+  p_273(D)->cpu = iftmp.3_28;
+  b_error.6_738 = b_error;
+  if (b_error.6_738 != 0)
+    goto <bb 27>;
+  else
+    goto <bb 345>;
+
+  <bb 27>:
+  saveptr_740 = __strdup (value_5);
+  # DEBUG buf => saveptr_740
+  b_error = 0;
+  p_273(D)->cpu = 0;
+  # DEBUG init => saveptr_740
+  # DEBUG saveptr => saveptr_846(D)
+  # DEBUG init => saveptr_740
+  # DEBUG __s => saveptr_740
+  # DEBUG __sep => 44
+  # DEBUG __nextp => &saveptr
+  if (saveptr_740 == 0B)
+    goto <bb 29>;
+  else
+    goto <bb 28>;
+
+  <bb 28>:
+
+  <bb 29>:
+  # saveptr_265 = PHI <saveptr_740(28), saveptr_846(D)(27)>
+  goto <bb 35>;
+
+  <bb 30>:
+  i_747 = i_884 + 1;
+  # DEBUG i => i_747
+  # DEBUG i => i_747
+  _744 = x264_cpu_names[i_747].flags;
+  if (_744 != 0)
+    goto <bb 31>;
+  else
+    goto <bb 350>;
+
+  <bb 31>:
+  goto <bb 33>;
+
+  <bb 32>:
+
+  <bb 33>:
+  # i_884 = PHI <0(32), i_747(31)>
+  # _29 = PHI <_851(32), _744(31)>
+  # DEBUG i => i_884
+  _745 = &x264_cpu_names[i_884].name;
+  _746 = strcasecmp (saveptr_882, _745);
+  if (_746 != 0)
+    goto <bb 30>;
+  else
+    goto <bb 351>;
+
+  <bb 34>:
+  # DEBUG saveptr => saveptr_881
+  # DEBUG init => 0B
+  # DEBUG __s => 0B
+  # DEBUG __sep => 44
+  # DEBUG __nextp => &saveptr
+
+  <bb 35>:
+  # saveptr_27 = PHI <saveptr_265(29), saveptr_881(34)>
+  # DEBUG __s => saveptr_27
+  _854 = *saveptr_27;
+  if (_854 == 44)
+    goto <bb 36>;
+  else
+    goto <bb 40>;
+
+  <bb 36>:
+
+  <bb 37>:
+  # saveptr_1003 = PHI <saveptr_27(36), saveptr_763(39)>
+  # DEBUG __s => saveptr_1003
+  saveptr_763 = saveptr_1003 + 1;
+  # DEBUG __s => saveptr_763
+  # DEBUG __s => saveptr_763
+  _764 = *saveptr_763;
+  if (_764 == 44)
+    goto <bb 39>;
+  else
+    goto <bb 38>;
+
+  <bb 38>:
+  # saveptr_983 = PHI <saveptr_763(37)>
+  # _981 = PHI <_764(37)>
+  goto <bb 40>;
+
+  <bb 39>:
+  goto <bb 37>;
+
+  <bb 40>:
+  # saveptr_882 = PHI <saveptr_983(38), saveptr_27(35)>
+  # _1004 = PHI <_981(38), _854(35)>
+  # DEBUG __result => 0B
+  if (_1004 != 0)
+    goto <bb 41>;
+  else
+    goto <bb 352>;
+
+  <bb 41>:
+  saveptr_765 = saveptr_882 + 1;
+  # DEBUG __s => saveptr_765
+  # DEBUG __result => saveptr_882
+  goto <bb 45>;
+
+  <bb 42>:
+  saveptr_767 = saveptr_766 + 1;
+  # DEBUG __s => saveptr_767
+  if (_768 == 44)
+    goto <bb 43>;
+  else
+    goto <bb 44>;
+
+  <bb 43>:
+  # saveptr_955 = PHI <saveptr_766(42)>
+  # saveptr_952 = PHI <saveptr_767(42)>
+  *saveptr_955 = 0;
+  goto <bb 354>;
+
+  <bb 44>:
+
+  <bb 45>:
+  # saveptr_766 = PHI <saveptr_765(41), saveptr_767(44)>
+  # DEBUG __s => saveptr_766
+  _768 = *saveptr_766;
+  if (_768 != 0)
+    goto <bb 42>;
+  else
+    goto <bb 353>;
+
+  <bb 46>:
+  # DEBUG __result => NULL
+  # DEBUG __s2_len => 7
+  iftmp.8_81 = __builtin_strcmp (name_2, "threads");
+  if (iftmp.8_81 == 0)
+    goto <bb 47>;
+  else
+    goto <bb 50>;
+
+  <bb 47>:
+  # DEBUG __s2_len => 4
+  iftmp.9_717 = __builtin_strcmp (value_5, "auto");
+  if (iftmp.9_717 == 0)
+    goto <bb 48>;
+  else
+    goto <bb 49>;
+
+  <bb 48>:
+  p_273(D)->i_threads = 0;
+  pretmp_1040 = (int) _54;
+  pretmp_1120 = b_error;
+  goto <bb 345>;
+
+  <bb 49>:
+  _719 = x264_atoi (value_5, &b_error);
+  p_273(D)->i_threads = _719;
+  pretmp_903 = (int) _54;
+  pretmp_1055 = b_error;
+  goto <bb 345>;
+
+  <bb 50>:
+  # DEBUG __s2_len => 13
+  iftmp.10_82 = __builtin_strcmp (name_2, "deterministic");
+  if (iftmp.10_82 == 0)
+    goto <bb 52>;
+  else
+    goto <bb 51>;
+
+  <bb 51>:
+  # DEBUG __s2_len => 15
+  iftmp.11_83 = __builtin_strcmp (name_2, "n-deterministic");
+  if (iftmp.11_83 == 0)
+    goto <bb 52>;
+  else
+    goto <bb 53>;
+
+  <bb 52>:
+  # DEBUG name_was_bool => 1
+  _715 = x264_atobool (value_5, &b_error);
+  p_273(D)->b_deterministic = _715;
+  pretmp_1056 = b_error;
+  goto <bb 345>;
+
+  <bb 53>:
+  # DEBUG __s2_len => 5
+  iftmp.12_84 = __builtin_strcmp (name_2, "level");
+  if (iftmp.12_84 == 0)
+    goto <bb 55>;
+  else
+    goto <bb 54>;
+
+  <bb 54>:
+  # DEBUG __s2_len => 9
+  iftmp.13_85 = __builtin_strcmp (name_2, "level-idc");
+  if (iftmp.13_85 == 0)
+    goto <bb 55>;
+  else
+    goto <bb 64>;
+
+  <bb 55>:
+  # DEBUG str => value_5
+  # DEBUG b_error => &b_error
+  v_743 = strtod (value_5, &end);
+  # DEBUG v => v_743
+  end.150_771 = end;
+  if (value_5 == end.150_771)
+    goto <bb 57>;
+  else
+    goto <bb 56>;
+
+  <bb 56>:
+  _772 = *end.150_771;
+  if (_772 != 0)
+    goto <bb 57>;
+  else
+    goto <bb 58>;
+
+  <bb 57>:
+  b_error = 1;
+
+  <bb 58>:
+  end ={v} {CLOBBER};
+  # DEBUG str => NULL
+  # DEBUG b_error => NULL
+  # DEBUG v => NULL
+  # DEBUG end => NULL
+  if (v_743 < 6.0e+0)
+    goto <bb 59>;
+  else
+    goto <bb 63>;
+
+  <bb 59>:
+  # DEBUG str => value_5
+  # DEBUG b_error => &b_error
+  v_705 = strtod (value_5, &end);
+  # DEBUG v => v_705
+  end.150_773 = end;
+  if (value_5 == end.150_773)
+    goto <bb 62>;
+  else
+    goto <bb 60>;
+
+  <bb 60>:
+  _774 = *end.150_773;
+  if (_774 != 0)
+    goto <bb 62>;
+  else
+    goto <bb 61>;
+
+  <bb 61>:
+  pretmp_1134 = b_error;
+
+  <bb 62>:
+  # prephitmp_1135 = PHI <pretmp_1134(61), 1(59), 1(60)>
+  end ={v} {CLOBBER};
+  # DEBUG str => NULL
+  # DEBUG b_error => NULL
+  # DEBUG v => NULL
+  # DEBUG end => NULL
+  _710 = v_705 * 1.0e+1;
+  _711 = _710 + 5.0e-1;
+  _712 = (int) _711;
+  p_273(D)->i_level_idc = _712;
+  pretmp_1041 = (int) _54;
+  goto <bb 345>;
+
+  <bb 63>:
+  _707 = x264_atoi (value_5, &b_error);
+  p_273(D)->i_level_idc = _707;
+  pretmp_864 = (int) _54;
+  pretmp_1057 = b_error;
+  goto <bb 345>;
+
+  <bb 64>:
+  # DEBUG __s2_len => 3
+  # DEBUG __s2 => name_2
+  # DEBUG __result => 115 - _70
+  if (_70 == 115)
+    goto <bb 65>;
+  else
+    goto <bb 71>;
+
+  <bb 65>:
+  _87 = MEM[(const unsigned char *)name_2 + 1B];
+  # DEBUG D#24 => (int) _87
+  # DEBUG __result => 97 - D#24
+  if (_87 == 97)
+    goto <bb 66>;
+  else
+    goto <bb 71>;
+
+  <bb 66>:
+  _90 = MEM[(const unsigned char *)name_2 + 2B];
+  # DEBUG D#25 => (int) _90
+  # DEBUG __result => 114 - D#25
+  if (_90 == 114)
+    goto <bb 67>;
+  else
+    goto <bb 71>;
+
+  <bb 67>:
+  _93 = MEM[(const unsigned char *)name_2 + 3B];
+  # DEBUG D#27 => (int) _93
+  # DEBUG D#26 => -D#27
+  # DEBUG __result => D#26
+  # DEBUG __result => D#26
+  if (_93 == 0)
+    goto <bb 68>;
+  else
+    goto <bb 71>;
+
+  <bb 68>:
+  _698 = &p_273(D)->vui.i_sar_height;
+  _699 = &p_273(D)->vui.i_sar_width;
+  _701 = sscanf (value_5, "%d:%d", _699, _698);
+  if (_701 != 2)
+    goto <bb 69>;
+  else
+    goto <bb 70>;
+
+  <bb 69>:
+  _703 = sscanf (value_5, "%d/%d", _699, _698);
+  _849 = _703 != 2;
+  _850 = (int) _849;
+
+  <bb 70>:
+  # iftmp.15_30 = PHI <_850(69), 0(68)>
+  # DEBUG b_error => iftmp.15_30
+  pretmp_900 = (int) _54;
+  goto <bb 345>;
+
+  <bb 71>:
+  # DEBUG __result => NULL
+  # DEBUG __s2_len => 8
+  iftmp.16_96 = __builtin_strcmp (name_2, "overscan");
+  if (iftmp.16_96 == 0)
+    goto <bb 72>;
+  else
+    goto <bb 73>;
+
+  <bb 72>:
+  _692 = &p_273(D)->vui.i_overscan;
+  _694 = parse_enum (value_5, &x264_overscan_names, _692);
+  b_error.6_695 = b_error;
+  b_error.17_696 = _694 | b_error.6_695;
+  # DEBUG b_error => b_error.17_696
+  pretmp_901 = (int) _54;
+  goto <bb 345>;
+
+  <bb 73>:
+  # DEBUG __s2_len => 11
+  iftmp.18_97 = __builtin_strcmp (name_2, "videoformat");
+  if (iftmp.18_97 == 0)
+    goto <bb 74>;
+  else
+    goto <bb 75>;
+
+  <bb 74>:
+  _686 = &p_273(D)->vui.i_vidformat;
+  _688 = parse_enum (value_5, &x264_vidformat_names, _686);
+  b_error.6_689 = b_error;
+  b_error.19_690 = _688 | b_error.6_689;
+  # DEBUG b_error => b_error.19_690
+  pretmp_995 = (int) _54;
+  goto <bb 345>;
+
+  <bb 75>:
+  # DEBUG __s2_len => 9
+  iftmp.20_98 = __builtin_strcmp (name_2, "fullrange");
+  if (iftmp.20_98 == 0)
+    goto <bb 76>;
+  else
+    goto <bb 77>;
+
+  <bb 76>:
+  _680 = &p_273(D)->vui.b_fullrange;
+  _682 = parse_enum (value_5, &x264_fullrange_names, _680);
+  b_error.6_683 = b_error;
+  b_error.21_684 = _682 | b_error.6_683;
+  # DEBUG b_error => b_error.21_684
+  pretmp_994 = (int) _54;
+  goto <bb 345>;
+
+  <bb 77>:
+  # DEBUG __s2_len => 9
+  iftmp.22_99 = __builtin_strcmp (name_2, "colorprim");
+  if (iftmp.22_99 == 0)
+    goto <bb 78>;
+  else
+    goto <bb 79>;
+
+  <bb 78>:
+  _674 = &p_273(D)->vui.i_colorprim;
+  _676 = parse_enum (value_5, &x264_colorprim_names, _674);
+  b_error.6_677 = b_error;
+  b_error.23_678 = _676 | b_error.6_677;
+  # DEBUG b_error => b_error.23_678
+  pretmp_871 = (int) _54;
+  goto <bb 345>;
+
+  <bb 79>:
+  # DEBUG __s2_len => 8
+  iftmp.24_100 = __builtin_strcmp (name_2, "transfer");
+  if (iftmp.24_100 == 0)
+    goto <bb 80>;
+  else
+    goto <bb 81>;
+
+  <bb 80>:
+  _668 = &p_273(D)->vui.i_transfer;
+  _670 = parse_enum (value_5, &x264_transfer_names, _668);
+  b_error.6_671 = b_error;
+  b_error.25_672 = _670 | b_error.6_671;
+  # DEBUG b_error => b_error.25_672
+  pretmp_870 = (int) _54;
+  goto <bb 345>;
+
+  <bb 81>:
+  # DEBUG __s2_len => 11
+  iftmp.26_101 = __builtin_strcmp (name_2, "colormatrix");
+  if (iftmp.26_101 == 0)
+    goto <bb 82>;
+  else
+    goto <bb 83>;
+
+  <bb 82>:
+  _662 = &p_273(D)->vui.i_colmatrix;
+  _664 = parse_enum (value_5, &x264_colmatrix_names, _662);
+  b_error.6_665 = b_error;
+  b_error.27_666 = _664 | b_error.6_665;
+  # DEBUG b_error => b_error.27_666
+  pretmp_869 = (int) _54;
+  goto <bb 345>;
+
+  <bb 83>:
+  # DEBUG __s2_len => 9
+  iftmp.28_102 = __builtin_strcmp (name_2, "chromaloc");
+  if (iftmp.28_102 == 0)
+    goto <bb 84>;
+  else
+    goto <bb 85>;
+
+  <bb 84>:
+  _656 = x264_atoi (value_5, &b_error);
+  p_273(D)->vui.i_chroma_loc = _656;
+  _658 = (unsigned int) _656;
+  _659 = _658 > 5;
+  b_error.29_660 = (int) _659;
+  # DEBUG b_error => b_error.29_660
+  pretmp_868 = (int) _54;
+  goto <bb 345>;
+
+  <bb 85>:
+  # DEBUG __s2_len => 3
+  # DEBUG __s2 => name_2
+  # DEBUG __result => 102 - _70
+  if (_70 == 102)
+    goto <bb 86>;
+  else
+    goto <bb 95>;
+
+  <bb 86>:
+  _104 = MEM[(const unsigned char *)name_2 + 1B];
+  # DEBUG D#28 => (int) _104
+  # DEBUG __result => 112 - D#28
+  if (_104 == 112)
+    goto <bb 87>;
+  else
+    goto <bb 95>;
+
+  <bb 87>:
+  _107 = MEM[(const unsigned char *)name_2 + 2B];
+  # DEBUG D#29 => (int) _107
+  # DEBUG __result => 115 - D#29
+  if (_107 == 115)
+    goto <bb 88>;
+  else
+    goto <bb 95>;
+
+  <bb 88>:
+  _110 = MEM[(const unsigned char *)name_2 + 3B];
+  # DEBUG D#31 => (int) _110
+  # DEBUG D#30 => -D#31
+  # DEBUG __result => D#30
+  # DEBUG __result => D#30
+  if (_110 == 0)
+    goto <bb 89>;
+  else
+    goto <bb 95>;
+
+  <bb 89>:
+  _643 = &p_273(D)->i_fps_den;
+  _644 = &p_273(D)->i_fps_num;
+  _646 = sscanf (value_5, "%d/%d", _644, _643);
+  if (_646 == 2)
+    goto <bb 90>;
+  else
+    goto <bb 91>;
+
+  <bb 90>:
+  pretmp_1042 = (int) _54;
+  pretmp_1122 = b_error;
+  goto <bb 345>;
+
+  <bb 91>:
+  # DEBUG str => value_5
+  # DEBUG b_error => &b_error
+  v_709 = strtod (value_5, &end);
+  # DEBUG v => v_709
+  end.150_775 = end;
+  if (value_5 == end.150_775)
+    goto <bb 94>;
+  else
+    goto <bb 92>;
+
+  <bb 92>:
+  _776 = *end.150_775;
+  if (_776 != 0)
+    goto <bb 94>;
+  else
+    goto <bb 93>;
+
+  <bb 93>:
+  pretmp_1154 = b_error;
+
+  <bb 94>:
+  # prephitmp_1155 = PHI <pretmp_1154(93), 1(91), 1(92)>
+  end ={v} {CLOBBER};
+  # DEBUG str => NULL
+  # DEBUG b_error => NULL
+  # DEBUG v => NULL
+  # DEBUG end => NULL
+  fps_648 = (float) v_709;
+  # DEBUG fps => fps_648
+  _649 = fps_648 * 1.0e+3;
+  _650 = (double) _649;
+  _651 = _650 + 5.0e-1;
+  _652 = (int) _651;
+  p_273(D)->i_fps_num = _652;
+  p_273(D)->i_fps_den = 1000;
+  pretmp_993 = (int) _54;
+  goto <bb 345>;
+
+  <bb 95>:
+  # DEBUG __result => NULL
+  # DEBUG __s2_len => 3
+  # DEBUG __s2 => name_2
+  # DEBUG __result => 114 - _70
+  if (_70 == 114)
+    goto <bb 96>;
+  else
+    goto <bb 99>;
+
+  <bb 96>:
+  _114 = MEM[(const unsigned char *)name_2 + 1B];
+  # DEBUG D#32 => (int) _114
+  # DEBUG __result => 101 - D#32
+  if (_114 == 101)
+    goto <bb 97>;
+  else
+    goto <bb 99>;
+
+  <bb 97>:
+  _117 = MEM[(const unsigned char *)name_2 + 2B];
+  # DEBUG D#33 => (int) _117
+  # DEBUG __result => 102 - D#33
+  if (_117 == 102)
+    goto <bb 98>;
+  else
+    goto <bb 99>;
+
+  <bb 98>:
+  _120 = MEM[(const unsigned char *)name_2 + 3B];
+  # DEBUG D#35 => (int) _120
+  # DEBUG D#34 => -D#35
+  # DEBUG __result => D#34
+  # DEBUG __result => D#34
+  if (_120 == 0)
+    goto <bb 100>;
+  else
+    goto <bb 99>;
+
+  <bb 99>:
+  # DEBUG __result => NULL
+  # DEBUG __s2_len => 8
+  iftmp.32_123 = __builtin_strcmp (name_2, "frameref");
+  if (iftmp.32_123 == 0)
+    goto <bb 100>;
+  else
+    goto <bb 101>;
+
+  <bb 100>:
+  _641 = x264_atoi (value_5, &b_error);
+  p_273(D)->i_frame_reference = _641;
+  pretmp_991 = (int) _54;
+  pretmp_1059 = b_error;
+  goto <bb 345>;
+
+  <bb 101>:
+  # DEBUG __s2_len => 6
+  iftmp.33_124 = __builtin_strcmp (name_2, "keyint");
+  if (iftmp.33_124 == 0)
+    goto <bb 102>;
+  else
+    goto <bb 105>;
+
+  <bb 102>:
+  _636 = x264_atoi (value_5, &b_error);
+  p_273(D)->i_keyint_max = _636;
+  _638 = p_273(D)->i_keyint_min;
+  if (_636 < _638)
+    goto <bb 104>;
+  else
+    goto <bb 103>;
+
+  <bb 103>:
+  pretmp_1043 = (int) _54;
+  pretmp_1123 = b_error;
+  goto <bb 345>;
+
+  <bb 104>:
+  p_273(D)->i_keyint_min = _636;
+  pretmp_992 = (int) _54;
+  pretmp_1060 = b_error;
+  goto <bb 345>;
+
+  <bb 105>:
+  # DEBUG __s2_len => 10
+  iftmp.34_125 = __builtin_strcmp (name_2, "min-keyint");
+  if (iftmp.34_125 == 0)
+    goto <bb 107>;
+  else
+    goto <bb 106>;
+
+  <bb 106>:
+  # DEBUG __s2_len => 10
+  iftmp.35_126 = __builtin_strcmp (name_2, "keyint-min");
+  if (iftmp.35_126 == 0)
+    goto <bb 107>;
+  else
+    goto <bb 110>;
+
+  <bb 107>:
+  _631 = x264_atoi (value_5, &b_error);
+  p_273(D)->i_keyint_min = _631;
+  _633 = p_273(D)->i_keyint_max;
+  if (_631 > _633)
+    goto <bb 109>;
+  else
+    goto <bb 108>;
+
+  <bb 108>:
+  pretmp_1044 = (int) _54;
+  pretmp_1124 = b_error;
+  goto <bb 345>;
+
+  <bb 109>:
+  p_273(D)->i_keyint_max = _631;
+  pretmp_990 = (int) _54;
+  pretmp_1061 = b_error;
+  goto <bb 345>;
+
+  <bb 110>:
+  # DEBUG __s2_len => 8
+  iftmp.36_127 = __builtin_strcmp (name_2, "scenecut");
+  if (iftmp.36_127 == 0)
+    goto <bb 111>;
+  else
+    goto <bb 112>;
+
+  <bb 111>:
+  _628 = x264_atoi (value_5, &b_error);
+  p_273(D)->i_scenecut_threshold = _628;
+  pretmp_989 = (int) _54;
+  pretmp_1062 = b_error;
+  goto <bb 345>;
+
+  <bb 112>:
+  # DEBUG __s2_len => 12
+  iftmp.37_128 = __builtin_strcmp (name_2, "pre-scenecut");
+  if (iftmp.37_128 == 0)
+    goto <bb 113>;
+  else
+    goto <bb 114>;
+
+  <bb 113>:
+  # DEBUG name_was_bool => 1
+  _625 = x264_atobool (value_5, &b_error);
+  p_273(D)->b_pre_scenecut = _625;
+  pretmp_1063 = b_error;
+  goto <bb 345>;
+
+  <bb 114>:
+  # DEBUG __s2_len => 7
+  iftmp.38_129 = __builtin_strcmp (name_2, "bframes");
+  if (iftmp.38_129 == 0)
+    goto <bb 115>;
+  else
+    goto <bb 116>;
+
+  <bb 115>:
+  _622 = x264_atoi (value_5, &b_error);
+  p_273(D)->i_bframe = _622;
+  pretmp_885 = (int) _54;
+  pretmp_1064 = b_error;
+  goto <bb 345>;
+
+  <bb 116>:
+  # DEBUG __s2_len => 7
+  iftmp.39_130 = __builtin_strcmp (name_2, "b-adapt");
+  if (iftmp.39_130 == 0)
+    goto <bb 117>;
+  else
+    goto <bb 119>;
+
+  <bb 117>:
+  # DEBUG name_was_bool => 1
+  _614 = x264_atobool (value_5, &b_error);
+  p_273(D)->i_bframe_adaptive = _614;
+  b_error.6_616 = b_error;
+  if (b_error.6_616 != 0)
+    goto <bb 118>;
+  else
+    goto <bb 355>;
+
+  <bb 118>:
+  b_error = 0;
+  _619 = x264_atoi (value_5, &b_error);
+  p_273(D)->i_bframe_adaptive = _619;
+  pretmp_1065 = b_error;
+  goto <bb 345>;
+
+  <bb 119>:
+  # DEBUG __s2_len => 6
+  iftmp.40_131 = __builtin_strcmp (name_2, "b-bias");
+  if (iftmp.40_131 == 0)
+    goto <bb 120>;
+  else
+    goto <bb 121>;
+
+  <bb 120>:
+  _611 = x264_atoi (value_5, &b_error);
+  p_273(D)->i_bframe_bias = _611;
+  pretmp_886 = (int) _54;
+  pretmp_1066 = b_error;
+  goto <bb 345>;
+
+  <bb 121>:
+  # DEBUG __s2_len => 9
+  iftmp.41_132 = __builtin_strcmp (name_2, "b-pyramid");
+  if (iftmp.41_132 == 0)
+    goto <bb 122>;
+  else
+    goto <bb 123>;
+
+  <bb 122>:
+  # DEBUG name_was_bool => 1
+  _608 = x264_atobool (value_5, &b_error);
+  p_273(D)->b_bframe_pyramid = _608;
+  pretmp_1067 = b_error;
+  goto <bb 345>;
+
+  <bb 123>:
+  # DEBUG __s2_len => 2
+  # DEBUG __s2 => name_2
+  __result_133 = 110 - _70;
+  # DEBUG __result => __result_133
+  if (__result_133 == 0)
+    goto <bb 124>;
+  else
+    goto <bb 127>;
+
+  <bb 124>:
+  _134 = MEM[(const unsigned char *)name_2 + 1B];
+  # DEBUG D#36 => (int) _134
+  # DEBUG __result => 102 - D#36
+  if (_134 == 102)
+    goto <bb 125>;
+  else
+    goto <bb 127>;
+
+  <bb 125>:
+  _137 = MEM[(const unsigned char *)name_2 + 2B];
+  # DEBUG D#38 => (int) _137
+  # DEBUG D#37 => -D#38
+  # DEBUG __result => D#37
+  # DEBUG __result => D#37
+  if (_137 == 0)
+    goto <bb 126>;
+  else
+    goto <bb 127>;
+
+  <bb 126>:
+  # DEBUG name_was_bool => 1
+  _603 = x264_atobool (value_5, &b_error);
+  _604 = _603 == 0;
+  _605 = (int) _604;
+  p_273(D)->b_deblocking_filter = _605;
+  pretmp_1068 = b_error;
+  goto <bb 345>;
+
+  <bb 127>:
+  # DEBUG __result => NULL
+  # DEBUG __s2_len => 6
+  iftmp.43_140 = __builtin_strcmp (name_2, "filter");
+  if (iftmp.43_140 == 0)
+    goto <bb 129>;
+  else
+    goto <bb 128>;
+
+  <bb 128>:
+  # DEBUG __s2_len => 7
+  iftmp.44_141 = __builtin_strcmp (name_2, "deblock");
+  if (iftmp.44_141 == 0)
+    goto <bb 129>;
+  else
+    goto <bb 135>;
+
+  <bb 129>:
+  _587 = &p_273(D)->i_deblocking_filter_beta;
+  _588 = &p_273(D)->i_deblocking_filter_alphac0;
+  _590 = sscanf (value_5, "%d:%d", _588, _587);
+  if (_590 == 2)
+    goto <bb 130>;
+  else
+    goto <bb 131>;
+
+  <bb 130>:
+  p_273(D)->b_deblocking_filter = 1;
+  pretmp_1046 = (int) _54;
+  pretmp_1126 = b_error;
+  goto <bb 345>;
+
+  <bb 131>:
+  _592 = sscanf (value_5, "%d,%d", _588, _587);
+  if (_592 == 2)
+    goto <bb 130>;
+  else
+    goto <bb 132>;
+
+  <bb 132>:
+  _594 = sscanf (value_5, "%d", _588);
+  if (_594 != 0)
+    goto <bb 133>;
+  else
+    goto <bb 134>;
+
+  <bb 133>:
+  p_273(D)->b_deblocking_filter = 1;
+  _596 = p_273(D)->i_deblocking_filter_alphac0;
+  p_273(D)->i_deblocking_filter_beta = _596;
+  pretmp_987 = (int) _54;
+  pretmp_1069 = b_error;
+  goto <bb 345>;
+
+  <bb 134>:
+  # DEBUG name_was_bool => 1
+  _599 = x264_atobool (value_5, &b_error);
+  p_273(D)->b_deblocking_filter = _599;
+  pretmp_1127 = b_error;
+  goto <bb 345>;
+
+  <bb 135>:
+  # DEBUG __s2_len => 5
+  iftmp.45_142 = __builtin_strcmp (name_2, "cabac");
+  if (iftmp.45_142 == 0)
+    goto <bb 136>;
+  else
+    goto <bb 137>;
+
+  <bb 136>:
+  # DEBUG name_was_bool => 1
+  _585 = x264_atobool (value_5, &b_error);
+  p_273(D)->b_cabac = _585;
+  pretmp_1070 = b_error;
+  goto <bb 345>;
+
+  <bb 137>:
+  # DEBUG __s2_len => 9
+  iftmp.46_143 = __builtin_strcmp (name_2, "cabac-idc");
+  if (iftmp.46_143 == 0)
+    goto <bb 138>;
+  else
+    goto <bb 139>;
+
+  <bb 138>:
+  _582 = x264_atoi (value_5, &b_error);
+  p_273(D)->i_cabac_init_idc = _582;
+  pretmp_988 = (int) _54;
+  pretmp_1071 = b_error;
+  goto <bb 345>;
+
+  <bb 139>:
+  # DEBUG __s2_len => 10
+  iftmp.47_144 = __builtin_strcmp (name_2, "interlaced");
+  if (iftmp.47_144 == 0)
+    goto <bb 140>;
+  else
+    goto <bb 141>;
+
+  <bb 140>:
+  # DEBUG name_was_bool => 1
+  _579 = x264_atobool (value_5, &b_error);
+  p_273(D)->b_interlaced = _579;
+  pretmp_1072 = b_error;
+  goto <bb 345>;
+
+  <bb 141>:
+  # DEBUG __s2_len => 3
+  # DEBUG __s2 => name_2
+  __result_145 = 99 - _70;
+  # DEBUG __result => __result_145
+  if (__result_145 == 0)
+    goto <bb 142>;
+  else
+    goto <bb 150>;
+
+  <bb 142>:
+  _146 = MEM[(const unsigned char *)name_2 + 1B];
+  # DEBUG D#39 => (int) _146
+  # DEBUG __result => 113 - D#39
+  if (_146 == 113)
+    goto <bb 143>;
+  else
+    goto <bb 150>;
+
+  <bb 143>:
+  _149 = MEM[(const unsigned char *)name_2 + 2B];
+  # DEBUG D#40 => (int) _149
+  # DEBUG __result => 109 - D#40
+  if (_149 == 109)
+    goto <bb 144>;
+  else
+    goto <bb 150>;
+
+  <bb 144>:
+  _152 = MEM[(const unsigned char *)name_2 + 3B];
+  # DEBUG D#42 => (int) _152
+  # DEBUG D#41 => -D#42
+  # DEBUG __result => D#41
+  # DEBUG __result => D#41
+  if (_152 == 0)
+    goto <bb 145>;
+  else
+    goto <bb 150>;
+
+  <bb 145>:
+  _571 = strstr (value_5, "flat");
+  if (_571 != 0B)
+    goto <bb 146>;
+  else
+    goto <bb 147>;
+
+  <bb 146>:
+  p_273(D)->i_cqm_preset = 0;
+  pretmp_1047 = (int) _54;
+  pretmp_1128 = b_error;
+  goto <bb 345>;
+
+  <bb 147>:
+  _572 = strstr (value_5, "jvt");
+  if (_572 != 0B)
+    goto <bb 148>;
+  else
+    goto <bb 149>;
+
+  <bb 148>:
+  p_273(D)->i_cqm_preset = 1;
+  pretmp_956 = (int) _54;
+  pretmp_1073 = b_error;
+  goto <bb 345>;
+
+  <bb 149>:
+  _575 = __strdup (value_5);
+  p_273(D)->psz_cqm_file = _575;
+  pretmp_1048 = (int) _54;
+  pretmp_1129 = b_error;
+  goto <bb 345>;
+
+  <bb 150>:
+  # DEBUG __result => NULL
+  # DEBUG __s2_len => 7
+  iftmp.49_155 = __builtin_strcmp (name_2, "cqmfile");
+  if (iftmp.49_155 == 0)
+    goto <bb 151>;
+  else
+    goto <bb 152>;
+
+  <bb 151>:
+  _569 = __strdup (value_5);
+  p_273(D)->psz_cqm_file = _569;
+  pretmp_867 = (int) _54;
+  pretmp_1074 = b_error;
+  goto <bb 345>;
+
+  <bb 152>:
+  # DEBUG __s2_len => 4
+  iftmp.50_156 = __builtin_strcmp (name_2, "cqm4");
+  if (iftmp.50_156 == 0)
+    goto <bb 153>;
+  else
+    goto <bb 154>;
+
+  <bb 153>:
+  p_273(D)->i_cqm_preset = 2;
+  _544 = &p_273(D)->cqm_4iy;
+  _546 = parse_cqm (value_5, _544, 16);
+  b_error.6_547 = b_error;
+  b_error.51_548 = _546 | b_error.6_547;
+  b_error = b_error.51_548;
+  _550 = &p_273(D)->cqm_4ic;
+  _552 = parse_cqm (value_5, _550, 16);
+  b_error.6_553 = b_error;
+  b_error.52_554 = _552 | b_error.6_553;
+  b_error = b_error.52_554;
+  _556 = &p_273(D)->cqm_4py;
+  _558 = parse_cqm (value_5, _556, 16);
+  b_error.6_559 = b_error;
+  b_error.53_560 = _558 | b_error.6_559;
+  b_error = b_error.53_560;
+  _562 = &p_273(D)->cqm_4pc;
+  _564 = parse_cqm (value_5, _562, 16);
+  b_error.6_565 = b_error;
+  b_error.54_566 = _564 | b_error.6_565;
+  # DEBUG b_error => b_error.54_566
+  pretmp_898 = (int) _54;
+  goto <bb 345>;
+
+  <bb 154>:
+  # DEBUG __s2_len => 4
+  iftmp.55_157 = __builtin_strcmp (name_2, "cqm8");
+  if (iftmp.55_157 == 0)
+    goto <bb 155>;
+  else
+    goto <bb 156>;
+
+  <bb 155>:
+  p_273(D)->i_cqm_preset = 2;
+  _531 = &p_273(D)->cqm_8iy;
+  _533 = parse_cqm (value_5, _531, 64);
+  b_error.6_534 = b_error;
+  b_error.56_535 = _533 | b_error.6_534;
+  b_error = b_error.56_535;
+  _537 = &p_273(D)->cqm_8py;
+  _539 = parse_cqm (value_5, _537, 64);
+  b_error.6_540 = b_error;
+  b_error.57_541 = _539 | b_error.6_540;
+  # DEBUG b_error => b_error.57_541
+  pretmp_899 = (int) _54;
+  goto <bb 345>;
+
+  <bb 156>:
+  # DEBUG __s2_len => 5
+  iftmp.58_158 = __builtin_strcmp (name_2, "cqm4i");
+  if (iftmp.58_158 == 0)
+    goto <bb 157>;
+  else
+    goto <bb 158>;
+
+  <bb 157>:
+  p_273(D)->i_cqm_preset = 2;
+  _518 = &p_273(D)->cqm_4iy;
+  _520 = parse_cqm (value_5, _518, 16);
+  b_error.6_521 = b_error;
+  b_error.59_522 = _520 | b_error.6_521;
+  b_error = b_error.59_522;
+  _524 = &p_273(D)->cqm_4ic;
+  _526 = parse_cqm (value_5, _524, 16);
+  b_error.6_527 = b_error;
+  b_error.60_528 = _526 | b_error.6_527;
+  # DEBUG b_error => b_error.60_528
+  pretmp_896 = (int) _54;
+  goto <bb 345>;
+
+  <bb 158>:
+  # DEBUG __s2_len => 5
+  iftmp.61_159 = __builtin_strcmp (name_2, "cqm4p");
+  if (iftmp.61_159 == 0)
+    goto <bb 159>;
+  else
+    goto <bb 160>;
+
+  <bb 159>:
+  p_273(D)->i_cqm_preset = 2;
+  _505 = &p_273(D)->cqm_4py;
+  _507 = parse_cqm (value_5, _505, 16);
+  b_error.6_508 = b_error;
+  b_error.62_509 = _507 | b_error.6_508;
+  b_error = b_error.62_509;
+  _511 = &p_273(D)->cqm_4pc;
+  _513 = parse_cqm (value_5, _511, 16);
+  b_error.6_514 = b_error;
+  b_error.63_515 = _513 | b_error.6_514;
+  # DEBUG b_error => b_error.63_515
+  pretmp_897 = (int) _54;
+  goto <bb 345>;
+
+  <bb 160>:
+  # DEBUG __s2_len => 6
+  iftmp.64_160 = __builtin_strcmp (name_2, "cqm4iy");
+  if (iftmp.64_160 == 0)
+    goto <bb 161>;
+  else
+    goto <bb 162>;
+
+  <bb 161>:
+  p_273(D)->i_cqm_preset = 2;
+  _498 = &p_273(D)->cqm_4iy;
+  _500 = parse_cqm (value_5, _498, 16);
+  b_error.6_501 = b_error;
+  b_error.65_502 = _500 | b_error.6_501;
+  # DEBUG b_error => b_error.65_502
+  pretmp_865 = (int) _54;
+  goto <bb 345>;
+
+  <bb 162>:
+  # DEBUG __s2_len => 6
+  iftmp.66_161 = __builtin_strcmp (name_2, "cqm4ic");
+  if (iftmp.66_161 == 0)
+    goto <bb 163>;
+  else
+    goto <bb 164>;
+
+  <bb 163>:
+  p_273(D)->i_cqm_preset = 2;
+  _491 = &p_273(D)->cqm_4ic;
+  _493 = parse_cqm (value_5, _491, 16);
+  b_error.6_494 = b_error;
+  b_error.67_495 = _493 | b_error.6_494;
+  # DEBUG b_error => b_error.67_495
+  pretmp_894 = (int) _54;
+  goto <bb 345>;
+
+  <bb 164>:
+  # DEBUG __s2_len => 6
+  iftmp.68_162 = __builtin_strcmp (name_2, "cqm4py");
+  if (iftmp.68_162 == 0)
+    goto <bb 165>;
+  else
+    goto <bb 166>;
+
+  <bb 165>:
+  p_273(D)->i_cqm_preset = 2;
+  _484 = &p_273(D)->cqm_4py;
+  _486 = parse_cqm (value_5, _484, 16);
+  b_error.6_487 = b_error;
+  b_error.69_488 = _486 | b_error.6_487;
+  # DEBUG b_error => b_error.69_488
+  pretmp_895 = (int) _54;
+  goto <bb 345>;
+
+  <bb 166>:
+  # DEBUG __s2_len => 6
+  iftmp.70_163 = __builtin_strcmp (name_2, "cqm4pc");
+  if (iftmp.70_163 == 0)
+    goto <bb 167>;
+  else
+    goto <bb 168>;
+
+  <bb 167>:
+  p_273(D)->i_cqm_preset = 2;
+  _477 = &p_273(D)->cqm_4pc;
+  _479 = parse_cqm (value_5, _477, 16);
+  b_error.6_480 = b_error;
+  b_error.71_481 = _479 | b_error.6_480;
+  # DEBUG b_error => b_error.71_481
+  pretmp_853 = (int) _54;
+  goto <bb 345>;
+
+  <bb 168>:
+  # DEBUG __s2_len => 5
+  iftmp.72_164 = __builtin_strcmp (name_2, "cqm8i");
+  if (iftmp.72_164 == 0)
+    goto <bb 169>;
+  else
+    goto <bb 170>;
+
+  <bb 169>:
+  p_273(D)->i_cqm_preset = 2;
+  _470 = &p_273(D)->cqm_8iy;
+  _472 = parse_cqm (value_5, _470, 64);
+  b_error.6_473 = b_error;
+  b_error.73_474 = _472 | b_error.6_473;
+  # DEBUG b_error => b_error.73_474
+  pretmp_852 = (int) _54;
+  goto <bb 345>;
+
+  <bb 170>:
+  # DEBUG __s2_len => 5
+  iftmp.74_165 = __builtin_strcmp (name_2, "cqm8p");
+  if (iftmp.74_165 == 0)
+    goto <bb 171>;
+  else
+    goto <bb 172>;
+
+  <bb 171>:
+  p_273(D)->i_cqm_preset = 2;
+  _463 = &p_273(D)->cqm_8py;
+  _465 = parse_cqm (value_5, _463, 64);
+  b_error.6_466 = b_error;
+  b_error.75_467 = _465 | b_error.6_466;
+  # DEBUG b_error => b_error.75_467
+  pretmp_890 = (int) _54;
+  goto <bb 345>;
+
+  <bb 172>:
+  # DEBUG __s2_len => 3
+  # DEBUG __s2 => name_2
+  # DEBUG __result => 108 - _70
+  if (_70 == 108)
+    goto <bb 173>;
+  else
+    goto <bb 177>;
+
+  <bb 173>:
+  _167 = MEM[(const unsigned char *)name_2 + 1B];
+  # DEBUG D#43 => (int) _167
+  # DEBUG __result => 111 - D#43
+  if (_167 == 111)
+    goto <bb 174>;
+  else
+    goto <bb 177>;
+
+  <bb 174>:
+  _170 = MEM[(const unsigned char *)name_2 + 2B];
+  # DEBUG D#44 => (int) _170
+  # DEBUG __result => 103 - D#44
+  if (_170 == 103)
+    goto <bb 175>;
+  else
+    goto <bb 177>;
+
+  <bb 175>:
+  _173 = MEM[(const unsigned char *)name_2 + 3B];
+  # DEBUG D#46 => (int) _173
+  # DEBUG D#45 => -D#46
+  # DEBUG __result => D#45
+  # DEBUG __result => D#45
+  if (_173 == 0)
+    goto <bb 176>;
+  else
+    goto <bb 177>;
+
+  <bb 176>:
+  _460 = x264_atoi (value_5, &b_error);
+  p_273(D)->i_log_level = _460;
+  pretmp_891 = (int) _54;
+  pretmp_1075 = b_error;
+  goto <bb 345>;
+
+  <bb 177>:
+  # DEBUG __result => NULL
+  # DEBUG __s2_len => 8
+  iftmp.77_176 = __builtin_strcmp (name_2, "dump-yuv");
+  if (iftmp.77_176 == 0)
+    goto <bb 178>;
+  else
+    goto <bb 179>;
+
+  <bb 178>:
+  _457 = __strdup (value_5);
+  p_273(D)->psz_dump_yuv = _457;
+  pretmp_866 = (int) _54;
+  pretmp_1076 = b_error;
+  goto <bb 345>;
+
+  <bb 179>:
+  # DEBUG __s2_len => 7
+  iftmp.78_177 = __builtin_strcmp (name_2, "analyse");
+  if (iftmp.78_177 == 0)
+    goto <bb 181>;
+  else
+    goto <bb 180>;
+
+  <bb 180>:
+  # DEBUG __s2_len => 10
+  iftmp.79_178 = __builtin_strcmp (name_2, "partitions");
+  if (iftmp.79_178 == 0)
+    goto <bb 181>;
+  else
+    goto <bb 194>;
+
+  <bb 181>:
+  p_273(D)->analyse.inter = 0;
+  _434 = strstr (value_5, "all");
+  if (_434 != 0B)
+    goto <bb 182>;
+  else
+    goto <bb 183>;
+
+  <bb 182>:
+  p_273(D)->analyse.inter = 4294967295;
+
+  <bb 183>:
+  _436 = strstr (value_5, "i4x4");
+  if (_436 != 0B)
+    goto <bb 184>;
+  else
+    goto <bb 185>;
+
+  <bb 184>:
+  _437 = p_273(D)->analyse.inter;
+  _438 = _437 | 1;
+  p_273(D)->analyse.inter = _438;
+
+  <bb 185>:
+  _440 = strstr (value_5, "i8x8");
+  if (_440 != 0B)
+    goto <bb 186>;
+  else
+    goto <bb 187>;
+
+  <bb 186>:
+  _441 = p_273(D)->analyse.inter;
+  _442 = _441 | 2;
+  p_273(D)->analyse.inter = _442;
+
+  <bb 187>:
+  _444 = strstr (value_5, "p8x8");
+  if (_444 != 0B)
+    goto <bb 188>;
+  else
+    goto <bb 189>;
+
+  <bb 188>:
+  _445 = p_273(D)->analyse.inter;
+  _446 = _445 | 16;
+  p_273(D)->analyse.inter = _446;
+
+  <bb 189>:
+  _448 = strstr (value_5, "p4x4");
+  if (_448 != 0B)
+    goto <bb 190>;
+  else
+    goto <bb 191>;
+
+  <bb 190>:
+  _449 = p_273(D)->analyse.inter;
+  _450 = _449 | 32;
+  p_273(D)->analyse.inter = _450;
+
+  <bb 191>:
+  _452 = strstr (value_5, "b8x8");
+  if (_452 != 0B)
+    goto <bb 193>;
+  else
+    goto <bb 192>;
+
+  <bb 192>:
+  pretmp_1049 = (int) _54;
+  pretmp_1130 = b_error;
+  goto <bb 345>;
+
+  <bb 193>:
+  _453 = p_273(D)->analyse.inter;
+  _454 = _453 | 256;
+  p_273(D)->analyse.inter = _454;
+  pretmp_887 = (int) _54;
+  pretmp_1077 = b_error;
+  goto <bb 345>;
+
+  <bb 194>:
+  # DEBUG __s2_len => 6
+  iftmp.80_179 = __builtin_strcmp (name_2, "8x8dct");
+  if (iftmp.80_179 == 0)
+    goto <bb 195>;
+  else
+    goto <bb 196>;
+
+  <bb 195>:
+  # DEBUG name_was_bool => 1
+  _431 = x264_atobool (value_5, &b_error);
+  p_273(D)->analyse.b_transform_8x8 = _431;
+  pretmp_1078 = b_error;
+  goto <bb 345>;
+
+  <bb 196>:
+  # DEBUG __s2_len => 7
+  iftmp.81_180 = __builtin_strcmp (name_2, "weightb");
+  if (iftmp.81_180 == 0)
+    goto <bb 198>;
+  else
+    goto <bb 197>;
+
+  <bb 197>:
+  # DEBUG __s2_len => 8
+  iftmp.82_181 = __builtin_strcmp (name_2, "weight-b");
+  if (iftmp.82_181 == 0)
+    goto <bb 198>;
+  else
+    goto <bb 199>;
+
+  <bb 198>:
+  # DEBUG name_was_bool => 1
+  _428 = x264_atobool (value_5, &b_error);
+  p_273(D)->analyse.b_weighted_bipred = _428;
+  pretmp_1079 = b_error;
+  goto <bb 345>;
+
+  <bb 199>:
+  # DEBUG __s2_len => 6
+  iftmp.83_182 = __builtin_strcmp (name_2, "direct");
+  if (iftmp.83_182 == 0)
+    goto <bb 201>;
+  else
+    goto <bb 200>;
+
+  <bb 200>:
+  # DEBUG __s2_len => 11
+  iftmp.84_183 = __builtin_strcmp (name_2, "direct-pred");
+  if (iftmp.84_183 == 0)
+    goto <bb 201>;
+  else
+    goto <bb 202>;
+
+  <bb 201>:
+  _421 = &p_273(D)->analyse.i_direct_mv_pred;
+  _423 = parse_enum (value_5, &x264_direct_pred_names, _421);
+  b_error.6_424 = b_error;
+  b_error.85_425 = _423 | b_error.6_424;
+  # DEBUG b_error => b_error.85_425
+  pretmp_888 = (int) _54;
+  goto <bb 345>;
+
+  <bb 202>:
+  # DEBUG __s2_len => 10
+  iftmp.86_184 = __builtin_strcmp (name_2, "direct-8x8");
+  if (iftmp.86_184 == 0)
+    goto <bb 203>;
+  else
+    goto <bb 204>;
+
+  <bb 203>:
+  _419 = x264_atoi (value_5, &b_error);
+  p_273(D)->analyse.i_direct_8x8_inference = _419;
+  pretmp_889 = (int) _54;
+  pretmp_1080 = b_error;
+  goto <bb 345>;
+
+  <bb 204>:
+  # DEBUG __s2_len => 16
+  iftmp.87_185 = __builtin_strcmp (name_2, "chroma-qp-offset");
+  if (iftmp.87_185 == 0)
+    goto <bb 205>;
+  else
+    goto <bb 206>;
+
+  <bb 205>:
+  _416 = x264_atoi (value_5, &b_error);
+  p_273(D)->analyse.i_chroma_qp_offset = _416;
+  pretmp_1007 = (int) _54;
+  pretmp_1081 = b_error;
+  goto <bb 345>;
+
+  <bb 206>:
+  # DEBUG __s2_len => 2
+  # DEBUG __s2 => name_2
+  # DEBUG __result => 109 - _70
+  if (_70 == 109)
+    goto <bb 207>;
+  else
+    goto <bb 210>;
+
+  <bb 207>:
+  _187 = MEM[(const unsigned char *)name_2 + 1B];
+  # DEBUG D#47 => (int) _187
+  # DEBUG __result => 101 - D#47
+  if (_187 == 101)
+    goto <bb 208>;
+  else
+    goto <bb 210>;
+
+  <bb 208>:
+  _190 = MEM[(const unsigned char *)name_2 + 2B];
+  # DEBUG D#49 => (int) _190
+  # DEBUG D#48 => -D#49
+  # DEBUG __result => D#48
+  # DEBUG __result => D#48
+  if (_190 == 0)
+    goto <bb 209>;
+  else
+    goto <bb 210>;
+
+  <bb 209>:
+  _409 = &p_273(D)->analyse.i_me_method;
+  _411 = parse_enum (value_5, &x264_motion_est_names, _409);
+  b_error.6_412 = b_error;
+  b_error.89_413 = _411 | b_error.6_412;
+  # DEBUG b_error => b_error.89_413
+  pretmp_1008 = (int) _54;
+  goto <bb 345>;
+
+  <bb 210>:
+  # DEBUG __result => NULL
+  # DEBUG __s2_len => 7
+  iftmp.90_193 = __builtin_strcmp (name_2, "merange");
+  if (iftmp.90_193 == 0)
+    goto <bb 212>;
+  else
+    goto <bb 211>;
+
+  <bb 211>:
+  # DEBUG __s2_len => 8
+  iftmp.91_194 = __builtin_strcmp (name_2, "me-range");
+  if (iftmp.91_194 == 0)
+    goto <bb 212>;
+  else
+    goto <bb 213>;
+
+  <bb 212>:
+  _407 = x264_atoi (value_5, &b_error);
+  p_273(D)->analyse.i_me_range = _407;
+  pretmp_1009 = (int) _54;
+  pretmp_1082 = b_error;
+  goto <bb 345>;
+
+  <bb 213>:
+  # DEBUG __s2_len => 7
+  iftmp.92_195 = __builtin_strcmp (name_2, "mvrange");
+  if (iftmp.92_195 == 0)
+    goto <bb 215>;
+  else
+    goto <bb 214>;
+
+  <bb 214>:
+  # DEBUG __s2_len => 8
+  iftmp.93_196 = __builtin_strcmp (name_2, "mv-range");
+  if (iftmp.93_196 == 0)
+    goto <bb 215>;
+  else
+    goto <bb 216>;
+
+  <bb 215>:
+  _404 = x264_atoi (value_5, &b_error);
+  p_273(D)->analyse.i_mv_range = _404;
+  pretmp_1010 = (int) _54;
+  pretmp_1083 = b_error;
+  goto <bb 345>;
+
+  <bb 216>:
+  # DEBUG __s2_len => 14
+  iftmp.94_197 = __builtin_strcmp (name_2, "mvrange-thread");
+  if (iftmp.94_197 == 0)
+    goto <bb 218>;
+  else
+    goto <bb 217>;
+
+  <bb 217>:
+  # DEBUG __s2_len => 15
+  iftmp.95_198 = __builtin_strcmp (name_2, "mv-range-thread");
+  if (iftmp.95_198 == 0)
+    goto <bb 218>;
+  else
+    goto <bb 219>;
+
+  <bb 218>:
+  _401 = x264_atoi (value_5, &b_error);
+  p_273(D)->analyse.i_mv_range_thread = _401;
+  pretmp_1011 = (int) _54;
+  pretmp_1084 = b_error;
+  goto <bb 345>;
+
+  <bb 219>:
+  # DEBUG __s2_len => 5
+  iftmp.96_199 = __builtin_strcmp (name_2, "subme");
+  if (iftmp.96_199 == 0)
+    goto <bb 221>;
+  else
+    goto <bb 220>;
+
+  <bb 220>:
+  # DEBUG __s2_len => 4
+  iftmp.97_200 = __builtin_strcmp (name_2, "subq");
+  if (iftmp.97_200 == 0)
+    goto <bb 221>;
+  else
+    goto <bb 222>;
+
+  <bb 221>:
+  _398 = x264_atoi (value_5, &b_error);
+  p_273(D)->analyse.i_subpel_refine = _398;
+  pretmp_1012 = (int) _54;
+  pretmp_1085 = b_error;
+  goto <bb 345>;
+
+  <bb 222>:
+  # DEBUG __s2_len => 6
+  iftmp.98_201 = __builtin_strcmp (name_2, "psy-rd");
+  if (iftmp.98_201 == 0)
+    goto <bb 223>;
+  else
+    goto <bb 230>;
+
+  <bb 223>:
+  _386 = &p_273(D)->analyse.f_psy_trellis;
+  _387 = &p_273(D)->analyse.f_psy_rd;
+  _389 = sscanf (value_5, "%f:%f", _387, _386);
+  if (_389 == 2)
+    goto <bb 224>;
+  else
+    goto <bb 225>;
+
+  <bb 224>:
+  pretmp_1050 = (int) _54;
+  pretmp_1131 = b_error;
+  goto <bb 345>;
+
+  <bb 225>:
+  _391 = sscanf (value_5, "%f,%f", _387, _386);
+  if (_391 == 2)
+    goto <bb 226>;
+  else
+    goto <bb 227>;
+
+  <bb 226>:
+  pretmp_1013 = (int) _54;
+  pretmp_1086 = b_error;
+  goto <bb 345>;
+
+  <bb 227>:
+  _393 = sscanf (value_5, "%f", _387);
+  if (_393 != 0)
+    goto <bb 228>;
+  else
+    goto <bb 229>;
+
+  <bb 228>:
+  p_273(D)->analyse.f_psy_trellis = 0.0;
+  pretmp_1045 = (int) _54;
+  pretmp_1125 = b_error;
+  goto <bb 345>;
+
+  <bb 229>:
+  p_273(D)->analyse.f_psy_rd = 0.0;
+  p_273(D)->analyse.f_psy_trellis = 0.0;
+  pretmp_1051 = (int) _54;
+  pretmp_1132 = b_error;
+  goto <bb 345>;
+
+  <bb 230>:
+  # DEBUG __s2_len => 9
+  iftmp.99_202 = __builtin_strcmp (name_2, "chroma-me");
+  if (iftmp.99_202 == 0)
+    goto <bb 231>;
+  else
+    goto <bb 232>;
+
+  <bb 231>:
+  # DEBUG name_was_bool => 1
+  _384 = x264_atobool (value_5, &b_error);
+  p_273(D)->analyse.b_chroma_me = _384;
+  pretmp_1087 = b_error;
+  goto <bb 345>;
+
+  <bb 232>:
+  # DEBUG __s2_len => 10
+  iftmp.100_203 = __builtin_strcmp (name_2, "mixed-refs");
+  if (iftmp.100_203 == 0)
+    goto <bb 233>;
+  else
+    goto <bb 234>;
+
+  <bb 233>:
+  # DEBUG name_was_bool => 1
+  _381 = x264_atobool (value_5, &b_error);
+  p_273(D)->analyse.b_mixed_references = _381;
+  pretmp_1088 = b_error;
+  goto <bb 345>;
+
+  <bb 234>:
+  # DEBUG __s2_len => 7
+  iftmp.101_204 = __builtin_strcmp (name_2, "trellis");
+  if (iftmp.101_204 == 0)
+    goto <bb 235>;
+  else
+    goto <bb 236>;
+
+  <bb 235>:
+  _378 = x264_atoi (value_5, &b_error);
+  p_273(D)->analyse.i_trellis = _378;
+  pretmp_1014 = (int) _54;
+  pretmp_1089 = b_error;
+  goto <bb 345>;
+
+  <bb 236>:
+  # DEBUG __s2_len => 10
+  iftmp.102_205 = __builtin_strcmp (name_2, "fast-pskip");
+  if (iftmp.102_205 == 0)
+    goto <bb 237>;
+  else
+    goto <bb 238>;
+
+  <bb 237>:
+  # DEBUG name_was_bool => 1
+  _375 = x264_atobool (value_5, &b_error);
+  p_273(D)->analyse.b_fast_pskip = _375;
+  pretmp_1090 = b_error;
+  goto <bb 345>;
+
+  <bb 238>:
+  # DEBUG __s2_len => 12
+  iftmp.103_206 = __builtin_strcmp (name_2, "dct-decimate");
+  if (iftmp.103_206 == 0)
+    goto <bb 239>;
+  else
+    goto <bb 240>;
+
+  <bb 239>:
+  # DEBUG name_was_bool => 1
+  _372 = x264_atobool (value_5, &b_error);
+  p_273(D)->analyse.b_dct_decimate = _372;
+  pretmp_1091 = b_error;
+  goto <bb 345>;
+
+  <bb 240>:
+  # DEBUG __s2_len => 14
+  iftmp.104_207 = __builtin_strcmp (name_2, "deadzone-inter");
+  if (iftmp.104_207 == 0)
+    goto <bb 241>;
+  else
+    goto <bb 242>;
+
+  <bb 241>:
+  _369 = x264_atoi (value_5, &b_error);
+  p_273(D)->analyse.i_luma_deadzone[0] = _369;
+  pretmp_1015 = (int) _54;
+  pretmp_1092 = b_error;
+  goto <bb 345>;
+
+  <bb 242>:
+  # DEBUG __s2_len => 14
+  iftmp.105_208 = __builtin_strcmp (name_2, "deadzone-intra");
+  if (iftmp.105_208 == 0)
+    goto <bb 243>;
+  else
+    goto <bb 244>;
+
+  <bb 243>:
+  _366 = x264_atoi (value_5, &b_error);
+  p_273(D)->analyse.i_luma_deadzone[1] = _366;
+  pretmp_1016 = (int) _54;
+  pretmp_1093 = b_error;
+  goto <bb 345>;
+
+  <bb 244>:
+  # DEBUG __s2_len => 2
+  # DEBUG __s2 => name_2
+  # DEBUG __result => __result_133
+  if (__result_133 == 0)
+    goto <bb 245>;
+  else
+    goto <bb 248>;
+
+  <bb 245>:
+  _209 = MEM[(const unsigned char *)name_2 + 1B];
+  # DEBUG D#50 => (int) _209
+  # DEBUG __result => 114 - D#50
+  if (_209 == 114)
+    goto <bb 246>;
+  else
+    goto <bb 248>;
+
+  <bb 246>:
+  _212 = MEM[(const unsigned char *)name_2 + 2B];
+  # DEBUG D#52 => (int) _212
+  # DEBUG D#51 => -D#52
+  # DEBUG __result => D#51
+  # DEBUG __result => D#51
+  if (_212 == 0)
+    goto <bb 247>;
+  else
+    goto <bb 248>;
+
+  <bb 247>:
+  _363 = x264_atoi (value_5, &b_error);
+  p_273(D)->analyse.i_noise_reduction = _363;
+  pretmp_1017 = (int) _54;
+  pretmp_1094 = b_error;
+  goto <bb 345>;
+
+  <bb 248>:
+  # DEBUG __result => NULL
+  # DEBUG __s2_len => 7
+  iftmp.107_215 = __builtin_strcmp (name_2, "bitrate");
+  if (iftmp.107_215 == 0)
+    goto <bb 249>;
+  else
+    goto <bb 250>;
+
+  <bb 249>:
+  _359 = x264_atoi (value_5, &b_error);
+  p_273(D)->rc.i_bitrate = _359;
+  p_273(D)->rc.i_rc_method = 2;
+  pretmp_1018 = (int) _54;
+  pretmp_1095 = b_error;
+  goto <bb 345>;
+
+  <bb 250>:
+  # DEBUG __s2_len => 2
+  # DEBUG __s2 => name_2
+  # DEBUG __result => 113 - _70
+  if (_70 == 113)
+    goto <bb 251>;
+  else
+    goto <bb 253>;
+
+  <bb 251>:
+  _217 = MEM[(const unsigned char *)name_2 + 1B];
+  # DEBUG D#53 => (int) _217
+  # DEBUG __result => 112 - D#53
+  if (_217 == 112)
+    goto <bb 252>;
+  else
+    goto <bb 253>;
+
+  <bb 252>:
+  _220 = MEM[(const unsigned char *)name_2 + 2B];
+  # DEBUG D#55 => (int) _220
+  # DEBUG D#54 => -D#55
+  # DEBUG __result => D#54
+  # DEBUG __result => D#54
+  if (_220 == 0)
+    goto <bb 254>;
+  else
+    goto <bb 253>;
+
+  <bb 253>:
+  # DEBUG __result => NULL
+  # DEBUG __s2_len => 11
+  iftmp.109_223 = __builtin_strcmp (name_2, "qp_constant");
+  if (iftmp.109_223 == 0)
+    goto <bb 254>;
+  else
+    goto <bb 255>;
+
+  <bb 254>:
+  _355 = x264_atoi (value_5, &b_error);
+  p_273(D)->rc.i_qp_constant = _355;
+  p_273(D)->rc.i_rc_method = 0;
+  pretmp_1019 = (int) _54;
+  pretmp_1096 = b_error;
+  goto <bb 345>;
+
+  <bb 255>:
+  # DEBUG __s2_len => 3
+  # DEBUG __s2 => name_2
+  # DEBUG __result => __result_145
+  if (__result_145 == 0)
+    goto <bb 256>;
+  else
+    goto <bb 263>;
+
+  <bb 256>:
+  _224 = MEM[(const unsigned char *)name_2 + 1B];
+  # DEBUG D#56 => (int) _224
+  # DEBUG __result => 114 - D#56
+  if (_224 == 114)
+    goto <bb 257>;
+  else
+    goto <bb 263>;
+
+  <bb 257>:
+  _227 = MEM[(const unsigned char *)name_2 + 2B];
+  # DEBUG D#57 => (int) _227
+  # DEBUG __result => 102 - D#57
+  if (_227 == 102)
+    goto <bb 258>;
+  else
+    goto <bb 263>;
+
+  <bb 258>:
+  _230 = MEM[(const unsigned char *)name_2 + 3B];
+  # DEBUG D#59 => (int) _230
+  # DEBUG D#58 => -D#59
+  # DEBUG __result => D#58
+  # DEBUG __result => D#58
+  if (_230 == 0)
+    goto <bb 259>;
+  else
+    goto <bb 263>;
+
+  <bb 259>:
+  # DEBUG str => value_5
+  # DEBUG b_error => &b_error
+  v_647 = strtod (value_5, &end);
+  # DEBUG v => v_647
+  end.150_777 = end;
+  if (value_5 == end.150_777)
+    goto <bb 262>;
+  else
+    goto <bb 260>;
+
+  <bb 260>:
+  _778 = *end.150_777;
+  if (_778 != 0)
+    goto <bb 262>;
+  else
+    goto <bb 261>;
+
+  <bb 261>:
+  pretmp_1152 = b_error;
+
+  <bb 262>:
+  # prephitmp_1153 = PHI <pretmp_1152(261), 1(259), 1(260)>
+  end ={v} {CLOBBER};
+  # DEBUG str => NULL
+  # DEBUG b_error => NULL
+  # DEBUG v => NULL
+  # DEBUG end => NULL
+  _351 = (float) v_647;
+  p_273(D)->rc.f_rf_constant = _351;
+  p_273(D)->rc.i_rc_method = 1;
+  pretmp_1020 = (int) _54;
+  goto <bb 345>;
+
+  <bb 263>:
+  # DEBUG __result => NULL
+  # DEBUG __s2_len => 5
+  iftmp.111_233 = __builtin_strcmp (name_2, "qpmin");
+  if (iftmp.111_233 == 0)
+    goto <bb 265>;
+  else
+    goto <bb 264>;
+
+  <bb 264>:
+  # DEBUG __s2_len => 6
+  iftmp.112_234 = __builtin_strcmp (name_2, "qp-min");
+  if (iftmp.112_234 == 0)
+    goto <bb 265>;
+  else
+    goto <bb 266>;
+
+  <bb 265>:
+  _348 = x264_atoi (value_5, &b_error);
+  p_273(D)->rc.i_qp_min = _348;
+  pretmp_1021 = (int) _54;
+  pretmp_1098 = b_error;
+  goto <bb 345>;
+
+  <bb 266>:
+  # DEBUG __s2_len => 5
+  iftmp.113_235 = __builtin_strcmp (name_2, "qpmax");
+  if (iftmp.113_235 == 0)
+    goto <bb 268>;
+  else
+    goto <bb 267>;
+
+  <bb 267>:
+  # DEBUG __s2_len => 6
+  iftmp.114_236 = __builtin_strcmp (name_2, "qp-max");
+  if (iftmp.114_236 == 0)
+    goto <bb 268>;
+  else
+    goto <bb 269>;
+
+  <bb 268>:
+  _345 = x264_atoi (value_5, &b_error);
+  p_273(D)->rc.i_qp_max = _345;
+  pretmp_1022 = (int) _54;
+  pretmp_1099 = b_error;
+  goto <bb 345>;
+
+  <bb 269>:
+  # DEBUG __s2_len => 6
+  iftmp.115_237 = __builtin_strcmp (name_2, "qpstep");
+  if (iftmp.115_237 == 0)
+    goto <bb 271>;
+  else
+    goto <bb 270>;
+
+  <bb 270>:
+  # DEBUG __s2_len => 7
+  iftmp.116_238 = __builtin_strcmp (name_2, "qp-step");
+  if (iftmp.116_238 == 0)
+    goto <bb 271>;
+  else
+    goto <bb 272>;
+
+  <bb 271>:
+  _342 = x264_atoi (value_5, &b_error);
+  p_273(D)->rc.i_qp_step = _342;
+  pretmp_1023 = (int) _54;
+  pretmp_1100 = b_error;
+  goto <bb 345>;
+
+  <bb 272>:
+  # DEBUG __s2_len => 7
+  iftmp.117_239 = __builtin_strcmp (name_2, "ratetol");
+  if (iftmp.117_239 == 0)
+    goto <bb 273>;
+  else
+    goto <bb 280>;
+
+  <bb 273>:
+  _337 = strncmp ("inf", value_5, 3);
+  if (_337 != 0)
+    goto <bb 275>;
+  else
+    goto <bb 274>;
+
+  <bb 274>:
+  pretmp_1178 = b_error;
+  goto <bb 279>;
+
+  <bb 275>:
+  # DEBUG str => value_5
+  # DEBUG b_error => &b_error
+  v_350 = strtod (value_5, &end);
+  # DEBUG v => v_350
+  end.150_779 = end;
+  if (value_5 == end.150_779)
+    goto <bb 278>;
+  else
+    goto <bb 276>;
+
+  <bb 276>:
+  _780 = *end.150_779;
+  if (_780 != 0)
+    goto <bb 278>;
+  else
+    goto <bb 277>;
+
+  <bb 277>:
+  pretmp_1150 = b_error;
+
+  <bb 278>:
+  # prephitmp_1151 = PHI <pretmp_1150(277), 1(275), 1(276)>
+  end ={v} {CLOBBER};
+  # DEBUG str => NULL
+  # DEBUG b_error => NULL
+  # DEBUG v => NULL
+  # DEBUG end => NULL
+  iftmp.118_339 = (float) v_350;
+
+  <bb 279>:
+  # iftmp.118_31 = PHI <iftmp.118_339(278), 1.0e+9(274)>
+  # prephitmp_1179 = PHI <prephitmp_1151(278), pretmp_1178(274)>
+  p_273(D)->rc.f_rate_tolerance = iftmp.118_31;
+  pretmp_1024 = (int) _54;
+  goto <bb 345>;
+
+  <bb 280>:
+  # DEBUG __s2_len => 11
+  iftmp.119_240 = __builtin_strcmp (name_2, "vbv-maxrate");
+  if (iftmp.119_240 == 0)
+    goto <bb 281>;
+  else
+    goto <bb 282>;
+
+  <bb 281>:
+  _335 = x264_atoi (value_5, &b_error);
+  p_273(D)->rc.i_vbv_max_bitrate = _335;
+  pretmp_1025 = (int) _54;
+  pretmp_1102 = b_error;
+  goto <bb 345>;
+
+  <bb 282>:
+  # DEBUG __s2_len => 11
+  iftmp.120_241 = __builtin_strcmp (name_2, "vbv-bufsize");
+  if (iftmp.120_241 == 0)
+    goto <bb 283>;
+  else
+    goto <bb 284>;
+
+  <bb 283>:
+  _332 = x264_atoi (value_5, &b_error);
+  p_273(D)->rc.i_vbv_buffer_size = _332;
+  pretmp_1026 = (int) _54;
+  pretmp_1103 = b_error;
+  goto <bb 345>;
+
+  <bb 284>:
+  # DEBUG __s2_len => 8
+  iftmp.121_242 = __builtin_strcmp (name_2, "vbv-init");
+  if (iftmp.121_242 == 0)
+    goto <bb 285>;
+  else
+    goto <bb 289>;
+
+  <bb 285>:
+  # DEBUG str => value_5
+  # DEBUG b_error => &b_error
+  v_338 = strtod (value_5, &end);
+  # DEBUG v => v_338
+  end.150_781 = end;
+  if (value_5 == end.150_781)
+    goto <bb 288>;
+  else
+    goto <bb 286>;
+
+  <bb 286>:
+  _782 = *end.150_781;
+  if (_782 != 0)
+    goto <bb 288>;
+  else
+    goto <bb 287>;
+
+  <bb 287>:
+  pretmp_1148 = b_error;
+
+  <bb 288>:
+  # prephitmp_1149 = PHI <pretmp_1148(287), 1(285), 1(286)>
+  end ={v} {CLOBBER};
+  # DEBUG str => NULL
+  # DEBUG b_error => NULL
+  # DEBUG v => NULL
+  # DEBUG end => NULL
+  _329 = (float) v_338;
+  p_273(D)->rc.f_vbv_buffer_init = _329;
+  pretmp_1027 = (int) _54;
+  goto <bb 345>;
+
+  <bb 289>:
+  # DEBUG __s2_len => 7
+  iftmp.122_243 = __builtin_strcmp (name_2, "ipratio");
+  if (iftmp.122_243 == 0)
+    goto <bb 291>;
+  else
+    goto <bb 290>;
+
+  <bb 290>:
+  # DEBUG __s2_len => 9
+  iftmp.123_244 = __builtin_strcmp (name_2, "ip-factor");
+  if (iftmp.123_244 == 0)
+    goto <bb 291>;
+  else
+    goto <bb 295>;
+
+  <bb 291>:
+  # DEBUG str => value_5
+  # DEBUG b_error => &b_error
+  v_328 = strtod (value_5, &end);
+  # DEBUG v => v_328
+  end.150_783 = end;
+  if (value_5 == end.150_783)
+    goto <bb 294>;
+  else
+    goto <bb 292>;
+
+  <bb 292>:
+  _784 = *end.150_783;
+  if (_784 != 0)
+    goto <bb 294>;
+  else
+    goto <bb 293>;
+
+  <bb 293>:
+  pretmp_1136 = b_error;
+
+  <bb 294>:
+  # prephitmp_1137 = PHI <pretmp_1136(293), 1(291), 1(292)>
+  end ={v} {CLOBBER};
+  # DEBUG str => NULL
+  # DEBUG b_error => NULL
+  # DEBUG v => NULL
+  # DEBUG end => NULL
+  _326 = (float) v_328;
+  p_273(D)->rc.f_ip_factor = _326;
+  pretmp_1028 = (int) _54;
+  goto <bb 345>;
+
+  <bb 295>:
+  # DEBUG __s2_len => 7
+  iftmp.124_245 = __builtin_strcmp (name_2, "pbratio");
+  if (iftmp.124_245 == 0)
+    goto <bb 297>;
+  else
+    goto <bb 296>;
+
+  <bb 296>:
+  # DEBUG __s2_len => 9
+  iftmp.125_246 = __builtin_strcmp (name_2, "pb-factor");
+  if (iftmp.125_246 == 0)
+    goto <bb 297>;
+  else
+    goto <bb 301>;
+
+  <bb 297>:
+  # DEBUG str => value_5
+  # DEBUG b_error => &b_error
+  v_325 = strtod (value_5, &end);
+  # DEBUG v => v_325
+  end.150_785 = end;
+  if (value_5 == end.150_785)
+    goto <bb 300>;
+  else
+    goto <bb 298>;
+
+  <bb 298>:
+  _786 = *end.150_785;
+  if (_786 != 0)
+    goto <bb 300>;
+  else
+    goto <bb 299>;
+
+  <bb 299>:
+  pretmp_1138 = b_error;
+
+  <bb 300>:
+  # prephitmp_1139 = PHI <pretmp_1138(299), 1(297), 1(298)>
+  end ={v} {CLOBBER};
+  # DEBUG str => NULL
+  # DEBUG b_error => NULL
+  # DEBUG v => NULL
+  # DEBUG end => NULL
+  _323 = (float) v_325;
+  p_273(D)->rc.f_pb_factor = _323;
+  pretmp_1029 = (int) _54;
+  goto <bb 345>;
+
+  <bb 301>:
+  # DEBUG __s2_len => 7
+  iftmp.126_247 = __builtin_strcmp (name_2, "aq-mode");
+  if (iftmp.126_247 == 0)
+    goto <bb 302>;
+  else
+    goto <bb 303>;
+
+  <bb 302>:
+  _320 = x264_atoi (value_5, &b_error);
+  p_273(D)->rc.i_aq_mode = _320;
+  pretmp_1030 = (int) _54;
+  pretmp_1107 = b_error;
+  goto <bb 345>;
+
+  <bb 303>:
+  # DEBUG __s2_len => 11
+  iftmp.127_248 = __builtin_strcmp (name_2, "aq-strength");
+  if (iftmp.127_248 == 0)
+    goto <bb 304>;
+  else
+    goto <bb 308>;
+
+  <bb 304>:
+  # DEBUG str => value_5
+  # DEBUG b_error => &b_error
+  v_322 = strtod (value_5, &end);
+  # DEBUG v => v_322
+  end.150_787 = end;
+  if (value_5 == end.150_787)
+    goto <bb 307>;
+  else
+    goto <bb 305>;
+
+  <bb 305>:
+  _788 = *end.150_787;
+  if (_788 != 0)
+    goto <bb 307>;
+  else
+    goto <bb 306>;
+
+  <bb 306>:
+  pretmp_1146 = b_error;
+
+  <bb 307>:
+  # prephitmp_1147 = PHI <pretmp_1146(306), 1(304), 1(305)>
+  end ={v} {CLOBBER};
+  # DEBUG str => NULL
+  # DEBUG b_error => NULL
+  # DEBUG v => NULL
+  # DEBUG end => NULL
+  _317 = (float) v_322;
+  p_273(D)->rc.f_aq_strength = _317;
+  pretmp_1031 = (int) _54;
+  goto <bb 345>;
+
+  <bb 308>:
+  # DEBUG __s2_len => 4
+  iftmp.128_249 = __builtin_strcmp (name_2, "pass");
+  if (iftmp.128_249 == 0)
+    goto <bb 309>;
+  else
+    goto <bb 310>;
+
+  <bb 309>:
+  _311 = x264_atoi (value_5, &b_error);
+  # DEBUG v => _311
+  # DEBUG i_min => 0
+  # DEBUG i_max => 3
+  iftmp.149_316 = MIN_EXPR <_311, 3>;
+  iftmp.149_848 = MAX_EXPR <iftmp.149_316, 0>;
+  # DEBUG v => NULL
+  # DEBUG i_min => NULL
+  # DEBUG i_max => NULL
+  # DEBUG i => NULL
+  _312 = iftmp.149_848 & 1;
+  p_273(D)->rc.b_stat_write = _312;
+  _314 = iftmp.149_848 & 2;
+  p_273(D)->rc.b_stat_read = _314;
+  pretmp_1032 = (int) _54;
+  pretmp_1109 = b_error;
+  goto <bb 345>;
+
+  <bb 310>:
+  # DEBUG __s2_len => 5
+  iftmp.129_250 = __builtin_strcmp (name_2, "stats");
+  if (iftmp.129_250 == 0)
+    goto <bb 311>;
+  else
+    goto <bb 312>;
+
+  <bb 311>:
+  _305 = __strdup (value_5);
+  p_273(D)->rc.psz_stat_in = _305;
+  _308 = __strdup (value_5);
+  p_273(D)->rc.psz_stat_out = _308;
+  pretmp_1033 = (int) _54;
+  pretmp_1110 = b_error;
+  goto <bb 345>;
+
+  <bb 312>:
+  # DEBUG __s2_len => 5
+  iftmp.130_251 = __builtin_strcmp (name_2, "qcomp");
+  if (iftmp.130_251 == 0)
+    goto <bb 313>;
+  else
+    goto <bb 317>;
+
+  <bb 313>:
+  # DEBUG str => value_5
+  # DEBUG b_error => &b_error
+  v_790 = strtod (value_5, &end);
+  # DEBUG v => v_790
+  end.150_791 = end;
+  if (value_5 == end.150_791)
+    goto <bb 316>;
+  else
+    goto <bb 314>;
+
+  <bb 314>:
+  _792 = *end.150_791;
+  if (_792 != 0)
+    goto <bb 316>;
+  else
+    goto <bb 315>;
+
+  <bb 315>:
+  pretmp_1144 = b_error;
+
+  <bb 316>:
+  # prephitmp_1145 = PHI <pretmp_1144(315), 1(313), 1(314)>
+  end ={v} {CLOBBER};
+  # DEBUG str => NULL
+  # DEBUG b_error => NULL
+  # DEBUG v => NULL
+  # DEBUG end => NULL
+  _302 = (float) v_790;
+  p_273(D)->rc.f_qcompress = _302;
+  pretmp_1034 = (int) _54;
+  goto <bb 345>;
+
+  <bb 317>:
+  # DEBUG __s2_len => 5
+  iftmp.131_252 = __builtin_strcmp (name_2, "qblur");
+  if (iftmp.131_252 == 0)
+    goto <bb 318>;
+  else
+    goto <bb 322>;
+
+  <bb 318>:
+  # DEBUG str => value_5
+  # DEBUG b_error => &b_error
+  v_301 = strtod (value_5, &end);
+  # DEBUG v => v_301
+  end.150_793 = end;
+  if (value_5 == end.150_793)
+    goto <bb 321>;
+  else
+    goto <bb 319>;
+
+  <bb 319>:
+  _794 = *end.150_793;
+  if (_794 != 0)
+    goto <bb 321>;
+  else
+    goto <bb 320>;
+
+  <bb 320>:
+  pretmp_1142 = b_error;
+
+  <bb 321>:
+  # prephitmp_1143 = PHI <pretmp_1142(320), 1(318), 1(319)>
+  end ={v} {CLOBBER};
+  # DEBUG str => NULL
+  # DEBUG b_error => NULL
+  # DEBUG v => NULL
+  # DEBUG end => NULL
+  _299 = (float) v_301;
+  p_273(D)->rc.f_qblur = _299;
+  pretmp_1035 = (int) _54;
+  goto <bb 345>;
+
+  <bb 322>:
+  # DEBUG __s2_len => 8
+  iftmp.132_253 = __builtin_strcmp (name_2, "cplxblur");
+  if (iftmp.132_253 == 0)
+    goto <bb 324>;
+  else
+    goto <bb 323>;
+
+  <bb 323>:
+  # DEBUG __s2_len => 9
+  iftmp.133_254 = __builtin_strcmp (name_2, "cplx-blur");
+  if (iftmp.133_254 == 0)
+    goto <bb 324>;
+  else
+    goto <bb 328>;
+
+  <bb 324>:
+  # DEBUG str => value_5
+  # DEBUG b_error => &b_error
+  v_298 = strtod (value_5, &end);
+  # DEBUG v => v_298
+  end.150_795 = end;
+  if (value_5 == end.150_795)
+    goto <bb 327>;
+  else
+    goto <bb 325>;
+
+  <bb 325>:
+  _796 = *end.150_795;
+  if (_796 != 0)
+    goto <bb 327>;
+  else
+    goto <bb 326>;
+
+  <bb 326>:
+  pretmp_1140 = b_error;
+
+  <bb 327>:
+  # prephitmp_1141 = PHI <pretmp_1140(326), 1(324), 1(325)>
+  end ={v} {CLOBBER};
+  # DEBUG str => NULL
+  # DEBUG b_error => NULL
+  # DEBUG v => NULL
+  # DEBUG end => NULL
+  _296 = (float) v_298;
+  p_273(D)->rc.f_complexity_blur = _296;
+  pretmp_1036 = (int) _54;
+  goto <bb 345>;
+
+  <bb 328>:
+  # DEBUG __s2_len => 5
+  iftmp.134_255 = __builtin_strcmp (name_2, "zones");
+  if (iftmp.134_255 == 0)
+    goto <bb 329>;
+  else
+    goto <bb 330>;
+
+  <bb 329>:
+  _293 = __strdup (value_5);
+  p_273(D)->rc.psz_zones = _293;
+  pretmp_1037 = (int) _54;
+  pretmp_1114 = b_error;
+  goto <bb 345>;
+
+  <bb 330>:
+  # DEBUG __s2_len => 4
+  iftmp.135_256 = __builtin_strcmp (name_2, "psnr");
+  if (iftmp.135_256 == 0)
+    goto <bb 331>;
+  else
+    goto <bb 332>;
+
+  <bb 331>:
+  # DEBUG name_was_bool => 1
+  _290 = x264_atobool (value_5, &b_error);
+  p_273(D)->analyse.b_psnr = _290;
+  pretmp_1115 = b_error;
+  goto <bb 345>;
+
+  <bb 332>:
+  # DEBUG __s2_len => 4
+  iftmp.136_257 = __builtin_strcmp (name_2, "ssim");
+  if (iftmp.136_257 == 0)
+    goto <bb 333>;
+  else
+    goto <bb 334>;
+
+  <bb 333>:
+  # DEBUG name_was_bool => 1
+  _287 = x264_atobool (value_5, &b_error);
+  p_273(D)->analyse.b_ssim = _287;
+  pretmp_1116 = b_error;
+  goto <bb 345>;
+
+  <bb 334>:
+  # DEBUG __s2_len => 3
+  # DEBUG __s2 => name_2
+  # DEBUG __result => __result_71
+  if (__result_71 == 0)
+    goto <bb 335>;
+  else
+    goto <bb 339>;
+
+  <bb 335>:
+  _258 = MEM[(const unsigned char *)name_2 + 1B];
+  # DEBUG D#60 => (int) _258
+  # DEBUG __result => 117 - D#60
+  if (_258 == 117)
+    goto <bb 336>;
+  else
+    goto <bb 339>;
+
+  <bb 336>:
+  _261 = MEM[(const unsigned char *)name_2 + 2B];
+  # DEBUG D#61 => (int) _261
+  # DEBUG __result => 100 - D#61
+  if (_261 == 100)
+    goto <bb 337>;
+  else
+    goto <bb 339>;
+
+  <bb 337>:
+  _264 = MEM[(const unsigned char *)name_2 + 3B];
+  # DEBUG D#63 => (int) _264
+  # DEBUG D#62 => -D#63
+  # DEBUG __result => D#62
+  # DEBUG __result => D#62
+  if (_264 == 0)
+    goto <bb 338>;
+  else
+    goto <bb 339>;
+
+  <bb 338>:
+  # DEBUG name_was_bool => 1
+  _284 = x264_atobool (value_5, &b_error);
+  p_273(D)->b_aud = _284;
+  pretmp_1117 = b_error;
+  goto <bb 345>;
+
+  <bb 339>:
+  # DEBUG __result => NULL
+  # DEBUG __s2_len => 6
+  iftmp.138_268 = __builtin_strcmp (name_2, "sps-id");
+  if (iftmp.138_268 == 0)
+    goto <bb 340>;
+  else
+    goto <bb 341>;
+
+  <bb 340>:
+  _281 = x264_atoi (value_5, &b_error);
+  p_273(D)->i_sps_id = _281;
+  pretmp_1038 = (int) _54;
+  pretmp_1118 = b_error;
+  goto <bb 345>;
+
+  <bb 341>:
+  # DEBUG __s2_len => 13
+  iftmp.139_269 = __builtin_strcmp (name_2, "global-header");
+  if (iftmp.139_269 == 0)
+    goto <bb 342>;
+  else
+    goto <bb 343>;
+
+  <bb 342>:
+  # DEBUG name_was_bool => 1
+  _276 = x264_atobool (value_5, &b_error);
+  _277 = _276 == 0;
+  _278 = (int) _277;
+  p_273(D)->b_repeat_headers = _278;
+  pretmp_1119 = b_error;
+  goto <bb 345>;
+
+  <bb 343>:
+  # DEBUG __s2_len => 14
+  iftmp.140_270 = __builtin_strcmp (name_2, "repeat-headers");
+  if (iftmp.140_270 == 0)
+    goto <bb 344>;
+  else
+    goto <bb 3>;
+
+  <bb 344>:
+  # DEBUG name_was_bool => 1
+  _272 = x264_atobool (value_5, &b_error);
+  p_273(D)->b_repeat_headers = _272;
+  pretmp_1053 = b_error;
+
+  <bb 345>:
+  # prephitmp_1052 = PHI <0(344), prephitmp_1165(352), pretmp_903(49), 0(52), pretmp_864(63), pretmp_900(70), pretmp_901(72), pretmp_995(74), pretmp_994(76), pretmp_871(78), pretmp_870(80), pretmp_869(82), pretmp_868(84), pretmp_993(94), pretmp_991(100), pretmp_992(104), pretmp_990(109), pretmp_989(111), 0(113), pretmp_885(115), 0(118), pretmp_886(120), 0(122), 0(126), pretmp_987(133), 0(136), pretmp_988(138), 0(140), pretmp_956(148), pretmp_867(151), pretmp_898(153), pretmp_899(155), pretmp_896(157), pretmp_897(159), pretmp_865(161), pretmp_894(163), pretmp_895(165), pretmp_853(167), pretmp_852(169), pretmp_890(171), pretmp_891(176), pretmp_866(178), pretmp_887(193), 0(195), 0(198), pretmp_888(201), pretmp_889(203), pretmp_1007(205), pretmp_1008(209), pretmp_1009(212), pretmp_1010(215), pretmp_1011(218), pretmp_1012(221), pretmp_1013(226), 0(231), 0(233), pretmp_1014(235), 0(237), 0(239), pretmp_1015(241), pretmp_1016(243), pretmp_1017(247), pretmp_1018(249), pretmp_1019(254), pretmp_1020(262), pretmp_1021(265), pretmp_1022(268), pretmp_1023(271), pretmp_1024(279), pretmp_1025(281), pretmp_1026(283), pretmp_1027(288), pretmp_1028(294), pretmp_1029(300), pretmp_1030(302), pretmp_1031(307), pretmp_1032(309), pretmp_1033(311), pretmp_1034(316), pretmp_1035(321), pretmp_1036(327), pretmp_1037(329), 0(331), 0(333), 0(338), pretmp_1038(340), 0(342), prephitmp_1165(26), pretmp_1040(48), pretmp_1041(62), pretmp_1042(90), pretmp_1043(103), pretmp_1044(108), pretmp_1045(228), pretmp_1046(130), 0(134), pretmp_1047(146), pretmp_1048(149), pretmp_1049(192), pretmp_1050(224), pretmp_1051(229)>
+  # prephitmp_1133 = PHI <pretmp_1053(344), pretmp_1054(352), pretmp_1055(49), pretmp_1056(52), pretmp_1057(63), iftmp.15_30(70), b_error.17_696(72), b_error.19_690(74), b_error.21_684(76), b_error.23_678(78), b_error.25_672(80), b_error.27_666(82), b_error.29_660(84), prephitmp_1155(94), pretmp_1059(100), pretmp_1060(104), pretmp_1061(109), pretmp_1062(111), pretmp_1063(113), pretmp_1064(115), pretmp_1065(118), pretmp_1066(120), pretmp_1067(122), pretmp_1068(126), pretmp_1069(133), pretmp_1070(136), pretmp_1071(138), pretmp_1072(140), pretmp_1073(148), pretmp_1074(151), b_error.54_566(153), b_error.57_541(155), b_error.60_528(157), b_error.63_515(159), b_error.65_502(161), b_error.67_495(163), b_error.69_488(165), b_error.71_481(167), b_error.73_474(169), b_error.75_467(171), pretmp_1075(176), pretmp_1076(178), pretmp_1077(193), pretmp_1078(195), pretmp_1079(198), b_error.85_425(201), pretmp_1080(203), pretmp_1081(205), b_error.89_413(209), pretmp_1082(212), pretmp_1083(215), pretmp_1084(218), pretmp_1085(221), pretmp_1086(226), pretmp_1087(231), pretmp_1088(233), pretmp_1089(235), pretmp_1090(237), pretmp_1091(239), pretmp_1092(241), pretmp_1093(243), pretmp_1094(247), pretmp_1095(249), pretmp_1096(254), prephitmp_1153(262), pretmp_1098(265), pretmp_1099(268), pretmp_1100(271), prephitmp_1179(279), pretmp_1102(281), pretmp_1103(283), prephitmp_1149(288), prephitmp_1137(294), prephitmp_1139(300), pretmp_1107(302), prephitmp_1147(307), pretmp_1109(309), pretmp_1110(311), prephitmp_1145(316), prephitmp_1143(321), prephitmp_1141(327), pretmp_1114(329), pretmp_1115(331), pretmp_1116(333), pretmp_1117(338), pretmp_1118(340), pretmp_1119(342), b_error.6_738(26), pretmp_1120(48), prephitmp_1135(62), pretmp_1122(90), pretmp_1123(103), pretmp_1124(108), pretmp_1125(228), pretmp_1126(130), pretmp_1127(134), pretmp_1128(146), pretmp_1129(149), pretmp_1130(192), pretmp_1131(224), pretmp_1132(229)>
+  # DEBUG name_was_bool => NULL
+  if (name_6 != 0B)
+    goto <bb 346>;
+  else
+    goto <bb 347>;
+
+  <bb 346>:
+  # prephitmp_751 = PHI <prephitmp_1052(345), 0(355)>
+  # prephitmp_770 = PHI <prephitmp_1133(345), b_error.6_616(355)>
+  free (name_6);
+
+  <bb 347>:
+  # prephitmp_1175 = PHI <prephitmp_1052(345), prephitmp_751(346)>
+  # prephitmp_1176 = PHI <prephitmp_1133(345), prephitmp_770(346)>
+  b_error.141_760 = prephitmp_1175 | prephitmp_1176;
+  # DEBUG b_error => b_error.141_760
+  if (b_error.141_760 != 0)
+    goto <bb 349>;
+  else
+    goto <bb 348>;
+
+  <bb 348>:
+
+  <bb 349>:
+  # _26 = PHI <-1(3), -2(347), 0(348)>
+  b_error ={v} {CLOBBER};
+  return _26;
+
+  <bb 350>:
+  b_error = 1;
+  goto <bb 34>;
+
+  <bb 351>:
+  # _984 = PHI <_29(33)>
+  _892 = p_273(D)->cpu;
+  _893 = (unsigned int) _984;
+  _1005 = _892 | _893;
+  p_273(D)->cpu = _1005;
+  goto <bb 34>;
+
+  <bb 352>:
+  # DEBUG __result => 0B
+  # DEBUG __s => saveptr_882
+  # DEBUG saveptr => saveptr_882
+  # DEBUG __s => NULL
+  # DEBUG __sep => NULL
+  # DEBUG __nextp => NULL
+  # DEBUG tok => 0B
+  # DEBUG __result => 0B
+  # DEBUG saveptr => saveptr_882
+  # DEBUG __s => NULL
+  # DEBUG __sep => NULL
+  # DEBUG __nextp => NULL
+  # DEBUG tok => 0B
+  free (saveptr_740);
+  # DEBUG D#1 => {CLOBBER}
+  # DEBUG saveptr => D#1
+  pretmp_1054 = b_error;
+  goto <bb 345>;
+
+  <bb 353>:
+  # saveptr_954 = PHI <saveptr_766(45)>
+
+  <bb 354>:
+  # saveptr_881 = PHI <saveptr_954(353), saveptr_952(43)>
+  # DEBUG __result => saveptr_882
+  # DEBUG __s => saveptr_881
+  # DEBUG saveptr => saveptr_881
+  # DEBUG __s => NULL
+  # DEBUG __sep => NULL
+  # DEBUG __nextp => NULL
+  # DEBUG tok => saveptr_882
+  # DEBUG __result => saveptr_882
+  # DEBUG saveptr => saveptr_881
+  # DEBUG __s => NULL
+  # DEBUG __sep => NULL
+  # DEBUG __nextp => NULL
+  # DEBUG tok => saveptr_882
+  # DEBUG i => 0
+  _851 = x264_cpu_names[0].flags;
+  if (_851 != 0)
+    goto <bb 32>;
+  else
+    goto <bb 350>;
+
+  <bb 355>:
+  # DEBUG name_was_bool => 1
+  if (name_6 != 0B)
+    goto <bb 346>;
+  else
+    goto <bb 348>;
+
+}
+
+
+
+;; Function x264_nal_encode (x264_nal_encode, funcdef_no=128, decl_uid=4504, cgraph_uid=128, symbol_order=171)
+
+
+Analyzing loop at common/common.c:680
+common/common.c:680:10: note: ===== analyze_loop_nest =====
+common/common.c:680:10: note: === vect_analyze_loop_form ===
+common/common.c:680:10: note: not vectorized: control flow in loop.
+common/common.c:680:10: note: bad loop form.
+common/common.c:659:5: note: vectorized 0 loops in function.
+x264_nal_encode (void * p_data, int * pi_data, int b_annexeb, struct x264_nal_t * nal)
+{
+  int i_count;
+  uint8_t * end;
+  uint8_t * src;
+  uint8_t * dst;
+  int _15;
+  sizetype _16;
+  int _25;
+  int _26;
+  signed char _27;
+  int _28;
+  signed char _29;
+  signed char _30;
+  unsigned char _31;
+  unsigned char _33;
+  unsigned char _36;
+  long int dst.166_41;
+  long int p_data.167_42;
+  long int _43;
+  int _44;
+
+  <bb 2>:
+  # DEBUG dst => p_data_11(D)
+  src_14 = nal_13(D)->p_payload;
+  # DEBUG src => src_14
+  _15 = nal_13(D)->i_payload;
+  _16 = (sizetype) _15;
+  end_17 = src_14 + _16;
+  # DEBUG end => end_17
+  # DEBUG i_count => 0
+  if (b_annexeb_18(D) != 0)
+    goto <bb 3>;
+  else
+    goto <bb 4>;
+
+  <bb 3>:
+  # DEBUG dst => p_data_11(D) + 1
+  MEM[(uint8_t *)p_data_11(D)] = 0;
+  # DEBUG D#2 => &MEM[(void *)p_data_11(D) + 2B]
+  # DEBUG dst => D#2
+  MEM[(uint8_t *)p_data_11(D) + 1B] = 0;
+  # DEBUG D#3 => &MEM[(void *)p_data_11(D) + 3B]
+  # DEBUG dst => D#3
+  MEM[(uint8_t *)p_data_11(D) + 2B] = 0;
+  p_data_22 = &MEM[(void *)p_data_11(D) + 4B];
+  # DEBUG dst => p_data_22
+  MEM[(uint8_t *)p_data_11(D) + 3B] = 1;
+
+  <bb 4>:
+  # p_data_1 = PHI <p_data_11(D)(2), p_data_22(3)>
+  # DEBUG dst => p_data_1
+  dst_24 = p_data_1 + 1;
+  # DEBUG dst => dst_24
+  _25 = nal_13(D)->i_ref_idc;
+  _26 = _25 << 5;
+  _27 = (signed char) _26;
+  _28 = nal_13(D)->i_type;
+  _29 = (signed char) _28;
+  _30 = _27 | _29;
+  _31 = (unsigned char) _30;
+  MEM[(uint8_t *)p_data_1] = _31;
+  # DEBUG i_count => 0
+  # DEBUG src => src_14
+  # DEBUG dst => dst_24
+  if (src_14 < end_17)
+    goto <bb 5>;
+  else
+    goto <bb 14>;
+
+  <bb 5>:
+  goto <bb 10>;
+
+  <bb 6>:
+  # DEBUG i_count => i_count_6
+  # DEBUG src => src_39
+  # DEBUG dst => dst_38
+  if (i_count_6 == 2)
+    goto <bb 7>;
+  else
+    goto <bb 9>;
+
+  <bb 7>:
+  _33 = *src_39;
+  if (_33 <= 3)
+    goto <bb 8>;
+  else
+    goto <bb 9>;
+
+  <bb 8>:
+  dst_34 = &MEM[(void *)dst_2 + 2B];
+  # DEBUG dst => dst_34
+  MEM[(uint8_t *)dst_2 + 1B] = 3;
+  # DEBUG i_count => 0
+
+  <bb 9>:
+  # dst_55 = PHI <dst_38(6), dst_38(7), dst_34(8)>
+  # i_count_58 = PHI <i_count_6(6), 2(7), 0(8)>
+
+  <bb 10>:
+  # dst_2 = PHI <dst_55(9), dst_24(5)>
+  # i_count_5 = PHI <i_count_58(9), 0(5)>
+  # src_60 = PHI <src_39(9), src_14(5)>
+  # DEBUG i_count => i_count_5
+  # DEBUG dst => dst_2
+  _36 = *src_60;
+  if (_36 == 0)
+    goto <bb 11>;
+  else
+    goto <bb 12>;
+
+  <bb 11>:
+  i_count_37 = i_count_5 + 1;
+  # DEBUG i_count => i_count_37
+
+  <bb 12>:
+  # i_count_6 = PHI <i_count_37(11), 0(10)>
+  # DEBUG i_count => i_count_6
+  dst_38 = dst_2 + 1;
+  # DEBUG dst => dst_38
+  src_39 = src_60 + 1;
+  # DEBUG src => src_39
+  *dst_2 = _36;
+  # DEBUG i_count => i_count_6
+  # DEBUG src => src_39
+  # DEBUG dst => dst_38
+  if (end_17 > src_39)
+    goto <bb 6>;
+  else
+    goto <bb 13>;
+
+  <bb 13>:
+  # dst_76 = PHI <dst_38(12)>
+
+  <bb 14>:
+  # dst_50 = PHI <dst_76(13), dst_24(4)>
+  dst.166_41 = (long int) dst_50;
+  p_data.167_42 = (long int) p_data_11(D);
+  _43 = dst.166_41 - p_data.167_42;
+  _44 = (int) _43;
+  *pi_data_45(D) = _44;
+  return _44;
+
+}
+
+
+
+;; Function x264_reduce_fraction (x264_reduce_fraction, funcdef_no=132, decl_uid=5344, cgraph_uid=132, symbol_order=175)
+
+
+Analyzing loop at common/common.c:774
+common/common.c:774:10: note: ===== analyze_loop_nest =====
+common/common.c:774:10: note: === vect_analyze_loop_form ===
+common/common.c:774:10: note: === get_loop_niters ===
+common/common.c:774:10: note: not vectorized: number of iterations cannot be computed.
+common/common.c:774:10: note: bad loop form.
+common/common.c:766:6: note: vectorized 0 loops in function.
+x264_reduce_fraction (int * n, int * d)
+{
+  int a;
+  _Bool _9;
+  _Bool _10;
+  _Bool _11;
+  int _14;
+  int _16;
+  int _17;
+
+  <bb 2>:
+  a_6 = *n_5(D);
+  # DEBUG a => a_6
+  a_8 = *d_7(D);
+  # DEBUG b => a_8
+  _9 = a_6 == 0;
+  _10 = a_8 == 0;
+  _11 = _9 | _10;
+  if (_11 != 0)
+    goto <bb 9>;
+  else
+    goto <bb 3>;
+
+  <bb 3>:
+  a_12 = a_6 % a_8;
+  # DEBUG c => a_12
+  # DEBUG c => a_12
+  # DEBUG b => a_8
+  if (a_12 != 0)
+    goto <bb 4>;
+  else
+    goto <bb 8>;
+
+  <bb 4>:
+
+  <bb 5>:
+  # a_24 = PHI <a_8(4), a_23(6)>
+  # a_23 = PHI <a_12(4), a_13(6)>
+  # DEBUG c => a_23
+  # DEBUG a => a_24
+  # DEBUG b => a_23
+  a_13 = a_24 % a_23;
+  # DEBUG c => a_13
+  # DEBUG c => a_13
+  # DEBUG b => a_23
+  if (a_13 != 0)
+    goto <bb 6>;
+  else
+    goto <bb 7>;
+
+  <bb 6>:
+  goto <bb 5>;
+
+  <bb 7>:
+  # a_1 = PHI <a_23(5)>
+
+  <bb 8>:
+  # a_22 = PHI <a_1(7), a_8(3)>
+  _14 = a_6 / a_22;
+  *n_5(D) = _14;
+  _16 = *d_7(D);
+  _17 = _16 / a_22;
+  *d_7(D) = _17;
+
+  <bb 9>:
+  return;
+
+}
+
+

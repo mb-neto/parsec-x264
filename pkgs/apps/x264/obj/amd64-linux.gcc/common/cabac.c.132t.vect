@@ -1,0 +1,2645 @@
+
+;; Function x264_cabac_context_init (x264_cabac_context_init, funcdef_no=115, decl_uid=5047, cgraph_uid=115, symbol_order=165)
+
+
+Analyzing loop at common/cabac.c:836
+common/cabac.c:836:5: note: ===== analyze_loop_nest =====
+common/cabac.c:836:5: note: === vect_analyze_loop_form ===
+common/cabac.c:836:5: note: === get_loop_niters ===
+Analyzing # of iterations of loop 1
+  exit condition [459, + , 4294967295] != 0
+  bounds on difference of bases: -459 ... -459
+  result:
+    # of iterations 459, bounded by 459
+common/cabac.c:836:5: note: === vect_analyze_data_refs ===
+Creating dr for *cabac_context_init_1[i_23][0]
+analyze_innermost: Applying pattern match.pd:49, generic-match.c:3223
+success.
+	base_address: cabac_context_init_1
+	offset from base address: 0
+	constant offset from base address: 0
+	step: 2
+	aligned to: 128
+	base_object: *cabac_context_init_1
+	Access function 0: 0
+	Access function 1: {0, +, 1}_1
+Creating dr for *cabac_context_init_1[i_23][1]
+analyze_innermost: success.
+	base_address: cabac_context_init_1
+	offset from base address: 0
+	constant offset from base address: 1
+	step: 2
+	aligned to: 128
+	base_object: *cabac_context_init_1
+	Access function 0: 1
+	Access function 1: {0, +, 1}_1
+Creating dr for cb_18(D)->state[i_23]
+analyze_innermost: Applying pattern match.pd:114, generic-match.c:6569
+Applying pattern match.pd:49, generic-match.c:3223
+success.
+	base_address: cb_18(D)
+	offset from base address: 0
+	constant offset from base address: 52
+	step: 1
+	aligned to: 128
+	base_object: *cb_18(D)
+	Access function 0: {0, +, 1}_1
+	Access function 1: 416
+common/cabac.c:836:5: note: got vectype for stmt: _8 = *cabac_context_init_1[i_23][0];
+const vector(16) signed char
+common/cabac.c:836:5: note: got vectype for stmt: _13 = *cabac_context_init_1[i_23][1];
+const vector(16) signed char
+common/cabac.c:836:5: note: got vectype for stmt: cb_18(D)->state[i_23] = prephitmp_58;
+vector(16) unsigned char
+common/cabac.c:836:5: note: === vect_analyze_scalar_cycles ===
+common/cabac.c:836:5: note: Analyze phi: i_23 = PHI <i_20(6), 0(4)>
+
+common/cabac.c:836:5: note: Access function of PHI: {0, +, 1}_1
+common/cabac.c:836:5: note: step: 1,  init: 0
+common/cabac.c:836:5: note: Detected induction.
+common/cabac.c:836:5: note: Analyze phi: .MEM_25 = PHI <.MEM_19(6), .MEM_7(D)(4)>
+
+common/cabac.c:836:5: note: Analyze phi: ivtmp_21 = PHI <ivtmp_47(6), 460(4)>
+
+common/cabac.c:836:5: note: Access function of PHI: {460, +, 4294967295}_1
+common/cabac.c:836:5: note: step: 4294967295,  init: 460
+common/cabac.c:836:5: note: Detected induction.
+common/cabac.c:836:5: note: === vect_pattern_recog ===
+common/cabac.c:836:5: note: vect_is_simple_use: operand _9
+common/cabac.c:836:5: note: def_stmt: _9 = (int) _8;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_is_simple_use: operand _8
+common/cabac.c:836:5: note: def_stmt: _8 = *cabac_context_init_1[i_23][0];
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_is_simple_use: operand i_qp_10(D)
+common/cabac.c:836:5: note: def_stmt: GIMPLE_NOP
+common/cabac.c:836:5: note: vect_is_simple_use: operand _11
+common/cabac.c:836:5: note: def_stmt: _11 = _9 * i_qp_10(D);
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_is_simple_use: operand pretmp_57
+common/cabac.c:836:5: note: def_stmt: pretmp_57 = (unsigned char) iftmp.0_16;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_is_simple_use: operand iftmp.0_16
+common/cabac.c:836:5: note: def_stmt: iftmp.0_16 = MIN_EXPR <_15, 126>;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_recog_mixed_size_cond_pattern: detected:
+common/cabac.c:836:5: note: pattern recognized: patt_42 = (unsigned char) patt_43;
+common/cabac.c:836:5: note: === vect_analyze_data_ref_accesses ===
+common/cabac.c:836:5: note: Detected interleaving *cabac_context_init_1[i_23][0] and *cabac_context_init_1[i_23][1]
+common/cabac.c:836:5: note: Detected interleaving of size 2
+common/cabac.c:836:5: note: === vect_mark_stmts_to_be_vectorized ===
+common/cabac.c:836:5: note: init: phi relevant? i_23 = PHI <i_20(6), 0(4)>
+common/cabac.c:836:5: note: init: phi relevant? .MEM_25 = PHI <.MEM_19(6), .MEM_7(D)(4)>
+common/cabac.c:836:5: note: init: phi relevant? ivtmp_21 = PHI <ivtmp_47(6), 460(4)>
+common/cabac.c:836:5: note: init: stmt relevant? # DEBUG i => NULL
+common/cabac.c:836:5: note: init: stmt relevant? _8 = *cabac_context_init_1[i_23][0];
+common/cabac.c:836:5: note: init: stmt relevant? _9 = (int) _8;
+common/cabac.c:836:5: note: init: stmt relevant? _11 = _9 * i_qp_10(D);
+common/cabac.c:836:5: note: init: stmt relevant? _12 = _11 >> 4;
+common/cabac.c:836:5: note: init: stmt relevant? _13 = *cabac_context_init_1[i_23][1];
+common/cabac.c:836:5: note: init: stmt relevant? _14 = (int) _13;
+common/cabac.c:836:5: note: init: stmt relevant? _15 = _12 + _14;
+common/cabac.c:836:5: note: init: stmt relevant? # DEBUG v => NULL
+common/cabac.c:836:5: note: init: stmt relevant? # DEBUG i_min => NULL
+common/cabac.c:836:5: note: init: stmt relevant? # DEBUG i_max => NULL
+common/cabac.c:836:5: note: init: stmt relevant? iftmp.0_16 = MIN_EXPR <_15, 126>;
+common/cabac.c:836:5: note: init: stmt relevant? pretmp_57 = (unsigned char) iftmp.0_16;
+common/cabac.c:836:5: note: init: stmt relevant? prephitmp_58 = _15 > 0 ? pretmp_57 : 1;
+common/cabac.c:836:5: note: init: stmt relevant? # DEBUG v => NULL
+common/cabac.c:836:5: note: init: stmt relevant? # DEBUG i_min => NULL
+common/cabac.c:836:5: note: init: stmt relevant? # DEBUG i_max => NULL
+common/cabac.c:836:5: note: init: stmt relevant? cb_18(D)->state[i_23] = prephitmp_58;
+common/cabac.c:836:5: note: vec_stmt_relevant_p: stmt has vdefs.
+common/cabac.c:836:5: note: mark relevant 4, live 0.
+common/cabac.c:836:5: note: init: stmt relevant? i_20 = i_23 + 1;
+common/cabac.c:836:5: note: init: stmt relevant? # DEBUG i => i_20
+common/cabac.c:836:5: note: init: stmt relevant? # DEBUG i => i_20
+common/cabac.c:836:5: note: init: stmt relevant? ivtmp_47 = ivtmp_21 - 1;
+common/cabac.c:836:5: note: init: stmt relevant? if (ivtmp_47 != 0)
+common/cabac.c:836:5: note: worklist: examine stmt: cb_18(D)->state[i_23] = prephitmp_58;
+common/cabac.c:836:5: note: vect_is_simple_use: operand prephitmp_58
+common/cabac.c:836:5: note: def_stmt: prephitmp_58 = _15 > 0 ? pretmp_57 : 1;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: mark relevant 4, live 0.
+common/cabac.c:836:5: note: last stmt in pattern. don't mark relevant/live.
+common/cabac.c:836:5: note: worklist: examine stmt: patt_42 = (unsigned char) patt_43;
+common/cabac.c:836:5: note: vect_is_simple_use: operand patt_43
+common/cabac.c:836:5: note: def_stmt: patt_43 = _15 > 0 ? iftmp.0_16 : 1;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: mark relevant 4, live 0.
+common/cabac.c:836:5: note: worklist: examine stmt: patt_43 = _15 > 0 ? iftmp.0_16 : 1;
+common/cabac.c:836:5: note: vect_is_simple_use: operand _15
+common/cabac.c:836:5: note: def_stmt: _15 = _12 + _14;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: mark relevant 4, live 0.
+common/cabac.c:836:5: note: vect_is_simple_use: operand 0
+common/cabac.c:836:5: note: vect_is_simple_use: operand iftmp.0_16
+common/cabac.c:836:5: note: def_stmt: iftmp.0_16 = MIN_EXPR <_15, 126>;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: mark relevant 4, live 0.
+common/cabac.c:836:5: note: vect_is_simple_use: operand 1
+common/cabac.c:836:5: note: worklist: examine stmt: iftmp.0_16 = MIN_EXPR <_15, 126>;
+common/cabac.c:836:5: note: vect_is_simple_use: operand _15
+common/cabac.c:836:5: note: def_stmt: _15 = _12 + _14;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: mark relevant 4, live 0.
+common/cabac.c:836:5: note: already marked relevant/live.
+common/cabac.c:836:5: note: worklist: examine stmt: _15 = _12 + _14;
+common/cabac.c:836:5: note: vect_is_simple_use: operand _12
+common/cabac.c:836:5: note: def_stmt: _12 = _11 >> 4;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: mark relevant 4, live 0.
+common/cabac.c:836:5: note: vect_is_simple_use: operand _14
+common/cabac.c:836:5: note: def_stmt: _14 = (int) _13;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: mark relevant 4, live 0.
+common/cabac.c:836:5: note: worklist: examine stmt: _14 = (int) _13;
+common/cabac.c:836:5: note: vect_is_simple_use: operand _13
+common/cabac.c:836:5: note: def_stmt: _13 = *cabac_context_init_1[i_23][1];
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: mark relevant 4, live 0.
+common/cabac.c:836:5: note: worklist: examine stmt: _13 = *cabac_context_init_1[i_23][1];
+common/cabac.c:836:5: note: worklist: examine stmt: _12 = _11 >> 4;
+common/cabac.c:836:5: note: vect_is_simple_use: operand _11
+common/cabac.c:836:5: note: def_stmt: _11 = _9 * i_qp_10(D);
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: mark relevant 4, live 0.
+common/cabac.c:836:5: note: worklist: examine stmt: _11 = _9 * i_qp_10(D);
+common/cabac.c:836:5: note: vect_is_simple_use: operand _9
+common/cabac.c:836:5: note: def_stmt: _9 = (int) _8;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: mark relevant 4, live 0.
+common/cabac.c:836:5: note: vect_is_simple_use: operand i_qp_10(D)
+common/cabac.c:836:5: note: def_stmt: GIMPLE_NOP
+common/cabac.c:836:5: note: worklist: examine stmt: _9 = (int) _8;
+common/cabac.c:836:5: note: vect_is_simple_use: operand _8
+common/cabac.c:836:5: note: def_stmt: _8 = *cabac_context_init_1[i_23][0];
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: mark relevant 4, live 0.
+common/cabac.c:836:5: note: worklist: examine stmt: _8 = *cabac_context_init_1[i_23][0];
+common/cabac.c:836:5: note: === vect_analyze_data_ref_dependences ===
+(compute_affine_dependence
+  stmt_a: _8 = *cabac_context_init_1[i_23][0];
+  stmt_b: _13 = *cabac_context_init_1[i_23][1];
+(analyze_overlapping_iterations 
+  (chrec_a = 0)
+  (chrec_b = 1)
+(analyze_ziv_subscript 
+)
+  (overlap_iterations_a = no dependence)
+  (overlap_iterations_b = no dependence))
+) -> no dependence
+(compute_affine_dependence
+  stmt_a: _8 = *cabac_context_init_1[i_23][0];
+  stmt_b: cb_18(D)->state[i_23] = prephitmp_58;
+) -> dependence analysis failed
+(compute_affine_dependence
+  stmt_a: _13 = *cabac_context_init_1[i_23][1];
+  stmt_b: cb_18(D)->state[i_23] = prephitmp_58;
+) -> dependence analysis failed
+(compute_affine_dependence
+  stmt_a: _8 = *cabac_context_init_1[i_23][0];
+  stmt_b: _8 = *cabac_context_init_1[i_23][0];
+(analyze_overlapping_iterations 
+  (chrec_a = 0)
+  (chrec_b = 0)
+  (overlap_iterations_a = [0])
+  (overlap_iterations_b = [0]))
+(analyze_overlapping_iterations 
+  (chrec_a = {0, +, 1}_1)
+  (chrec_b = {0, +, 1}_1)
+  (overlap_iterations_a = [0])
+  (overlap_iterations_b = [0]))
+)
+(compute_affine_dependence
+  stmt_a: _13 = *cabac_context_init_1[i_23][1];
+  stmt_b: _13 = *cabac_context_init_1[i_23][1];
+(analyze_overlapping_iterations 
+  (chrec_a = 1)
+  (chrec_b = 1)
+  (overlap_iterations_a = [0])
+  (overlap_iterations_b = [0]))
+(analyze_overlapping_iterations 
+  (chrec_a = {0, +, 1}_1)
+  (chrec_b = {0, +, 1}_1)
+  (overlap_iterations_a = [0])
+  (overlap_iterations_b = [0]))
+)
+(compute_affine_dependence
+  stmt_a: cb_18(D)->state[i_23] = prephitmp_58;
+  stmt_b: cb_18(D)->state[i_23] = prephitmp_58;
+(analyze_overlapping_iterations 
+  (chrec_a = {0, +, 1}_1)
+  (chrec_b = {0, +, 1}_1)
+  (overlap_iterations_a = [0])
+  (overlap_iterations_b = [0]))
+(analyze_overlapping_iterations 
+  (chrec_a = 416)
+  (chrec_b = 416)
+  (overlap_iterations_a = [0])
+  (overlap_iterations_b = [0]))
+)
+common/cabac.c:836:5: note: versioning for alias required: can't determine dependence between *cabac_context_init_1[i_23][0] and cb_18(D)->state[i_23]
+common/cabac.c:836:5: note: mark for run-time aliasing test between *cabac_context_init_1[i_23][0] and cb_18(D)->state[i_23]
+common/cabac.c:836:5: note: versioning for alias required: can't determine dependence between *cabac_context_init_1[i_23][1] and cb_18(D)->state[i_23]
+common/cabac.c:836:5: note: mark for run-time aliasing test between *cabac_context_init_1[i_23][1] and cb_18(D)->state[i_23]
+common/cabac.c:836:5: note: === vect_determine_vectorization_factor ===
+common/cabac.c:836:5: note: ==> examining phi: i_23 = PHI <i_20(6), 0(4)>
+
+common/cabac.c:836:5: note: ==> examining phi: .MEM_25 = PHI <.MEM_19(6), .MEM_7(D)(4)>
+
+common/cabac.c:836:5: note: ==> examining phi: ivtmp_21 = PHI <ivtmp_47(6), 460(4)>
+
+common/cabac.c:836:5: note: ==> examining statement: # DEBUG i => NULL
+
+common/cabac.c:836:5: note: skip.
+common/cabac.c:836:5: note: ==> examining statement: _8 = *cabac_context_init_1[i_23][0];
+
+common/cabac.c:836:5: note: get vectype for scalar type:  signed char
+common/cabac.c:836:5: note: vectype: vector(16) signed char
+common/cabac.c:836:5: note: nunits = 16
+common/cabac.c:836:5: note: ==> examining statement: _9 = (int) _8;
+
+common/cabac.c:836:5: note: get vectype for scalar type:  int
+common/cabac.c:836:5: note: vectype: vector(4) int
+common/cabac.c:836:5: note: get vectype for scalar type:  signed char
+common/cabac.c:836:5: note: vectype: vector(16) signed char
+common/cabac.c:836:5: note: nunits = 16
+common/cabac.c:836:5: note: ==> examining statement: _11 = _9 * i_qp_10(D);
+
+common/cabac.c:836:5: note: get vectype for scalar type:  int
+common/cabac.c:836:5: note: vectype: vector(4) int
+common/cabac.c:836:5: note: get vectype for scalar type:  int
+common/cabac.c:836:5: note: vectype: vector(4) int
+common/cabac.c:836:5: note: nunits = 4
+common/cabac.c:836:5: note: ==> examining statement: _12 = _11 >> 4;
+
+common/cabac.c:836:5: note: get vectype for scalar type:  int
+common/cabac.c:836:5: note: vectype: vector(4) int
+common/cabac.c:836:5: note: get vectype for scalar type:  int
+common/cabac.c:836:5: note: vectype: vector(4) int
+common/cabac.c:836:5: note: nunits = 4
+common/cabac.c:836:5: note: ==> examining statement: _13 = *cabac_context_init_1[i_23][1];
+
+common/cabac.c:836:5: note: get vectype for scalar type:  signed char
+common/cabac.c:836:5: note: vectype: vector(16) signed char
+common/cabac.c:836:5: note: nunits = 16
+common/cabac.c:836:5: note: ==> examining statement: _14 = (int) _13;
+
+common/cabac.c:836:5: note: get vectype for scalar type:  int
+common/cabac.c:836:5: note: vectype: vector(4) int
+common/cabac.c:836:5: note: get vectype for scalar type:  signed char
+common/cabac.c:836:5: note: vectype: vector(16) signed char
+common/cabac.c:836:5: note: nunits = 16
+common/cabac.c:836:5: note: ==> examining statement: _15 = _12 + _14;
+
+common/cabac.c:836:5: note: get vectype for scalar type:  int
+common/cabac.c:836:5: note: vectype: vector(4) int
+common/cabac.c:836:5: note: get vectype for scalar type:  int
+common/cabac.c:836:5: note: vectype: vector(4) int
+common/cabac.c:836:5: note: nunits = 4
+common/cabac.c:836:5: note: ==> examining statement: # DEBUG v => NULL
+
+common/cabac.c:836:5: note: skip.
+common/cabac.c:836:5: note: ==> examining statement: # DEBUG i_min => NULL
+
+common/cabac.c:836:5: note: skip.
+common/cabac.c:836:5: note: ==> examining statement: # DEBUG i_max => NULL
+
+common/cabac.c:836:5: note: skip.
+common/cabac.c:836:5: note: ==> examining statement: iftmp.0_16 = MIN_EXPR <_15, 126>;
+
+common/cabac.c:836:5: note: get vectype for scalar type:  int
+common/cabac.c:836:5: note: vectype: vector(4) int
+common/cabac.c:836:5: note: get vectype for scalar type:  int
+common/cabac.c:836:5: note: vectype: vector(4) int
+common/cabac.c:836:5: note: nunits = 4
+common/cabac.c:836:5: note: ==> examining statement: pretmp_57 = (unsigned char) iftmp.0_16;
+
+common/cabac.c:836:5: note: skip.
+common/cabac.c:836:5: note: ==> examining statement: prephitmp_58 = _15 > 0 ? pretmp_57 : 1;
+
+common/cabac.c:836:5: note: ==> examining pattern statement: patt_42 = (unsigned char) patt_43;
+
+common/cabac.c:836:5: note: ==> examining pattern def stmt: patt_43 = _15 > 0 ? iftmp.0_16 : 1;
+
+common/cabac.c:836:5: note: get vectype for scalar type:  int
+common/cabac.c:836:5: note: vectype: vector(4) int
+common/cabac.c:836:5: note: nunits = 4
+common/cabac.c:836:5: note: ==> examining statement: prephitmp_58 = _15 > 0 ? pretmp_57 : 1;
+
+common/cabac.c:836:5: note: ==> examining pattern statement: patt_42 = (unsigned char) patt_43;
+
+common/cabac.c:836:5: note: get vectype for scalar type:  unsigned char
+common/cabac.c:836:5: note: vectype: vector(16) unsigned char
+common/cabac.c:836:5: note: nunits = 16
+common/cabac.c:836:5: note: ==> examining statement: # DEBUG v => NULL
+
+common/cabac.c:836:5: note: skip.
+common/cabac.c:836:5: note: ==> examining statement: # DEBUG i_min => NULL
+
+common/cabac.c:836:5: note: skip.
+common/cabac.c:836:5: note: ==> examining statement: # DEBUG i_max => NULL
+
+common/cabac.c:836:5: note: skip.
+common/cabac.c:836:5: note: ==> examining statement: cb_18(D)->state[i_23] = prephitmp_58;
+
+common/cabac.c:836:5: note: get vectype for scalar type:  uint8_t
+common/cabac.c:836:5: note: vectype: vector(16) unsigned char
+common/cabac.c:836:5: note: nunits = 16
+common/cabac.c:836:5: note: ==> examining statement: i_20 = i_23 + 1;
+
+common/cabac.c:836:5: note: skip.
+common/cabac.c:836:5: note: ==> examining statement: # DEBUG i => i_20
+
+common/cabac.c:836:5: note: skip.
+common/cabac.c:836:5: note: ==> examining statement: # DEBUG i => i_20
+
+common/cabac.c:836:5: note: skip.
+common/cabac.c:836:5: note: ==> examining statement: ivtmp_47 = ivtmp_21 - 1;
+
+common/cabac.c:836:5: note: skip.
+common/cabac.c:836:5: note: ==> examining statement: if (ivtmp_47 != 0)
+
+common/cabac.c:836:5: note: skip.
+common/cabac.c:836:5: note: vectorization factor = 16
+common/cabac.c:836:5: note: === vect_analyze_data_refs_alignment ===
+common/cabac.c:836:5: note: vect_compute_data_ref_alignment:
+common/cabac.c:836:5: note: can't force alignment of ref: *cabac_context_init_1[i_23][0]
+common/cabac.c:836:5: note: vect_compute_data_ref_alignment:
+common/cabac.c:836:5: note: can't force alignment of ref: *cabac_context_init_1[i_23][1]
+common/cabac.c:836:5: note: vect_compute_data_ref_alignment:
+common/cabac.c:836:5: note: misalign = 4 bytes of ref cb_18(D)->state[i_23]
+common/cabac.c:836:5: note: === vect_prune_runtime_alias_test_list ===
+Applying pattern match.pd:49, generic-match.c:3223
+Applying pattern match.pd:49, generic-match.c:3223
+common/cabac.c:836:5: note: found equal ranges *cabac_context_init_1[i_23][0], cb_18(D)->state[i_23] and *cabac_context_init_1[i_23][0], cb_18(D)->state[i_23]
+common/cabac.c:836:5: note: improved number of alias checks from 2 to 1
+common/cabac.c:836:5: note: === vect_enhance_data_refs_alignment ===
+Applying pattern match.pd:49, generic-match.c:3223
+common/cabac.c:836:5: note: vector alignment may not be reachable
+common/cabac.c:836:5: note: vect_can_advance_ivs_p:
+common/cabac.c:836:5: note: Analyze phi: i_23 = PHI <i_20(6), 0(4)>
+
+common/cabac.c:836:5: note: Analyze phi: .MEM_25 = PHI <.MEM_19(6), .MEM_7(D)(4)>
+
+common/cabac.c:836:5: note: virtual phi. skip.
+common/cabac.c:836:5: note: Analyze phi: ivtmp_21 = PHI <ivtmp_47(6), 460(4)>
+
+Applying pattern match.pd:49, generic-match.c:3223
+Applying pattern match.pd:49, generic-match.c:3223
+common/cabac.c:836:5: note: Vectorizing an unaligned access.
+common/cabac.c:836:5: note: Vectorizing an unaligned access.
+common/cabac.c:836:5: note: === vect_analyze_slp ===
+common/cabac.c:836:5: note: === vect_make_slp_decision ===
+common/cabac.c:836:5: note: === vect_detect_hybrid_slp ===
+common/cabac.c:836:5: note: === vect_analyze_loop_operations ===
+common/cabac.c:836:5: note: examining phi: i_23 = PHI <i_20(6), 0(4)>
+
+common/cabac.c:836:5: note: examining phi: .MEM_25 = PHI <.MEM_19(6), .MEM_7(D)(4)>
+
+common/cabac.c:836:5: note: examining phi: ivtmp_21 = PHI <ivtmp_47(6), 460(4)>
+
+common/cabac.c:836:5: note: ==> examining statement: # DEBUG i => NULL
+common/cabac.c:836:5: note: irrelevant.
+common/cabac.c:836:5: note: ==> examining statement: _8 = *cabac_context_init_1[i_23][0];
+common/cabac.c:836:5: note: num. args = 4 (not unary/binary/ternary op).
+common/cabac.c:836:5: note: vect_is_simple_use: operand *cabac_context_init_1[i_23][0]
+common/cabac.c:836:5: note: not ssa-name.
+common/cabac.c:836:5: note: use not simple.
+common/cabac.c:836:5: note: no array mode for V16QI[2]
+common/cabac.c:836:5: note: vect_model_load_cost: strided group_size = 2 .
+Applying pattern match.pd:49, generic-match.c:3223
+common/cabac.c:836:5: note: vect_model_load_cost: unaligned supported by hardware.
+common/cabac.c:836:5: note: vect_model_load_cost: inside_cost = 4, prologue_cost = 0 .
+common/cabac.c:836:5: note: ==> examining statement: _9 = (int) _8;
+common/cabac.c:836:5: note: vect_is_simple_use: operand _8
+common/cabac.c:836:5: note: def_stmt: _8 = *cabac_context_init_1[i_23][0];
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: === vectorizable_conversion ===
+common/cabac.c:836:5: note: vect_model_promotion_demotion_cost: inside_cost = 6, prologue_cost = 0 .
+common/cabac.c:836:5: note: ==> examining statement: _11 = _9 * i_qp_10(D);
+common/cabac.c:836:5: note: vect_is_simple_use: operand _9
+common/cabac.c:836:5: note: def_stmt: _9 = (int) _8;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_is_simple_use: operand i_qp_10(D)
+common/cabac.c:836:5: note: def_stmt: GIMPLE_NOP
+common/cabac.c:836:5: note: === vectorizable_operation ===
+common/cabac.c:836:5: note: vect_model_simple_cost: inside_cost = 4, prologue_cost = 1 .
+common/cabac.c:836:5: note: ==> examining statement: _12 = _11 >> 4;
+common/cabac.c:836:5: note: vect_is_simple_use: operand _11
+common/cabac.c:836:5: note: def_stmt: _11 = _9 * i_qp_10(D);
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_is_simple_use: operand 4
+common/cabac.c:836:5: note: vector/scalar shift/rotate found.
+common/cabac.c:836:5: note: === vectorizable_shift ===
+common/cabac.c:836:5: note: vect_model_simple_cost: inside_cost = 4, prologue_cost = 1 .
+common/cabac.c:836:5: note: ==> examining statement: _13 = *cabac_context_init_1[i_23][1];
+common/cabac.c:836:5: note: num. args = 4 (not unary/binary/ternary op).
+common/cabac.c:836:5: note: vect_is_simple_use: operand *cabac_context_init_1[i_23][1]
+common/cabac.c:836:5: note: not ssa-name.
+common/cabac.c:836:5: note: use not simple.
+common/cabac.c:836:5: note: no array mode for V16QI[2]
+Applying pattern match.pd:49, generic-match.c:3223
+common/cabac.c:836:5: note: vect_model_load_cost: unaligned supported by hardware.
+common/cabac.c:836:5: note: vect_model_load_cost: inside_cost = 2, prologue_cost = 0 .
+common/cabac.c:836:5: note: ==> examining statement: _14 = (int) _13;
+common/cabac.c:836:5: note: vect_is_simple_use: operand _13
+common/cabac.c:836:5: note: def_stmt: _13 = *cabac_context_init_1[i_23][1];
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: === vectorizable_conversion ===
+common/cabac.c:836:5: note: vect_model_promotion_demotion_cost: inside_cost = 6, prologue_cost = 0 .
+common/cabac.c:836:5: note: ==> examining statement: _15 = _12 + _14;
+common/cabac.c:836:5: note: vect_is_simple_use: operand _12
+common/cabac.c:836:5: note: def_stmt: _12 = _11 >> 4;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_is_simple_use: operand _14
+common/cabac.c:836:5: note: def_stmt: _14 = (int) _13;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: === vectorizable_operation ===
+common/cabac.c:836:5: note: vect_model_simple_cost: inside_cost = 4, prologue_cost = 0 .
+common/cabac.c:836:5: note: ==> examining statement: # DEBUG v => NULL
+common/cabac.c:836:5: note: irrelevant.
+common/cabac.c:836:5: note: ==> examining statement: # DEBUG i_min => NULL
+common/cabac.c:836:5: note: irrelevant.
+common/cabac.c:836:5: note: ==> examining statement: # DEBUG i_max => NULL
+common/cabac.c:836:5: note: irrelevant.
+common/cabac.c:836:5: note: ==> examining statement: iftmp.0_16 = MIN_EXPR <_15, 126>;
+common/cabac.c:836:5: note: vect_is_simple_use: operand _15
+common/cabac.c:836:5: note: def_stmt: _15 = _12 + _14;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_is_simple_use: operand 126
+common/cabac.c:836:5: note: === vectorizable_operation ===
+common/cabac.c:836:5: note: vect_model_simple_cost: inside_cost = 4, prologue_cost = 1 .
+common/cabac.c:836:5: note: ==> examining statement: pretmp_57 = (unsigned char) iftmp.0_16;
+common/cabac.c:836:5: note: irrelevant.
+common/cabac.c:836:5: note: ==> examining statement: prephitmp_58 = _15 > 0 ? pretmp_57 : 1;
+common/cabac.c:836:5: note: ==> examining pattern statement: patt_42 = (unsigned char) patt_43;
+common/cabac.c:836:5: note: ==> examining pattern def statement: patt_43 = _15 > 0 ? iftmp.0_16 : 1;
+common/cabac.c:836:5: note: ==> examining statement: patt_43 = _15 > 0 ? iftmp.0_16 : 1;
+common/cabac.c:836:5: note: vect_is_simple_use: operand _15 > 0
+common/cabac.c:836:5: note: not ssa-name.
+common/cabac.c:836:5: note: use not simple.
+common/cabac.c:836:5: note: vect_is_simple_use: operand _15
+common/cabac.c:836:5: note: def_stmt: _15 = _12 + _14;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_is_simple_use: operand iftmp.0_16
+common/cabac.c:836:5: note: def_stmt: iftmp.0_16 = MIN_EXPR <_15, 126>;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_is_simple_use: operand patt_43
+common/cabac.c:836:5: note: def_stmt: patt_43 = _15 > 0 ? iftmp.0_16 : 1;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: === vectorizable_conversion ===
+common/cabac.c:836:5: note: vect_model_promotion_demotion_cost: inside_cost = 3, prologue_cost = 0 .
+common/cabac.c:836:5: note: ==> examining statement: # DEBUG v => NULL
+common/cabac.c:836:5: note: irrelevant.
+common/cabac.c:836:5: note: ==> examining statement: # DEBUG i_min => NULL
+common/cabac.c:836:5: note: irrelevant.
+common/cabac.c:836:5: note: ==> examining statement: # DEBUG i_max => NULL
+common/cabac.c:836:5: note: irrelevant.
+common/cabac.c:836:5: note: ==> examining statement: cb_18(D)->state[i_23] = prephitmp_58;
+common/cabac.c:836:5: note: vect_is_simple_use: operand prephitmp_58
+common/cabac.c:836:5: note: def_stmt: prephitmp_58 = _15 > 0 ? pretmp_57 : 1;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_model_store_cost: unaligned supported by hardware.
+common/cabac.c:836:5: note: vect_model_store_cost: inside_cost = 2, prologue_cost = 0 .
+common/cabac.c:836:5: note: ==> examining statement: i_20 = i_23 + 1;
+common/cabac.c:836:5: note: irrelevant.
+common/cabac.c:836:5: note: ==> examining statement: # DEBUG i => i_20
+common/cabac.c:836:5: note: irrelevant.
+common/cabac.c:836:5: note: ==> examining statement: # DEBUG i => i_20
+common/cabac.c:836:5: note: irrelevant.
+common/cabac.c:836:5: note: ==> examining statement: ivtmp_47 = ivtmp_21 - 1;
+common/cabac.c:836:5: note: irrelevant.
+common/cabac.c:836:5: note: ==> examining statement: if (ivtmp_47 != 0)
+common/cabac.c:836:5: note: irrelevant.
+common/cabac.c:836:5: note: vectorization_factor = 16, niters = 460
+common/cabac.c:836:5: note: === vect_update_slp_costs_according_to_vf ===
+cost model: Adding cost of checks for loop versioning aliasing.
+common/cabac.c:836:5: note: Cost model analysis: 
+  Vector inside of loop cost: 39
+  Vector prologue cost: 7
+  Vector epilogue cost: 120
+  Scalar iteration cost: 10
+  Scalar outside cost: 1
+  Vector outside cost: 127
+  prologue iterations: 0
+  epilogue iterations: 12
+  Calculated minimum iters for profitability: 13
+common/cabac.c:836:5: note:   Runtime profitability threshold = 15
+common/cabac.c:836:5: note:   Static estimate profitability threshold = 15
+common/cabac.c:836:5: note: epilog loop required
+common/cabac.c:836:5: note: vect_can_advance_ivs_p:
+common/cabac.c:836:5: note: Analyze phi: i_23 = PHI <i_20(6), 0(4)>
+
+common/cabac.c:836:5: note: Analyze phi: .MEM_25 = PHI <.MEM_19(6), .MEM_7(D)(4)>
+
+common/cabac.c:836:5: note: virtual phi. skip.
+common/cabac.c:836:5: note: Analyze phi: ivtmp_21 = PHI <ivtmp_47(6), 460(4)>
+
+common/cabac.c:836:5: note: loop vectorized
+common/cabac.c:836:5: note: === vec_transform_loop ===
+Applying pattern match.pd:49, generic-match.c:4015
+common/cabac.c:836:5: note: create runtime check for data references *cabac_context_init_1[i_23][0] and cb_18(D)->state[i_23]
+Applying pattern match.pd:400, generic-match.c:4039
+common/cabac.c:836:5: note: created 1 versioning for alias checks.
+gimple_simplified to _53 = cabac_context_init_1 >= _50;
+Applying pattern match.pd:318, gimple-match.c:17
+Applying pattern match.pd:318, generic-match.c:18
+common/cabac.c:836:5: note: loop versioned for vectorization because of possible aliasing
+
+Updating SSA:
+creating PHI node in block #7 for .MEM_19
+Registering new PHI nodes in block #10
+Registering new PHI nodes in block #11
+Registering new PHI nodes in block #5
+Updating SSA information for statement _8 = *cabac_context_init_1[i_23][0];
+Updating SSA information for statement _9 = (int) _8;
+Updating SSA information for statement _11 = _9 * i_qp_10(D);
+Updating SSA information for statement _12 = _11 >> 4;
+Updating SSA information for statement _13 = *cabac_context_init_1[i_23][1];
+Updating SSA information for statement _14 = (int) _13;
+Updating SSA information for statement _15 = _12 + _14;
+Updating SSA information for statement iftmp.0_16 = MIN_EXPR <_15, 126>;
+Updating SSA information for statement pretmp_57 = (unsigned char) iftmp.0_16;
+Updating SSA information for statement prephitmp_58 = _15 > 0 ? pretmp_57 : 1;
+Updating SSA information for statement cb_18(D)->state[i_23] = prephitmp_58;
+Updating SSA information for statement i_20 = i_23 + 1;
+Updating SSA information for statement # DEBUG i => i_20
+Updating SSA information for statement # DEBUG i => i_20
+Updating SSA information for statement ivtmp_47 = ivtmp_21 - 1;
+Updating SSA information for statement if (ivtmp_47 != 0)
+Registering new PHI nodes in block #6
+Registering new PHI nodes in block #13
+Registering new PHI nodes in block #12
+Registering new PHI nodes in block #8
+Updating SSA information for statement _37 = *cabac_context_init_1[i_23][0];
+Updating SSA information for statement _36 = (int) _8;
+Updating SSA information for statement _35 = _9 * i_qp_10(D);
+Updating SSA information for statement _34 = _11 >> 4;
+Updating SSA information for statement _33 = *cabac_context_init_1[i_23][1];
+Updating SSA information for statement _32 = (int) _13;
+Updating SSA information for statement _31 = _12 + _14;
+Updating SSA information for statement iftmp.0_30 = MIN_EXPR <_15, 126>;
+Updating SSA information for statement pretmp_29 = (unsigned char) iftmp.0_16;
+Updating SSA information for statement prephitmp_28 = _15 > 0 ? pretmp_57 : 1;
+Updating SSA information for statement cb_18(D)->state[i_23] = prephitmp_58;
+Updating SSA information for statement i_26 = i_23 + 1;
+Updating SSA information for statement # DEBUG i => i_20
+Updating SSA information for statement # DEBUG i => i_20
+Updating SSA information for statement ivtmp_24 = ivtmp_21 - 1;
+Updating SSA information for statement if (ivtmp_47 != 0)
+Registering new PHI nodes in block #9
+Registering new PHI nodes in block #7
+Updating SSA information for statement return;
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+.MEM_22 -> { .MEM_19 }
+ivtmp_24 -> { ivtmp_47 }
+i_26 -> { i_20 }
+.MEM_27 -> { .MEM_19 }
+prephitmp_28 -> { prephitmp_58 }
+pretmp_29 -> { pretmp_57 }
+iftmp.0_30 -> { iftmp.0_16 }
+_31 -> { _15 }
+_32 -> { _14 }
+_33 -> { _13 }
+_34 -> { _12 }
+_35 -> { _11 }
+_36 -> { _9 }
+_37 -> { _8 }
+ivtmp_38 -> { ivtmp_21 }
+.MEM_39 -> { .MEM_25 }
+i_40 -> { i_23 }
+Incremental SSA update started at block: 10
+Number of blocks in CFG: 14
+Number of blocks to update: 8 ( 57%)
+Affected blocks: 5 6 7 8 9 11 12 13
+
+
+common/cabac.c:836:5: note: === vect_do_peeling_for_loop_bound ===
+Removing basic block 14
+basic block 14, loop depth 0
+ pred:       11
+ succ:      
+
+
+;; Scaling loop 1 with scale 0.666600, bounding iterations to 0 from guessed 148
+;; guessed iterations are now 99
+;; Scaling loop 3 with scale 0.777800, bounding iterations to 16 from guessed 127
+;; guessed iterations are now 15
+common/cabac.c:836:5: note: vect_update_ivs_after_vectorizer: phi: i_23 = PHI <i_20(6), 0(18)>
+
+common/cabac.c:836:5: note: vect_update_ivs_after_vectorizer: phi: .MEM_25 = PHI <.MEM_19(6), .MEM_7(D)(18)>
+
+common/cabac.c:836:5: note: virtual phi. skip.
+common/cabac.c:836:5: note: vect_update_ivs_after_vectorizer: phi: ivtmp_21 = PHI <ivtmp_47(6), 460(18)>
+
+Setting upper bound of nb iterations for epilogue loop to 14
+common/cabac.c:836:5: note: ------>vectorizing phi: i_23 = PHI <i_20(6), 0(22)>
+
+common/cabac.c:836:5: note: ------>vectorizing phi: .MEM_25 = PHI <.MEM_19(6), .MEM_7(D)(22)>
+
+common/cabac.c:836:5: note: ------>vectorizing phi: ivtmp_21 = PHI <ivtmp_47(6), 460(22)>
+
+common/cabac.c:836:5: note: ------>vectorizing statement: # DEBUG i => NULL
+
+common/cabac.c:836:5: note: ------>vectorizing statement: _8 = *cabac_context_init_1[i_23][0];
+
+common/cabac.c:836:5: note: transform statement.
+common/cabac.c:836:5: note: no array mode for V16QI[2]
+common/cabac.c:836:5: note: transform load. ncopies = 1
+Applying pattern match.pd:49, generic-match.c:3223
+common/cabac.c:836:5: note: create vector_type-pointer variable to type: const vector(16) signed char  vectorizing an array ref: *cabac_context_init_1
+Applying pattern match.pd:49, generic-match.c:4015
+common/cabac.c:836:5: note: created vectp_cabac_context_init.16_74
+common/cabac.c:836:5: note: add new stmt: vect__8.17_77 = MEM[(const int8_t[460][2] *)vectp_cabac_context_init.15_75];
+common/cabac.c:836:5: note: add new stmt: vectp_cabac_context_init.15_78 = vectp_cabac_context_init.15_75 + 16;
+common/cabac.c:836:5: note: add new stmt: vect__8.18_79 = MEM[(const int8_t[460][2] *)vectp_cabac_context_init.15_78];
+common/cabac.c:836:5: note: add new stmt: vect_perm_even_80 = VEC_PERM_EXPR <vect__8.17_77, vect__8.18_79, { 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30 }>;
+common/cabac.c:836:5: note: add new stmt: vect_perm_odd_81 = VEC_PERM_EXPR <vect__8.17_77, vect__8.18_79, { 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31 }>;
+common/cabac.c:836:5: note: ------>vectorizing statement: _9 = (int) _8;
+
+common/cabac.c:836:5: note: multiple-types.
+common/cabac.c:836:5: note: transform statement.
+common/cabac.c:836:5: note: vect_is_simple_use: operand _8
+common/cabac.c:836:5: note: def_stmt: _8 = *cabac_context_init_1[i_23][0];
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: transform conversion. ncopies = 1.
+common/cabac.c:836:5: note: vect_get_vec_def_for_operand: _8
+common/cabac.c:836:5: note: vect_is_simple_use: operand _8
+common/cabac.c:836:5: note: def_stmt: _8 = *cabac_context_init_1[i_23][0];
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: def =  _8
+  def_stmt =  _8 = *cabac_context_init_1[i_23][0];
+common/cabac.c:836:5: note: add new stmt: vect__9.20_82 = [vec_unpack_lo_expr] vect_perm_even_80;
+common/cabac.c:836:5: note: add new stmt: vect__9.20_83 = [vec_unpack_hi_expr] vect_perm_even_80;
+common/cabac.c:836:5: note: add new stmt: vect__9.19_84 = [vec_unpack_lo_expr] vect__9.20_82;
+common/cabac.c:836:5: note: add new stmt: vect__9.19_85 = [vec_unpack_hi_expr] vect__9.20_82;
+common/cabac.c:836:5: note: add new stmt: vect__9.19_86 = [vec_unpack_lo_expr] vect__9.20_83;
+common/cabac.c:836:5: note: add new stmt: vect__9.19_87 = [vec_unpack_hi_expr] vect__9.20_83;
+common/cabac.c:836:5: note: ------>vectorizing statement: _11 = _9 * i_qp_10(D);
+
+common/cabac.c:836:5: note: multiple-types.
+common/cabac.c:836:5: note: transform statement.
+common/cabac.c:836:5: note: vect_is_simple_use: operand _9
+common/cabac.c:836:5: note: def_stmt: _9 = (int) _8;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_is_simple_use: operand i_qp_10(D)
+common/cabac.c:836:5: note: def_stmt: GIMPLE_NOP
+common/cabac.c:836:5: note: transform binary/unary operation.
+common/cabac.c:836:5: note: vect_get_vec_def_for_operand: _9
+common/cabac.c:836:5: note: vect_is_simple_use: operand _9
+common/cabac.c:836:5: note: def_stmt: _9 = (int) _8;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: def =  _9
+  def_stmt =  _9 = (int) _8;
+common/cabac.c:836:5: note: vect_get_vec_def_for_operand: i_qp_10(D)
+common/cabac.c:836:5: note: vect_is_simple_use: operand i_qp_10(D)
+common/cabac.c:836:5: note: def_stmt: GIMPLE_NOP
+common/cabac.c:836:5: note: def =  i_qp_10(D)
+  def_stmt =  GIMPLE_NOP
+common/cabac.c:836:5: note: Create vector_inv.
+common/cabac.c:836:5: note: created new init_stmt: vect_cst_.22_88 = {i_qp_10(D), i_qp_10(D), i_qp_10(D), i_qp_10(D)};
+common/cabac.c:836:5: note: add new stmt: vect__11.21_89 = vect__9.19_84 * vect_cst_.22_88;
+common/cabac.c:836:5: note: add new stmt: vect__11.21_90 = vect__9.19_85 * vect_cst_.22_88;
+common/cabac.c:836:5: note: add new stmt: vect__11.21_91 = vect__9.19_86 * vect_cst_.22_88;
+common/cabac.c:836:5: note: add new stmt: vect__11.21_92 = vect__9.19_87 * vect_cst_.22_88;
+common/cabac.c:836:5: note: ------>vectorizing statement: _12 = _11 >> 4;
+
+common/cabac.c:836:5: note: multiple-types.
+common/cabac.c:836:5: note: transform statement.
+common/cabac.c:836:5: note: vect_is_simple_use: operand _11
+common/cabac.c:836:5: note: def_stmt: _11 = _9 * i_qp_10(D);
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_is_simple_use: operand 4
+common/cabac.c:836:5: note: vector/scalar shift/rotate found.
+common/cabac.c:836:5: note: transform binary/unary operation.
+common/cabac.c:836:5: note: operand 1 using scalar mode.
+common/cabac.c:836:5: note: vect_get_vec_def_for_operand: _11
+common/cabac.c:836:5: note: vect_is_simple_use: operand _11
+common/cabac.c:836:5: note: def_stmt: _11 = _9 * i_qp_10(D);
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: def =  _11
+  def_stmt =  _11 = _9 * i_qp_10(D);
+common/cabac.c:836:5: note: add new stmt: vect__12.23_93 = vect__11.21_89 >> 4;
+common/cabac.c:836:5: note: add new stmt: vect__12.23_94 = vect__11.21_90 >> 4;
+common/cabac.c:836:5: note: add new stmt: vect__12.23_95 = vect__11.21_91 >> 4;
+common/cabac.c:836:5: note: add new stmt: vect__12.23_96 = vect__11.21_92 >> 4;
+common/cabac.c:836:5: note: ------>vectorizing statement: _13 = *cabac_context_init_1[i_23][1];
+
+common/cabac.c:836:5: note: transform statement.
+common/cabac.c:836:5: note: no array mode for V16QI[2]
+common/cabac.c:836:5: note: transform load. ncopies = 1
+common/cabac.c:836:5: note: ------>vectorizing statement: _14 = (int) _13;
+
+common/cabac.c:836:5: note: multiple-types.
+common/cabac.c:836:5: note: transform statement.
+common/cabac.c:836:5: note: vect_is_simple_use: operand _13
+common/cabac.c:836:5: note: def_stmt: _13 = *cabac_context_init_1[i_23][1];
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: transform conversion. ncopies = 1.
+common/cabac.c:836:5: note: vect_get_vec_def_for_operand: _13
+common/cabac.c:836:5: note: vect_is_simple_use: operand _13
+common/cabac.c:836:5: note: def_stmt: _13 = *cabac_context_init_1[i_23][1];
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: def =  _13
+  def_stmt =  _13 = *cabac_context_init_1[i_23][1];
+common/cabac.c:836:5: note: add new stmt: vect__14.25_97 = [vec_unpack_lo_expr] vect_perm_odd_81;
+common/cabac.c:836:5: note: add new stmt: vect__14.25_98 = [vec_unpack_hi_expr] vect_perm_odd_81;
+common/cabac.c:836:5: note: add new stmt: vect__14.24_99 = [vec_unpack_lo_expr] vect__14.25_97;
+common/cabac.c:836:5: note: add new stmt: vect__14.24_100 = [vec_unpack_hi_expr] vect__14.25_97;
+common/cabac.c:836:5: note: add new stmt: vect__14.24_101 = [vec_unpack_lo_expr] vect__14.25_98;
+common/cabac.c:836:5: note: add new stmt: vect__14.24_102 = [vec_unpack_hi_expr] vect__14.25_98;
+common/cabac.c:836:5: note: ------>vectorizing statement: _15 = _12 + _14;
+
+common/cabac.c:836:5: note: multiple-types.
+common/cabac.c:836:5: note: transform statement.
+common/cabac.c:836:5: note: vect_is_simple_use: operand _12
+common/cabac.c:836:5: note: def_stmt: _12 = _11 >> 4;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_is_simple_use: operand _14
+common/cabac.c:836:5: note: def_stmt: _14 = (int) _13;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: transform binary/unary operation.
+common/cabac.c:836:5: note: vect_get_vec_def_for_operand: _12
+common/cabac.c:836:5: note: vect_is_simple_use: operand _12
+common/cabac.c:836:5: note: def_stmt: _12 = _11 >> 4;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: def =  _12
+  def_stmt =  _12 = _11 >> 4;
+common/cabac.c:836:5: note: vect_get_vec_def_for_operand: _14
+common/cabac.c:836:5: note: vect_is_simple_use: operand _14
+common/cabac.c:836:5: note: def_stmt: _14 = (int) _13;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: def =  _14
+  def_stmt =  _14 = (int) _13;
+common/cabac.c:836:5: note: add new stmt: vect__15.26_103 = vect__12.23_93 + vect__14.24_99;
+common/cabac.c:836:5: note: add new stmt: vect__15.26_104 = vect__12.23_94 + vect__14.24_100;
+common/cabac.c:836:5: note: add new stmt: vect__15.26_105 = vect__12.23_95 + vect__14.24_101;
+common/cabac.c:836:5: note: add new stmt: vect__15.26_106 = vect__12.23_96 + vect__14.24_102;
+common/cabac.c:836:5: note: ------>vectorizing statement: # DEBUG v => NULL
+
+common/cabac.c:836:5: note: ------>vectorizing statement: # DEBUG i_min => NULL
+
+common/cabac.c:836:5: note: ------>vectorizing statement: # DEBUG i_max => NULL
+
+common/cabac.c:836:5: note: ------>vectorizing statement: iftmp.0_16 = MIN_EXPR <_15, 126>;
+
+common/cabac.c:836:5: note: multiple-types.
+common/cabac.c:836:5: note: transform statement.
+common/cabac.c:836:5: note: vect_is_simple_use: operand _15
+common/cabac.c:836:5: note: def_stmt: _15 = _12 + _14;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_is_simple_use: operand 126
+common/cabac.c:836:5: note: transform binary/unary operation.
+common/cabac.c:836:5: note: vect_get_vec_def_for_operand: _15
+common/cabac.c:836:5: note: vect_is_simple_use: operand _15
+common/cabac.c:836:5: note: def_stmt: _15 = _12 + _14;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: def =  _15
+  def_stmt =  _15 = _12 + _14;
+common/cabac.c:836:5: note: vect_get_vec_def_for_operand: 126
+common/cabac.c:836:5: note: vect_is_simple_use: operand 126
+common/cabac.c:836:5: note: Create vector_cst. nunits = 4
+common/cabac.c:836:5: note: created new init_stmt: vect_cst_.28_107 = { 126, 126, 126, 126 };
+common/cabac.c:836:5: note: add new stmt: vect_iftmp.27_108 = MIN_EXPR <vect__15.26_103, vect_cst_.28_107>;
+common/cabac.c:836:5: note: add new stmt: vect_iftmp.27_109 = MIN_EXPR <vect__15.26_104, vect_cst_.28_107>;
+common/cabac.c:836:5: note: add new stmt: vect_iftmp.27_110 = MIN_EXPR <vect__15.26_105, vect_cst_.28_107>;
+common/cabac.c:836:5: note: add new stmt: vect_iftmp.27_111 = MIN_EXPR <vect__15.26_106, vect_cst_.28_107>;
+common/cabac.c:836:5: note: ------>vectorizing statement: pretmp_57 = (unsigned char) iftmp.0_16;
+
+common/cabac.c:836:5: note: ------>vectorizing statement: prephitmp_58 = _15 > 0 ? pretmp_57 : 1;
+
+common/cabac.c:836:5: note: ==> vectorizing pattern def stmt: patt_43 = _15 > 0 ? iftmp.0_16 : 1;
+
+common/cabac.c:836:5: note: multiple-types.
+common/cabac.c:836:5: note: transform statement.
+common/cabac.c:836:5: note: vect_is_simple_use: operand _15
+common/cabac.c:836:5: note: def_stmt: _15 = _12 + _14;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_is_simple_use: operand iftmp.0_16
+common/cabac.c:836:5: note: def_stmt: iftmp.0_16 = MIN_EXPR <_15, 126>;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_get_vec_def_for_operand: _15
+common/cabac.c:836:5: note: vect_is_simple_use: operand _15
+common/cabac.c:836:5: note: def_stmt: _15 = _12 + _14;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: def =  _15
+  def_stmt =  _15 = _12 + _14;
+common/cabac.c:836:5: note: vect_is_simple_use: operand _15
+common/cabac.c:836:5: note: def_stmt: _15 = _12 + _14;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_get_vec_def_for_operand: 0
+common/cabac.c:836:5: note: vect_is_simple_use: operand 0
+common/cabac.c:836:5: note: Create vector_cst. nunits = 4
+common/cabac.c:836:5: note: created new init_stmt: vect_cst_.30_112 = { 0, 0, 0, 0 };
+common/cabac.c:836:5: note: vect_is_simple_use: operand 0
+common/cabac.c:836:5: note: vect_get_vec_def_for_operand: iftmp.0_16
+common/cabac.c:836:5: note: vect_is_simple_use: operand iftmp.0_16
+common/cabac.c:836:5: note: def_stmt: iftmp.0_16 = MIN_EXPR <_15, 126>;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: def =  iftmp.0_16
+  def_stmt =  iftmp.0_16 = MIN_EXPR <_15, 126>;
+common/cabac.c:836:5: note: vect_is_simple_use: operand iftmp.0_16
+common/cabac.c:836:5: note: def_stmt: iftmp.0_16 = MIN_EXPR <_15, 126>;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: vect_get_vec_def_for_operand: 1
+common/cabac.c:836:5: note: vect_is_simple_use: operand 1
+common/cabac.c:836:5: note: Create vector_cst. nunits = 4
+common/cabac.c:836:5: note: created new init_stmt: vect_cst_.31_113 = { 1, 1, 1, 1 };
+common/cabac.c:836:5: note: vect_is_simple_use: operand 1
+common/cabac.c:836:5: note: add new stmt: vect_patt_43.29_114 = VEC_COND_EXPR <vect__15.26_103 > vect_cst_.30_112, vect_iftmp.27_108, vect_cst_.31_113>;
+common/cabac.c:836:5: note: add new stmt: vect_patt_43.29_115 = VEC_COND_EXPR <vect__15.26_104 > vect_cst_.30_112, vect_iftmp.27_109, vect_cst_.31_113>;
+common/cabac.c:836:5: note: add new stmt: vect_patt_43.29_116 = VEC_COND_EXPR <vect__15.26_105 > vect_cst_.30_112, vect_iftmp.27_110, vect_cst_.31_113>;
+common/cabac.c:836:5: note: add new stmt: vect_patt_43.29_117 = VEC_COND_EXPR <vect__15.26_106 > vect_cst_.30_112, vect_iftmp.27_111, vect_cst_.31_113>;
+common/cabac.c:836:5: note: ------>vectorizing statement: prephitmp_58 = _15 > 0 ? pretmp_57 : 1;
+
+common/cabac.c:836:5: note: transform statement.
+common/cabac.c:836:5: note: vect_is_simple_use: operand patt_43
+common/cabac.c:836:5: note: def_stmt: patt_43 = _15 > 0 ? iftmp.0_16 : 1;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: transform conversion. ncopies = 1.
+common/cabac.c:836:5: note: vect_get_vec_def_for_operand: patt_43
+common/cabac.c:836:5: note: vect_is_simple_use: operand patt_43
+common/cabac.c:836:5: note: def_stmt: patt_43 = _15 > 0 ? iftmp.0_16 : 1;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: def =  patt_43
+  def_stmt =  patt_43 = _15 > 0 ? iftmp.0_16 : 1;
+common/cabac.c:836:5: note: add new stmt: vect_patt_42.33_118 = VEC_PACK_TRUNC_EXPR <vect_patt_43.29_114, vect_patt_43.29_115>;
+common/cabac.c:836:5: note: add new stmt: vect_patt_42.33_119 = VEC_PACK_TRUNC_EXPR <vect_patt_43.29_116, vect_patt_43.29_117>;
+common/cabac.c:836:5: note: add new stmt: vect_patt_42.32_120 = VEC_PACK_TRUNC_EXPR <vect_patt_42.33_118, vect_patt_42.33_119>;
+common/cabac.c:836:5: note: ------>vectorizing statement: # DEBUG v => NULL
+
+common/cabac.c:836:5: note: ------>vectorizing statement: # DEBUG i_min => NULL
+
+common/cabac.c:836:5: note: ------>vectorizing statement: # DEBUG i_max => NULL
+
+common/cabac.c:836:5: note: ------>vectorizing statement: cb_18(D)->state[i_23] = prephitmp_58;
+
+common/cabac.c:836:5: note: transform statement.
+common/cabac.c:836:5: note: vect_is_simple_use: operand prephitmp_58
+common/cabac.c:836:5: note: def_stmt: prephitmp_58 = _15 > 0 ? pretmp_57 : 1;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: transform store. ncopies = 1
+common/cabac.c:836:5: note: vect_get_vec_def_for_operand: prephitmp_58
+common/cabac.c:836:5: note: vect_is_simple_use: operand prephitmp_58
+common/cabac.c:836:5: note: def_stmt: prephitmp_58 = _15 > 0 ? pretmp_57 : 1;
+common/cabac.c:836:5: note: type of def: 3.
+common/cabac.c:836:5: note: def =  prephitmp_58
+  def_stmt =  prephitmp_58 = _15 > 0 ? pretmp_57 : 1;
+common/cabac.c:836:5: note: create vector_type-pointer variable to type: vector(16) unsigned char  vectorizing a record based array ref: *cb_18(D)
+common/cabac.c:836:5: note: created vectp_cb.35_121
+common/cabac.c:836:5: note: add new stmt: MEM[(uint8_t[460] *)vectp_cb.34_122] = vect_patt_42.32_120;
+common/cabac.c:836:5: note: ------>vectorizing statement: i_20 = i_23 + 1;
+
+common/cabac.c:836:5: note: ------>vectorizing statement: # DEBUG i => i_20
+
+common/cabac.c:836:5: note: ------>vectorizing statement: # DEBUG i => i_20
+
+common/cabac.c:836:5: note: ------>vectorizing statement: ivtmp_47 = ivtmp_21 - 1;
+
+common/cabac.c:836:5: note: ------>vectorizing statement: vectp_cabac_context_init.15_76 = vectp_cabac_context_init.15_78 + 16;
+
+common/cabac.c:836:5: note: ------>vectorizing statement: vectp_cb.34_123 = vectp_cb.34_122 + 16;
+
+common/cabac.c:836:5: note: ------>vectorizing statement: if (ivtmp_47 != 0)
+
+
+loop at common/cabac.c:838: if (ivtmp_125 < 28)
+
+;; Scaling loop 1 with scale 0.062500, bounding iterations to 28 from guessed 99
+;; guessed iterations are now 7
+common/cabac.c:836:5: note: LOOP VECTORIZED
+
+common/cabac.c:822:6: note: vectorized 1 loops in function.
+Merging blocks 4 and 10
+Removing basic block 11
+basic block 11, loop depth 0
+ pred:      
+ succ:       18
+
+
+Removing basic block 18
+basic block 18, loop depth 0
+ pred:      
+ succ:       22
+
+
+Merging blocks 19 and 17
+Merging blocks 21 and 20
+Merging blocks 21 and 13
+x264_cabac_context_init (struct x264_cabac_t * cb, int i_slice_type, int i_qp, int i_model)
+{
+  vector(16) unsigned char * vectp_cb.35;
+  vector(16) unsigned char * vectp_cb.34;
+  vector(8) short int vect_patt_42.33;
+  vector(16) unsigned char vect_patt_42.32;
+  vector(4) int vect_cst_.31;
+  vector(4) int vect_cst_.30;
+  vector(4) int vect_patt_43.29;
+  vector(4) int vect_cst_.28;
+  vector(4) int vect_iftmp.27;
+  vector(4) int vect__15.26;
+  vector(8) short int vect__14.25;
+  vector(4) int vect__14.24;
+  vector(4) int vect__12.23;
+  vector(4) int vect_cst_.22;
+  vector(4) int vect__11.21;
+  vector(8) short int vect__9.20;
+  vector(4) int vect__9.19;
+  const vector(16) signed char vect__8.18;
+  const vector(16) signed char vect__8.17;
+  const vector(16) signed char * vectp_cabac_context_init.16;
+  const vector(16) signed char * vectp_cabac_context_init.15;
+  unsigned int tmp.14;
+  int tmp.13;
+  int i;
+  const int8_t[460][2] * cabac_context_init;
+  signed char _8;
+  int _9;
+  int _11;
+  int _12;
+  signed char _13;
+  int _14;
+  int _15;
+  int iftmp.0_16;
+  int _17;
+  unsigned int ivtmp_19;
+  unsigned int ivtmp_21;
+  unsigned int ivtmp_24;
+  unsigned char prephitmp_28;
+  unsigned char pretmp_29;
+  int iftmp.0_30;
+  int _31;
+  int _32;
+  signed char _33;
+  int _34;
+  int _35;
+  int _36;
+  signed char _37;
+  unsigned int ivtmp_38;
+  _Bool _41;
+  int patt_43;
+  const int8_t[460][2] * _44;
+  signed char _45;
+  struct x264_cabac_t * _46;
+  unsigned int ivtmp_47;
+  _Bool _48;
+  int _49;
+  struct x264_cabac_t * _50;
+  int _51;
+  int _52;
+  _Bool _53;
+  signed char _54;
+  unsigned int ivtmp_55;
+  unsigned char pretmp_57;
+  unsigned char prephitmp_58;
+  int _59;
+  int iftmp.0_60;
+  unsigned char pretmp_61;
+  unsigned char prephitmp_62;
+  unsigned int ivtmp_65;
+  unsigned int ivtmp_70;
+  vector(16) signed char vect_perm_even_80;
+  vector(16) signed char vect_perm_odd_81;
+  unsigned int ivtmp_125;
+
+  <bb 2>:
+  if (i_slice_type_4(D) == 2)
+    goto <bb 4>;
+  else
+    goto <bb 3>;
+
+  <bb 3>:
+  cabac_context_init_6 = &x264_cabac_context_init_PB[i_model_5(D)];
+  # DEBUG cabac_context_init => cabac_context_init_6
+
+  <bb 4>:
+  # cabac_context_init_1 = PHI <&x264_cabac_context_init_I(2), cabac_context_init_6(3)>
+  # DEBUG cabac_context_init => cabac_context_init_1
+  # DEBUG i => 0
+  # DEBUG i => 0
+  _44 = cabac_context_init_1 + 920;
+  _46 = cb_18(D) + 52;
+  _48 = _44 <= _46;
+  _50 = cb_18(D) + 512;
+  _53 = cabac_context_init_1 >= _50;
+  _41 = _48 | _53;
+  if (_41 != 0)
+    goto <bb 5>;
+  else
+    goto <bb 11>;
+
+  <bb 5>:
+  vectp_cabac_context_init.16_74 = cabac_context_init_1;
+  vect_cst_.22_88 = {i_qp_10(D), i_qp_10(D), i_qp_10(D), i_qp_10(D)};
+  vect_cst_.28_107 = { 126, 126, 126, 126 };
+  vect_cst_.30_112 = { 0, 0, 0, 0 };
+  vect_cst_.31_113 = { 1, 1, 1, 1 };
+  vectp_cb.35_121 = cb_18(D) + 52;
+
+  <bb 6>:
+  # i_23 = PHI <i_20(10), 0(5)>
+  # ivtmp_21 = PHI <ivtmp_47(10), 460(5)>
+  # vectp_cabac_context_init.15_75 = PHI <vectp_cabac_context_init.15_76(10), vectp_cabac_context_init.16_74(5)>
+  # vectp_cb.34_122 = PHI <vectp_cb.34_123(10), vectp_cb.35_121(5)>
+  # ivtmp_19 = PHI <ivtmp_125(10), 0(5)>
+  # DEBUG i => NULL
+  vect__8.17_77 = MEM[(const int8_t[460][2] *)vectp_cabac_context_init.15_75];
+  vectp_cabac_context_init.15_78 = vectp_cabac_context_init.15_75 + 16;
+  vect__8.18_79 = MEM[(const int8_t[460][2] *)vectp_cabac_context_init.15_78];
+  vect_perm_even_80 = VEC_PERM_EXPR <vect__8.17_77, vect__8.18_79, { 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30 }>;
+  vect_perm_odd_81 = VEC_PERM_EXPR <vect__8.17_77, vect__8.18_79, { 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31 }>;
+  _8 = *cabac_context_init_1[i_23][0];
+  vect__9.20_82 = [vec_unpack_lo_expr] vect_perm_even_80;
+  vect__9.20_83 = [vec_unpack_hi_expr] vect_perm_even_80;
+  vect__9.19_84 = [vec_unpack_lo_expr] vect__9.20_82;
+  vect__9.19_85 = [vec_unpack_hi_expr] vect__9.20_82;
+  vect__9.19_86 = [vec_unpack_lo_expr] vect__9.20_83;
+  vect__9.19_87 = [vec_unpack_hi_expr] vect__9.20_83;
+  _9 = (int) _8;
+  vect__11.21_89 = vect__9.19_84 * vect_cst_.22_88;
+  vect__11.21_90 = vect__9.19_85 * vect_cst_.22_88;
+  vect__11.21_91 = vect__9.19_86 * vect_cst_.22_88;
+  vect__11.21_92 = vect__9.19_87 * vect_cst_.22_88;
+  _11 = _9 * i_qp_10(D);
+  vect__12.23_93 = vect__11.21_89 >> 4;
+  vect__12.23_94 = vect__11.21_90 >> 4;
+  vect__12.23_95 = vect__11.21_91 >> 4;
+  vect__12.23_96 = vect__11.21_92 >> 4;
+  _12 = _11 >> 4;
+  _13 = *cabac_context_init_1[i_23][1];
+  vect__14.25_97 = [vec_unpack_lo_expr] vect_perm_odd_81;
+  vect__14.25_98 = [vec_unpack_hi_expr] vect_perm_odd_81;
+  vect__14.24_99 = [vec_unpack_lo_expr] vect__14.25_97;
+  vect__14.24_100 = [vec_unpack_hi_expr] vect__14.25_97;
+  vect__14.24_101 = [vec_unpack_lo_expr] vect__14.25_98;
+  vect__14.24_102 = [vec_unpack_hi_expr] vect__14.25_98;
+  _14 = (int) _13;
+  vect__15.26_103 = vect__12.23_93 + vect__14.24_99;
+  vect__15.26_104 = vect__12.23_94 + vect__14.24_100;
+  vect__15.26_105 = vect__12.23_95 + vect__14.24_101;
+  vect__15.26_106 = vect__12.23_96 + vect__14.24_102;
+  _15 = _12 + _14;
+  # DEBUG v => NULL
+  # DEBUG i_min => NULL
+  # DEBUG i_max => NULL
+  vect_iftmp.27_108 = MIN_EXPR <vect__15.26_103, vect_cst_.28_107>;
+  vect_iftmp.27_109 = MIN_EXPR <vect__15.26_104, vect_cst_.28_107>;
+  vect_iftmp.27_110 = MIN_EXPR <vect__15.26_105, vect_cst_.28_107>;
+  vect_iftmp.27_111 = MIN_EXPR <vect__15.26_106, vect_cst_.28_107>;
+  iftmp.0_16 = MIN_EXPR <_15, 126>;
+  pretmp_57 = (unsigned char) iftmp.0_16;
+  vect_patt_43.29_114 = VEC_COND_EXPR <vect__15.26_103 > vect_cst_.30_112, vect_iftmp.27_108, vect_cst_.31_113>;
+  vect_patt_43.29_115 = VEC_COND_EXPR <vect__15.26_104 > vect_cst_.30_112, vect_iftmp.27_109, vect_cst_.31_113>;
+  vect_patt_43.29_116 = VEC_COND_EXPR <vect__15.26_105 > vect_cst_.30_112, vect_iftmp.27_110, vect_cst_.31_113>;
+  vect_patt_43.29_117 = VEC_COND_EXPR <vect__15.26_106 > vect_cst_.30_112, vect_iftmp.27_111, vect_cst_.31_113>;
+  vect_patt_42.33_118 = VEC_PACK_TRUNC_EXPR <vect_patt_43.29_114, vect_patt_43.29_115>;
+  vect_patt_42.33_119 = VEC_PACK_TRUNC_EXPR <vect_patt_43.29_116, vect_patt_43.29_117>;
+  vect_patt_42.32_120 = VEC_PACK_TRUNC_EXPR <vect_patt_42.33_118, vect_patt_42.33_119>;
+  prephitmp_58 = _15 > 0 ? pretmp_57 : 1;
+  # DEBUG v => NULL
+  # DEBUG i_min => NULL
+  # DEBUG i_max => NULL
+  MEM[(uint8_t[460] *)vectp_cb.34_122] = vect_patt_42.32_120;
+  i_20 = i_23 + 1;
+  # DEBUG i => i_20
+  # DEBUG i => i_20
+  ivtmp_47 = ivtmp_21 - 1;
+  vectp_cabac_context_init.15_76 = vectp_cabac_context_init.15_78 + 16;
+  vectp_cb.34_123 = vectp_cb.34_122 + 16;
+  ivtmp_125 = ivtmp_19 + 1;
+  if (ivtmp_125 < 28)
+    goto <bb 10>;
+  else
+    goto <bb 9>;
+
+  <bb 7>:
+  # i_2 = PHI <i_64(8), 448(9)>
+  # ivtmp_55 = PHI <ivtmp_65(8), 12(9)>
+  # DEBUG i => NULL
+  _54 = *cabac_context_init_1[i_2][0];
+  _52 = (int) _54;
+  _51 = _52 * i_qp_10(D);
+  _49 = _51 >> 4;
+  _45 = *cabac_context_init_1[i_2][1];
+  _17 = (int) _45;
+  _59 = _49 + _17;
+  # DEBUG v => NULL
+  # DEBUG i_min => NULL
+  # DEBUG i_max => NULL
+  iftmp.0_60 = MIN_EXPR <_59, 126>;
+  pretmp_61 = (unsigned char) iftmp.0_60;
+  prephitmp_62 = _59 > 0 ? pretmp_61 : 1;
+  # DEBUG v => NULL
+  # DEBUG i_min => NULL
+  # DEBUG i_max => NULL
+  cb_18(D)->state[i_2] = prephitmp_62;
+  i_64 = i_2 + 1;
+  # DEBUG i => i_64
+  # DEBUG i => i_64
+  ivtmp_65 = ivtmp_55 - 1;
+  if (ivtmp_65 != 0)
+    goto <bb 8>;
+  else
+    goto <bb 14>;
+
+  <bb 8>:
+  goto <bb 7>;
+
+  <bb 9>:
+  # i_67 = PHI <i_20(6)>
+  # ivtmp_70 = PHI <ivtmp_47(6)>
+  goto <bb 7>;
+
+  <bb 10>:
+  goto <bb 6>;
+
+  <bb 11>:
+
+  <bb 12>:
+  # i_40 = PHI <0(11), i_26(13)>
+  # ivtmp_38 = PHI <460(11), ivtmp_24(13)>
+  # DEBUG i => NULL
+  _37 = *cabac_context_init_1[i_40][0];
+  _36 = (int) _37;
+  _35 = _36 * i_qp_10(D);
+  _34 = _35 >> 4;
+  _33 = *cabac_context_init_1[i_40][1];
+  _32 = (int) _33;
+  _31 = _34 + _32;
+  # DEBUG v => NULL
+  # DEBUG i_min => NULL
+  # DEBUG i_max => NULL
+  iftmp.0_30 = MIN_EXPR <_31, 126>;
+  pretmp_29 = (unsigned char) iftmp.0_30;
+  prephitmp_28 = _31 > 0 ? pretmp_29 : 1;
+  # DEBUG v => NULL
+  # DEBUG i_min => NULL
+  # DEBUG i_max => NULL
+  cb_18(D)->state[i_40] = prephitmp_28;
+  i_26 = i_40 + 1;
+  # DEBUG i => i_26
+  # DEBUG i => i_26
+  ivtmp_24 = ivtmp_38 - 1;
+  if (ivtmp_24 != 0)
+    goto <bb 13>;
+  else
+    goto <bb 15>;
+
+  <bb 13>:
+  goto <bb 12>;
+
+  <bb 14>:
+
+  <bb 15>:
+  return;
+
+}
+
+
+
+;; Function x264_cabac_encode_decision_c (x264_cabac_encode_decision_c, funcdef_no=119, decl_uid=5055, cgraph_uid=119, symbol_order=169)
+
+
+Analyzing loop at common/cabac.c:876
+common/cabac.c:876:18: note: ===== analyze_loop_nest =====
+common/cabac.c:876:18: note: === vect_analyze_loop_form ===
+split exit edge.
+common/cabac.c:876:18: note: === get_loop_niters ===
+Analyzing # of iterations of loop 1
+  exit condition 0 < [bytes_outstanding_43 + -1, + , -1](no_overflow)
+  bounds on difference of bases: 0 ... 2147483646
+Applying pattern match.pd:49, generic-match.c:4249
+  result:
+    # of iterations (unsigned int) (bytes_outstanding_43 + -1), bounded by 2147483646
+Applying pattern match.pd:49, generic-match.c:3223
+common/cabac.c:876:18: note: Symbolic number of iterations is (unsigned int) bytes_outstanding_43
+common/cabac.c:876:18: note: === vect_analyze_data_refs ===
+Creating dr for cb_3(D)->p
+analyze_innermost: success.
+	base_address: cb_3(D)
+	offset from base address: 0
+	constant offset from base address: 24
+	step: 0
+	aligned to: 128
+	base_object: *cb_3(D)
+	Access function 0: 192
+Creating dr for cb_3(D)->p
+analyze_innermost: success.
+	base_address: cb_3(D)
+	offset from base address: 0
+	constant offset from base address: 24
+	step: 0
+	aligned to: 128
+	base_object: *cb_3(D)
+	Access function 0: 192
+Creating dr for *_48
+analyze_innermost: failed: evolution of base is not affine.
+	base_address: 
+	offset from base address: 
+	constant offset from base address: 
+	step: 
+	aligned to: 
+	base_object: *_48
+common/cabac.c:876:18: note: got vectype for stmt: _48 = cb_3(D)->p;
+vector(2) long unsigned int
+common/cabac.c:876:18: note: got vectype for stmt: cb_3(D)->p = _49;
+vector(2) long unsigned int
+common/cabac.c:876:18: note: not vectorized: data ref analysis failed *_48 = pretmp_80;
+
+common/cabac.c:876:18: note: bad data references.
+common/cabac.c:896:6: note: vectorized 0 loops in function.
+x264_cabac_encode_decision_c (struct x264_cabac_t * cb, int i_ctx, int b)
+{
+  int out;
+  int carry;
+  int bytes_outstanding;
+  int shift;
+  int i_range_lps;
+  int i_state;
+  unsigned char _5;
+  int _7;
+  int _8;
+  int _9;
+  unsigned char _10;
+  int _12;
+  int _14;
+  int _16;
+  int _17;
+  unsigned char _20;
+  int prephitmp_22;
+  int _24;
+  unsigned char _25;
+  int _27;
+  int _29;
+  int _30;
+  int _31;
+  int _33;
+  int _35;
+  int _36;
+  int _37;
+  int _38;
+  int _39;
+  int _40;
+  int _41;
+  uint8_t * _44;
+  unsigned char _45;
+  unsigned char _46;
+  unsigned char _47;
+  uint8_t * _48;
+  uint8_t * _49;
+  uint8_t * _53;
+  uint8_t * _54;
+  unsigned char _55;
+  int pretmp_78;
+  int prephitmp_79;
+  unsigned char pretmp_80;
+
+  <bb 2>:
+  _5 = cb_3(D)->state[i_ctx_4(D)];
+  i_state_6 = (int) _5;
+  # DEBUG i_state => i_state_6
+  _7 = cb_3(D)->i_range;
+  _8 = _7 >> 6;
+  _9 = _8 & 3;
+  _10 = x264_cabac_range_lps[i_state_6][_9];
+  i_range_lps_11 = (int) _10;
+  # DEBUG i_range_lps => i_range_lps_11
+  _12 = _7 - i_range_lps_11;
+  cb_3(D)->i_range = _12;
+  _14 = i_state_6 >> 6;
+  if (_14 != b_15(D))
+    goto <bb 4>;
+  else
+    goto <bb 3>;
+
+  <bb 3>:
+  pretmp_78 = cb_3(D)->i_low;
+  goto <bb 5>;
+
+  <bb 4>:
+  _16 = cb_3(D)->i_low;
+  _17 = _12 + _16;
+  cb_3(D)->i_low = _17;
+  cb_3(D)->i_range = i_range_lps_11;
+
+  <bb 5>:
+  # prephitmp_22 = PHI <_12(3), i_range_lps_11(4)>
+  # prephitmp_79 = PHI <pretmp_78(3), _17(4)>
+  _20 = x264_cabac_transition[i_state_6][b_15(D)];
+  cb_3(D)->state[i_ctx_4(D)] = _20;
+  # DEBUG cb => cb_3(D)
+  _24 = prephitmp_22 >> 3;
+  _25 = x264_cabac_renorm_shift[_24];
+  shift_26 = (int) _25;
+  # DEBUG shift => shift_26
+  _27 = prephitmp_22 << shift_26;
+  cb_3(D)->i_range = _27;
+  _29 = prephitmp_79 << shift_26;
+  cb_3(D)->i_low = _29;
+  _30 = cb_3(D)->i_queue;
+  _31 = shift_26 + _30;
+  cb_3(D)->i_queue = _31;
+  # DEBUG cb => cb_3(D)
+  if (_31 > 7)
+    goto <bb 6>;
+  else
+    goto <bb 13>;
+
+  <bb 6>:
+  _33 = _31 + 2;
+  out_34 = _29 >> _33;
+  # DEBUG out => out_34
+  _35 = 4 << _31;
+  _36 = _35 + -1;
+  _37 = _29 & _36;
+  cb_3(D)->i_low = _37;
+  _38 = _31 + -8;
+  cb_3(D)->i_queue = _38;
+  _39 = out_34 & 255;
+  if (_39 == 255)
+    goto <bb 7>;
+  else
+    goto <bb 8>;
+
+  <bb 7>:
+  _40 = cb_3(D)->i_bytes_outstanding;
+  _41 = _40 + 1;
+  cb_3(D)->i_bytes_outstanding = _41;
+  goto <bb 13>;
+
+  <bb 8>:
+  carry_42 = out_34 >> 8;
+  # DEBUG carry => carry_42
+  bytes_outstanding_43 = cb_3(D)->i_bytes_outstanding;
+  # DEBUG bytes_outstanding => bytes_outstanding_43
+  _44 = cb_3(D)->p;
+  _45 = MEM[(uint8_t *)_44 + -1B];
+  _46 = (unsigned char) carry_42;
+  _47 = _45 + _46;
+  MEM[(uint8_t *)_44 + -1B] = _47;
+  # DEBUG bytes_outstanding => bytes_outstanding_43
+  if (bytes_outstanding_43 > 0)
+    goto <bb 10>;
+  else
+    goto <bb 9>;
+
+  <bb 9>:
+  _53 = cb_3(D)->p;
+  _54 = _53 + 1;
+  cb_3(D)->p = _54;
+  _55 = (unsigned char) out_34;
+  *_53 = _55;
+  cb_3(D)->i_bytes_outstanding = 0;
+  goto <bb 13>;
+
+  <bb 10>:
+  pretmp_80 = _46 + 255;
+
+  <bb 11>:
+  # bytes_outstanding_76 = PHI <bytes_outstanding_43(10), bytes_outstanding_52(12)>
+  # DEBUG bytes_outstanding => bytes_outstanding_76
+  _48 = cb_3(D)->p;
+  _49 = _48 + 1;
+  cb_3(D)->p = _49;
+  *_48 = pretmp_80;
+  bytes_outstanding_52 = bytes_outstanding_76 + -1;
+  # DEBUG bytes_outstanding => bytes_outstanding_52
+  # DEBUG bytes_outstanding => bytes_outstanding_52
+  if (bytes_outstanding_52 > 0)
+    goto <bb 12>;
+  else
+    goto <bb 14>;
+
+  <bb 14>:
+  goto <bb 9>;
+
+  <bb 12>:
+  goto <bb 11>;
+
+  <bb 13>:
+  # DEBUG cb => NULL
+  # DEBUG bytes_outstanding => NULL
+  # DEBUG carry => NULL
+  # DEBUG out => NULL
+  # DEBUG cb => NULL
+  # DEBUG shift => NULL
+  return;
+
+}
+
+
+
+;; Function x264_cabac_encode_bypass (x264_cabac_encode_bypass, funcdef_no=120, decl_uid=5062, cgraph_uid=120, symbol_order=170)
+
+
+Analyzing loop at common/cabac.c:876
+common/cabac.c:876:18: note: ===== analyze_loop_nest =====
+common/cabac.c:876:18: note: === vect_analyze_loop_form ===
+split exit edge.
+common/cabac.c:876:18: note: === get_loop_niters ===
+Analyzing # of iterations of loop 1
+  exit condition 0 < [bytes_outstanding_28 + -1, + , -1](no_overflow)
+  bounds on difference of bases: 0 ... 2147483646
+Applying pattern match.pd:49, generic-match.c:4249
+  result:
+    # of iterations (unsigned int) (bytes_outstanding_28 + -1), bounded by 2147483646
+Applying pattern match.pd:49, generic-match.c:3223
+common/cabac.c:876:18: note: Symbolic number of iterations is (unsigned int) bytes_outstanding_28
+common/cabac.c:876:18: note: === vect_analyze_data_refs ===
+Creating dr for cb_2(D)->p
+analyze_innermost: success.
+	base_address: cb_2(D)
+	offset from base address: 0
+	constant offset from base address: 24
+	step: 0
+	aligned to: 128
+	base_object: *cb_2(D)
+	Access function 0: 192
+Creating dr for cb_2(D)->p
+analyze_innermost: success.
+	base_address: cb_2(D)
+	offset from base address: 0
+	constant offset from base address: 24
+	step: 0
+	aligned to: 128
+	base_object: *cb_2(D)
+	Access function 0: 192
+Creating dr for *_33
+analyze_innermost: failed: evolution of base is not affine.
+	base_address: 
+	offset from base address: 
+	constant offset from base address: 
+	step: 
+	aligned to: 
+	base_object: *_33
+common/cabac.c:876:18: note: got vectype for stmt: _33 = cb_2(D)->p;
+vector(2) long unsigned int
+common/cabac.c:876:18: note: got vectype for stmt: cb_2(D)->p = _34;
+vector(2) long unsigned int
+common/cabac.c:876:18: note: not vectorized: data ref analysis failed *_33 = pretmp_15;
+
+common/cabac.c:876:18: note: bad data references.
+common/cabac.c:910:6: note: vectorized 0 loops in function.
+x264_cabac_encode_bypass (struct x264_cabac_t * cb, int b)
+{
+  int out;
+  int carry;
+  int bytes_outstanding;
+  int _3;
+  int _4;
+  int _7;
+  int _8;
+  int _9;
+  int _10;
+  int _12;
+  int _13;
+  unsigned char pretmp_15;
+  int _18;
+  int _20;
+  int _21;
+  int _22;
+  int _23;
+  int _24;
+  int _25;
+  int _26;
+  uint8_t * _29;
+  unsigned char _30;
+  unsigned char _31;
+  unsigned char _32;
+  uint8_t * _33;
+  uint8_t * _34;
+  uint8_t * _38;
+  uint8_t * _39;
+  unsigned char _40;
+
+  <bb 2>:
+  _3 = cb_2(D)->i_low;
+  _4 = _3 << 1;
+  _7 = -b_6(D);
+  _8 = cb_2(D)->i_range;
+  _9 = _7 & _8;
+  _10 = _4 + _9;
+  cb_2(D)->i_low = _10;
+  _12 = cb_2(D)->i_queue;
+  _13 = _12 + 1;
+  cb_2(D)->i_queue = _13;
+  # DEBUG cb => cb_2(D)
+  if (_13 > 7)
+    goto <bb 3>;
+  else
+    goto <bb 10>;
+
+  <bb 3>:
+  _18 = _12 + 3;
+  out_19 = _10 >> _18;
+  # DEBUG out => out_19
+  _20 = 4 << _13;
+  _21 = _20 + -1;
+  _22 = _10 & _21;
+  cb_2(D)->i_low = _22;
+  _23 = _12 + -7;
+  cb_2(D)->i_queue = _23;
+  _24 = out_19 & 255;
+  if (_24 == 255)
+    goto <bb 4>;
+  else
+    goto <bb 5>;
+
+  <bb 4>:
+  _25 = cb_2(D)->i_bytes_outstanding;
+  _26 = _25 + 1;
+  cb_2(D)->i_bytes_outstanding = _26;
+  goto <bb 10>;
+
+  <bb 5>:
+  carry_27 = out_19 >> 8;
+  # DEBUG carry => carry_27
+  bytes_outstanding_28 = cb_2(D)->i_bytes_outstanding;
+  # DEBUG bytes_outstanding => bytes_outstanding_28
+  _29 = cb_2(D)->p;
+  _30 = MEM[(uint8_t *)_29 + -1B];
+  _31 = (unsigned char) carry_27;
+  _32 = _30 + _31;
+  MEM[(uint8_t *)_29 + -1B] = _32;
+  # DEBUG bytes_outstanding => bytes_outstanding_28
+  if (bytes_outstanding_28 > 0)
+    goto <bb 7>;
+  else
+    goto <bb 6>;
+
+  <bb 6>:
+  _38 = cb_2(D)->p;
+  _39 = _38 + 1;
+  cb_2(D)->p = _39;
+  _40 = (unsigned char) out_19;
+  *_38 = _40;
+  cb_2(D)->i_bytes_outstanding = 0;
+  goto <bb 10>;
+
+  <bb 7>:
+  pretmp_15 = _31 + 255;
+
+  <bb 8>:
+  # bytes_outstanding_53 = PHI <bytes_outstanding_28(7), bytes_outstanding_37(9)>
+  # DEBUG bytes_outstanding => bytes_outstanding_53
+  _33 = cb_2(D)->p;
+  _34 = _33 + 1;
+  cb_2(D)->p = _34;
+  *_33 = pretmp_15;
+  bytes_outstanding_37 = bytes_outstanding_53 + -1;
+  # DEBUG bytes_outstanding => bytes_outstanding_37
+  # DEBUG bytes_outstanding => bytes_outstanding_37
+  if (bytes_outstanding_37 > 0)
+    goto <bb 9>;
+  else
+    goto <bb 11>;
+
+  <bb 11>:
+  goto <bb 6>;
+
+  <bb 9>:
+  goto <bb 8>;
+
+  <bb 10>:
+  # DEBUG cb => NULL
+  # DEBUG bytes_outstanding => NULL
+  # DEBUG carry => NULL
+  # DEBUG out => NULL
+  return;
+
+}
+
+
+
+;; Function x264_cabac_encode_ue_bypass (x264_cabac_encode_ue_bypass, funcdef_no=121, decl_uid=5066, cgraph_uid=121, symbol_order=171)
+
+
+Analyzing loop at common/cabac.c:934
+common/cabac.c:934:5: note: ===== analyze_loop_nest =====
+common/cabac.c:934:5: note: === vect_analyze_loop_form ===
+common/cabac.c:934:5: note: ===== analyze_loop_nest_1 =====
+common/cabac.c:934:5: note: === vect_analyze_loop_form ===
+common/cabac.c:934:5: note: === get_loop_niters ===
+Analyzing # of iterations of loop 3
+  exit condition 0 < [bytes_outstanding_55 + -1, + , -1](no_overflow)
+  bounds on difference of bases: 0 ... 2147483646
+Applying pattern match.pd:49, generic-match.c:4249
+  result:
+    # of iterations (unsigned int) (bytes_outstanding_55 + -1), bounded by 2147483646
+Applying pattern match.pd:49, generic-match.c:3223
+common/cabac.c:934:5: note: Symbolic number of iterations is (unsigned int) bytes_outstanding_55
+common/cabac.c:934:5: note: not vectorized: inner-loop count not invariant.
+common/cabac.c:934:5: note: bad loop form.
+
+Analyzing loop at common/cabac.c:876
+common/cabac.c:876:18: note: ===== analyze_loop_nest =====
+common/cabac.c:876:18: note: === vect_analyze_loop_form ===
+common/cabac.c:876:18: note: === get_loop_niters ===
+Applying pattern match.pd:49, generic-match.c:3223
+common/cabac.c:876:18: note: Symbolic number of iterations is (unsigned int) bytes_outstanding_55
+common/cabac.c:876:18: note: === vect_analyze_data_refs ===
+Creating dr for cb_26(D)->p
+analyze_innermost: success.
+	base_address: cb_26(D)
+	offset from base address: 0
+	constant offset from base address: 24
+	step: 0
+	aligned to: 128
+	base_object: *cb_26(D)
+	Access function 0: 192
+Creating dr for cb_26(D)->p
+analyze_innermost: success.
+	base_address: cb_26(D)
+	offset from base address: 0
+	constant offset from base address: 24
+	step: 0
+	aligned to: 128
+	base_object: *cb_26(D)
+	Access function 0: 192
+Creating dr for *_60
+analyze_innermost: failed: evolution of base is not affine.
+	base_address: 
+	offset from base address: 
+	constant offset from base address: 
+	step: 
+	aligned to: 
+	base_object: *_60
+common/cabac.c:876:18: note: got vectype for stmt: _60 = cb_26(D)->p;
+vector(2) long unsigned int
+common/cabac.c:876:18: note: got vectype for stmt: cb_26(D)->p = _61;
+vector(2) long unsigned int
+common/cabac.c:876:18: note: not vectorized: data ref analysis failed *_60 = pretmp_191;
+
+common/cabac.c:876:18: note: bad data references.
+
+Analyzing loop at common/cabac.c:922
+common/cabac.c:922:5: note: ===== analyze_loop_nest =====
+common/cabac.c:922:5: note: === vect_analyze_loop_form ===
+common/cabac.c:922:5: note: === get_loop_niters ===
+common/cabac.c:922:5: note: not vectorized: number of iterations cannot be computed.
+common/cabac.c:922:5: note: bad loop form.
+common/cabac.c:918:6: note: vectorized 0 loops in function.
+x264_cabac_encode_ue_bypass (struct x264_cabac_t * cb, int exp_bits, int val)
+{
+  int out;
+  int carry;
+  int bytes_outstanding;
+  uint32_t x;
+  int i;
+  int k;
+  int _8;
+  int _16;
+  int _18;
+  int _19;
+  int _21;
+  int _22;
+  int _27;
+  int _28;
+  unsigned int _30;
+  unsigned int _31;
+  unsigned int _32;
+  int _33;
+  unsigned int _34;
+  unsigned int _35;
+  unsigned int _36;
+  int _37;
+  int _39;
+  int _40;
+  int _45;
+  int _47;
+  int _48;
+  int _49;
+  int _50;
+  int _51;
+  int _52;
+  int _53;
+  uint8_t * _56;
+  unsigned char _57;
+  unsigned char _58;
+  unsigned char _59;
+  uint8_t * _60;
+  uint8_t * _61;
+  uint8_t * _65;
+  uint8_t * _66;
+  unsigned char _67;
+  int _82;
+  int _88;
+  int pretmp_182;
+  int pretmp_184;
+  int pretmp_186;
+  int pretmp_188;
+  int pretmp_189;
+  int prephitmp_190;
+  unsigned char pretmp_191;
+
+  <bb 2>:
+  # DEBUG k => exp_bits_6(D)
+  # DEBUG k => exp_bits_6(D)
+  # DEBUG val => val_7(D)
+  _88 = 1 << exp_bits_6(D);
+  if (val_7(D) >= _88)
+    goto <bb 3>;
+  else
+    goto <bb 7>;
+
+  <bb 3>:
+
+  <bb 4>:
+  # val_87 = PHI <val_7(D)(3), val_9(5)>
+  # exp_bits_86 = PHI <exp_bits_6(D)(3), exp_bits_10(5)>
+  # _82 = PHI <_88(3), _8(5)>
+  # DEBUG k => exp_bits_86
+  # DEBUG val => val_87
+  val_9 = val_87 - _82;
+  # DEBUG val => val_9
+  exp_bits_10 = exp_bits_86 + 1;
+  # DEBUG k => exp_bits_10
+  # DEBUG k => exp_bits_10
+  # DEBUG val => val_9
+  _8 = 1 << exp_bits_10;
+  if (_8 <= val_9)
+    goto <bb 5>;
+  else
+    goto <bb 6>;
+
+  <bb 5>:
+  goto <bb 4>;
+
+  <bb 6>:
+  # val_178 = PHI <val_9(4)>
+  # exp_bits_177 = PHI <exp_bits_10(4)>
+  pretmp_182 = exp_bits_177 - exp_bits_6(D);
+  pretmp_184 = 1 << pretmp_182;
+  pretmp_186 = pretmp_184 + -1;
+  pretmp_188 = exp_bits_177 + 1;
+  pretmp_189 = pretmp_186 << pretmp_188;
+
+  <bb 7>:
+  # val_83 = PHI <val_178(6), val_7(D)(2)>
+  # exp_bits_85 = PHI <exp_bits_177(6), exp_bits_6(D)(2)>
+  # prephitmp_190 = PHI <pretmp_189(6), 0(2)>
+  _16 = val_83 + prephitmp_190;
+  x_17 = (uint32_t) _16;
+  # DEBUG x => x_17
+  _18 = exp_bits_85 * 2;
+  _19 = _18 + 1;
+  k_20 = _19 - exp_bits_6(D);
+  # DEBUG k => k_20
+  _21 = k_20 + -1;
+  _22 = _21 & 7;
+  i_23 = _22 + 1;
+  # DEBUG i => i_23
+
+  <bb 8>:
+  # k_3 = PHI <k_20(7), k_25(18)>
+  # i_4 = PHI <i_23(7), 8(18)>
+  # DEBUG i => i_4
+  # DEBUG k => k_3
+  k_25 = k_3 - i_4;
+  # DEBUG k => k_25
+  _27 = cb_26(D)->i_low;
+  _28 = _27 << i_4;
+  _30 = (unsigned int) _28;
+  _31 = x_17 >> k_25;
+  _32 = _31 & 255;
+  _33 = cb_26(D)->i_range;
+  _34 = (unsigned int) _33;
+  _35 = _32 * _34;
+  _36 = _30 + _35;
+  _37 = (int) _36;
+  cb_26(D)->i_low = _37;
+  _39 = cb_26(D)->i_queue;
+  _40 = i_4 + _39;
+  cb_26(D)->i_queue = _40;
+  # DEBUG cb => cb_26(D)
+  if (_40 > 7)
+    goto <bb 9>;
+  else
+    goto <bb 17>;
+
+  <bb 9>:
+  _45 = _40 + 2;
+  out_46 = _37 >> _45;
+  # DEBUG out => out_46
+  _47 = 4 << _40;
+  _48 = _47 + -1;
+  _49 = _37 & _48;
+  cb_26(D)->i_low = _49;
+  _50 = _40 + -8;
+  cb_26(D)->i_queue = _50;
+  _51 = out_46 & 255;
+  if (_51 == 255)
+    goto <bb 10>;
+  else
+    goto <bb 11>;
+
+  <bb 10>:
+  _52 = cb_26(D)->i_bytes_outstanding;
+  _53 = _52 + 1;
+  cb_26(D)->i_bytes_outstanding = _53;
+  goto <bb 17>;
+
+  <bb 11>:
+  carry_54 = out_46 >> 8;
+  # DEBUG carry => carry_54
+  bytes_outstanding_55 = cb_26(D)->i_bytes_outstanding;
+  # DEBUG bytes_outstanding => bytes_outstanding_55
+  _56 = cb_26(D)->p;
+  _57 = MEM[(uint8_t *)_56 + -1B];
+  _58 = (unsigned char) carry_54;
+  _59 = _57 + _58;
+  MEM[(uint8_t *)_56 + -1B] = _59;
+  # DEBUG bytes_outstanding => bytes_outstanding_55
+  if (bytes_outstanding_55 > 0)
+    goto <bb 13>;
+  else
+    goto <bb 12>;
+
+  <bb 12>:
+  _65 = cb_26(D)->p;
+  _66 = _65 + 1;
+  cb_26(D)->p = _66;
+  _67 = (unsigned char) out_46;
+  *_65 = _67;
+  cb_26(D)->i_bytes_outstanding = 0;
+  goto <bb 17>;
+
+  <bb 13>:
+  pretmp_191 = _58 + 255;
+
+  <bb 14>:
+  # bytes_outstanding_78 = PHI <bytes_outstanding_55(13), bytes_outstanding_64(16)>
+  # DEBUG bytes_outstanding => bytes_outstanding_78
+  _60 = cb_26(D)->p;
+  _61 = _60 + 1;
+  cb_26(D)->p = _61;
+  *_60 = pretmp_191;
+  bytes_outstanding_64 = bytes_outstanding_78 + -1;
+  # DEBUG bytes_outstanding => bytes_outstanding_64
+  # DEBUG bytes_outstanding => bytes_outstanding_64
+  if (bytes_outstanding_64 > 0)
+    goto <bb 16>;
+  else
+    goto <bb 15>;
+
+  <bb 15>:
+  goto <bb 12>;
+
+  <bb 16>:
+  goto <bb 14>;
+
+  <bb 17>:
+  # DEBUG cb => NULL
+  # DEBUG bytes_outstanding => NULL
+  # DEBUG carry => NULL
+  # DEBUG out => NULL
+  # DEBUG i => 8
+  if (k_25 > 0)
+    goto <bb 18>;
+  else
+    goto <bb 19>;
+
+  <bb 18>:
+  goto <bb 8>;
+
+  <bb 19>:
+  return;
+
+}
+
+
+
+;; Function x264_cabac_encode_terminal (x264_cabac_encode_terminal, funcdef_no=122, decl_uid=5068, cgraph_uid=122, symbol_order=172)
+
+
+Analyzing loop at common/cabac.c:876
+common/cabac.c:876:18: note: ===== analyze_loop_nest =====
+common/cabac.c:876:18: note: === vect_analyze_loop_form ===
+split exit edge.
+common/cabac.c:876:18: note: === get_loop_niters ===
+Analyzing # of iterations of loop 1
+  exit condition 0 < [bytes_outstanding_27 + -1, + , -1](no_overflow)
+  bounds on difference of bases: 0 ... 2147483646
+Applying pattern match.pd:49, generic-match.c:4249
+  result:
+    # of iterations (unsigned int) (bytes_outstanding_27 + -1), bounded by 2147483646
+Applying pattern match.pd:49, generic-match.c:3223
+common/cabac.c:876:18: note: Symbolic number of iterations is (unsigned int) bytes_outstanding_27
+common/cabac.c:876:18: note: === vect_analyze_data_refs ===
+Creating dr for cb_2(D)->p
+analyze_innermost: success.
+	base_address: cb_2(D)
+	offset from base address: 0
+	constant offset from base address: 24
+	step: 0
+	aligned to: 128
+	base_object: *cb_2(D)
+	Access function 0: 192
+Creating dr for cb_2(D)->p
+analyze_innermost: success.
+	base_address: cb_2(D)
+	offset from base address: 0
+	constant offset from base address: 24
+	step: 0
+	aligned to: 128
+	base_object: *cb_2(D)
+	Access function 0: 192
+Creating dr for *_32
+analyze_innermost: failed: evolution of base is not affine.
+	base_address: 
+	offset from base address: 
+	constant offset from base address: 
+	step: 
+	aligned to: 
+	base_object: *_32
+common/cabac.c:876:18: note: got vectype for stmt: _32 = cb_2(D)->p;
+vector(2) long unsigned int
+common/cabac.c:876:18: note: got vectype for stmt: cb_2(D)->p = _33;
+vector(2) long unsigned int
+common/cabac.c:876:18: note: not vectorized: data ref analysis failed *_32 = pretmp_40;
+
+common/cabac.c:876:18: note: bad data references.
+common/cabac.c:937:6: note: vectorized 0 loops in function.
+x264_cabac_encode_terminal (struct x264_cabac_t * cb)
+{
+  int out;
+  int carry;
+  int bytes_outstanding;
+  int shift;
+  int _3;
+  int _4;
+  int _8;
+  unsigned char _9;
+  int _11;
+  int _12;
+  int _13;
+  int _14;
+  int _15;
+  int _17;
+  int _19;
+  int _20;
+  int _21;
+  int _22;
+  int _23;
+  int _24;
+  int _25;
+  uint8_t * _28;
+  unsigned char _29;
+  unsigned char _30;
+  unsigned char _31;
+  uint8_t * _32;
+  uint8_t * _33;
+  uint8_t * _37;
+  uint8_t * _38;
+  unsigned char _39;
+  unsigned char pretmp_40;
+
+  <bb 2>:
+  _3 = cb_2(D)->i_range;
+  _4 = _3 + -2;
+  # DEBUG cb => cb_2(D)
+  _8 = _4 >> 3;
+  _9 = x264_cabac_renorm_shift[_8];
+  shift_10 = (int) _9;
+  # DEBUG shift => shift_10
+  _11 = _4 << shift_10;
+  cb_2(D)->i_range = _11;
+  _12 = cb_2(D)->i_low;
+  _13 = _12 << shift_10;
+  cb_2(D)->i_low = _13;
+  _14 = cb_2(D)->i_queue;
+  _15 = shift_10 + _14;
+  cb_2(D)->i_queue = _15;
+  # DEBUG cb => cb_2(D)
+  if (_15 > 7)
+    goto <bb 3>;
+  else
+    goto <bb 10>;
+
+  <bb 3>:
+  _17 = _15 + 2;
+  out_18 = _13 >> _17;
+  # DEBUG out => out_18
+  _19 = 4 << _15;
+  _20 = _19 + -1;
+  _21 = _13 & _20;
+  cb_2(D)->i_low = _21;
+  _22 = _15 + -8;
+  cb_2(D)->i_queue = _22;
+  _23 = out_18 & 255;
+  if (_23 == 255)
+    goto <bb 4>;
+  else
+    goto <bb 5>;
+
+  <bb 4>:
+  _24 = cb_2(D)->i_bytes_outstanding;
+  _25 = _24 + 1;
+  cb_2(D)->i_bytes_outstanding = _25;
+  goto <bb 10>;
+
+  <bb 5>:
+  carry_26 = out_18 >> 8;
+  # DEBUG carry => carry_26
+  bytes_outstanding_27 = cb_2(D)->i_bytes_outstanding;
+  # DEBUG bytes_outstanding => bytes_outstanding_27
+  _28 = cb_2(D)->p;
+  _29 = MEM[(uint8_t *)_28 + -1B];
+  _30 = (unsigned char) carry_26;
+  _31 = _29 + _30;
+  MEM[(uint8_t *)_28 + -1B] = _31;
+  # DEBUG bytes_outstanding => bytes_outstanding_27
+  if (bytes_outstanding_27 > 0)
+    goto <bb 7>;
+  else
+    goto <bb 6>;
+
+  <bb 6>:
+  _37 = cb_2(D)->p;
+  _38 = _37 + 1;
+  cb_2(D)->p = _38;
+  _39 = (unsigned char) out_18;
+  *_37 = _39;
+  cb_2(D)->i_bytes_outstanding = 0;
+  goto <bb 10>;
+
+  <bb 7>:
+  pretmp_40 = _30 + 255;
+
+  <bb 8>:
+  # bytes_outstanding_56 = PHI <bytes_outstanding_27(7), bytes_outstanding_36(9)>
+  # DEBUG bytes_outstanding => bytes_outstanding_56
+  _32 = cb_2(D)->p;
+  _33 = _32 + 1;
+  cb_2(D)->p = _33;
+  *_32 = pretmp_40;
+  bytes_outstanding_36 = bytes_outstanding_56 + -1;
+  # DEBUG bytes_outstanding => bytes_outstanding_36
+  # DEBUG bytes_outstanding => bytes_outstanding_36
+  if (bytes_outstanding_36 > 0)
+    goto <bb 9>;
+  else
+    goto <bb 11>;
+
+  <bb 11>:
+  goto <bb 6>;
+
+  <bb 9>:
+  goto <bb 8>;
+
+  <bb 10>:
+  # DEBUG cb => NULL
+  # DEBUG bytes_outstanding => NULL
+  # DEBUG carry => NULL
+  # DEBUG out => NULL
+  # DEBUG cb => NULL
+  # DEBUG shift => NULL
+  return;
+
+}
+
+
+
+;; Function x264_cabac_encode_flush (x264_cabac_encode_flush, funcdef_no=123, decl_uid=5071, cgraph_uid=123, symbol_order=173)
+
+
+Analyzing loop at common/cabac.c:956
+common/cabac.c:956:10: note: ===== analyze_loop_nest =====
+common/cabac.c:956:10: note: === vect_analyze_loop_form ===
+split exit edge.
+common/cabac.c:956:10: note: === get_loop_niters ===
+common/cabac.c:956:10: note: not vectorized: number of iterations cannot be computed.
+common/cabac.c:956:10: note: bad loop form.
+
+Analyzing loop at common/cabac.c:876
+common/cabac.c:876:18: note: ===== analyze_loop_nest =====
+common/cabac.c:876:18: note: === vect_analyze_loop_form ===
+common/cabac.c:876:18: note: === get_loop_niters ===
+Analyzing # of iterations of loop 2
+  exit condition 0 < [prephitmp_188 + -1, + , -1](no_overflow)
+  bounds on difference of bases: 0 ... 2147483646
+Applying pattern match.pd:49, generic-match.c:4249
+  result:
+    # of iterations (unsigned int) (prephitmp_188 + -1), bounded by 2147483646
+Applying pattern match.pd:49, generic-match.c:3223
+common/cabac.c:876:18: note: Symbolic number of iterations is (unsigned int) prephitmp_188
+common/cabac.c:876:18: note: === vect_analyze_data_refs ===
+Creating dr for cb_3(D)->p
+analyze_innermost: success.
+	base_address: cb_3(D)
+	offset from base address: 0
+	constant offset from base address: 24
+	step: 0
+	aligned to: 128
+	base_object: *cb_3(D)
+	Access function 0: 192
+Creating dr for cb_3(D)->p
+analyze_innermost: success.
+	base_address: cb_3(D)
+	offset from base address: 0
+	constant offset from base address: 24
+	step: 0
+	aligned to: 128
+	base_object: *cb_3(D)
+	Access function 0: 192
+Creating dr for *_58
+analyze_innermost: failed: evolution of base is not affine.
+	base_address: 
+	offset from base address: 
+	constant offset from base address: 
+	step: 
+	aligned to: 
+	base_object: *_58
+common/cabac.c:876:18: note: got vectype for stmt: _58 = cb_3(D)->p;
+vector(2) long unsigned int
+common/cabac.c:876:18: note: got vectype for stmt: cb_3(D)->p = _59;
+vector(2) long unsigned int
+common/cabac.c:876:18: note: not vectorized: data ref analysis failed *_58 = pretmp_189;
+
+common/cabac.c:876:18: note: bad data references.
+
+Analyzing loop at common/cabac.c:876
+common/cabac.c:876:18: note: ===== analyze_loop_nest =====
+common/cabac.c:876:18: note: === vect_analyze_loop_form ===
+common/cabac.c:876:18: note: === get_loop_niters ===
+Analyzing # of iterations of loop 3
+  exit condition 0 < [prephitmp_194 + -1, + , -1](no_overflow)
+  bounds on difference of bases: 0 ... 2147483646
+Applying pattern match.pd:49, generic-match.c:4249
+  result:
+    # of iterations (unsigned int) (prephitmp_194 + -1), bounded by 2147483646
+Applying pattern match.pd:49, generic-match.c:3223
+common/cabac.c:876:18: note: Symbolic number of iterations is (unsigned int) prephitmp_194
+common/cabac.c:876:18: note: === vect_analyze_data_refs ===
+Creating dr for cb_3(D)->p
+analyze_innermost: success.
+	base_address: cb_3(D)
+	offset from base address: 0
+	constant offset from base address: 24
+	step: 0
+	aligned to: 128
+	base_object: *cb_3(D)
+	Access function 0: 192
+Creating dr for cb_3(D)->p
+analyze_innermost: success.
+	base_address: cb_3(D)
+	offset from base address: 0
+	constant offset from base address: 24
+	step: 0
+	aligned to: 128
+	base_object: *cb_3(D)
+	Access function 0: 192
+Creating dr for *_82
+analyze_innermost: failed: evolution of base is not affine.
+	base_address: 
+	offset from base address: 
+	constant offset from base address: 
+	step: 
+	aligned to: 
+	base_object: *_82
+common/cabac.c:876:18: note: got vectype for stmt: _82 = cb_3(D)->p;
+vector(2) long unsigned int
+common/cabac.c:876:18: note: got vectype for stmt: cb_3(D)->p = _83;
+vector(2) long unsigned int
+common/cabac.c:876:18: note: not vectorized: data ref analysis failed *_82 = pretmp_195;
+
+common/cabac.c:876:18: note: bad data references.
+
+Analyzing loop at common/cabac.c:876
+common/cabac.c:876:18: note: ===== analyze_loop_nest =====
+common/cabac.c:876:18: note: === vect_analyze_loop_form ===
+common/cabac.c:876:18: note: === get_loop_niters ===
+Analyzing # of iterations of loop 4
+  exit condition 0 < [bytes_outstanding_101 + -1, + , -1](no_overflow)
+  bounds on difference of bases: 0 ... 2147483646
+Applying pattern match.pd:49, generic-match.c:4249
+  result:
+    # of iterations (unsigned int) (bytes_outstanding_101 + -1), bounded by 2147483646
+Applying pattern match.pd:49, generic-match.c:3223
+common/cabac.c:876:18: note: Symbolic number of iterations is (unsigned int) bytes_outstanding_101
+common/cabac.c:876:18: note: === vect_analyze_data_refs ===
+Creating dr for cb_3(D)->p
+analyze_innermost: success.
+	base_address: cb_3(D)
+	offset from base address: 0
+	constant offset from base address: 24
+	step: 0
+	aligned to: 128
+	base_object: *cb_3(D)
+	Access function 0: 192
+Creating dr for cb_3(D)->p
+analyze_innermost: success.
+	base_address: cb_3(D)
+	offset from base address: 0
+	constant offset from base address: 24
+	step: 0
+	aligned to: 128
+	base_object: *cb_3(D)
+	Access function 0: 192
+Creating dr for *_106
+analyze_innermost: failed: evolution of base is not affine.
+	base_address: 
+	offset from base address: 
+	constant offset from base address: 
+	step: 
+	aligned to: 
+	base_object: *_106
+common/cabac.c:876:18: note: got vectype for stmt: _106 = cb_3(D)->p;
+vector(2) long unsigned int
+common/cabac.c:876:18: note: got vectype for stmt: cb_3(D)->p = _107;
+vector(2) long unsigned int
+common/cabac.c:876:18: note: not vectorized: data ref analysis failed *_106 = pretmp_196;
+
+common/cabac.c:876:18: note: bad data references.
+common/cabac.c:943:6: note: vectorized 0 loops in function.
+x264_cabac_encode_flush (struct x264_t * h, struct x264_cabac_t * cb)
+{
+  int out;
+  int carry;
+  int bytes_outstanding;
+  int out;
+  int carry;
+  int bytes_outstanding;
+  int out;
+  int carry;
+  int bytes_outstanding;
+  int _4;
+  int _5;
+  int _6;
+  int _7;
+  int _9;
+  int _11;
+  int _13;
+  int _14;
+  int _20;
+  int _21;
+  int _24;
+  int _25;
+  int _26;
+  int _27;
+  int _28;
+  int _29;
+  uint8_t * _34;
+  uint8_t * _35;
+  int _38;
+  int _39;
+  int _47;
+  int _49;
+  int _51;
+  uint8_t * _54;
+  unsigned char _55;
+  unsigned char _56;
+  unsigned char _57;
+  uint8_t * _58;
+  uint8_t * _59;
+  uint8_t * _63;
+  uint8_t * _64;
+  unsigned char _65;
+  int _67;
+  int _69;
+  int _70;
+  int _71;
+  int _72;
+  int _73;
+  int _75;
+  uint8_t * _78;
+  unsigned char _79;
+  unsigned char _80;
+  unsigned char _81;
+  uint8_t * _82;
+  uint8_t * _83;
+  uint8_t * _87;
+  uint8_t * _88;
+  unsigned char _89;
+  int _91;
+  int _93;
+  int _94;
+  int _95;
+  int _96;
+  int _97;
+  int _98;
+  int _99;
+  uint8_t * _102;
+  unsigned char _103;
+  unsigned char _104;
+  unsigned char _105;
+  uint8_t * _106;
+  uint8_t * _107;
+  uint8_t * _111;
+  uint8_t * _112;
+  unsigned char _113;
+  int pretmp_182;
+  int prephitmp_183;
+  int pretmp_184;
+  int prephitmp_185;
+  int pretmp_187;
+  int prephitmp_188;
+  unsigned char pretmp_189;
+  int pretmp_190;
+  int prephitmp_191;
+  int pretmp_192;
+  int prephitmp_193;
+  int prephitmp_194;
+  unsigned char pretmp_195;
+  unsigned char pretmp_196;
+
+  <bb 2>:
+  _4 = cb_3(D)->i_low;
+  _5 = cb_3(D)->i_range;
+  _6 = _5 + -2;
+  _7 = _4 + _6;
+  _9 = _7 | 1;
+  _11 = _9 << 9;
+  cb_3(D)->i_low = _11;
+  _13 = cb_3(D)->i_queue;
+  _14 = _13 + 9;
+  cb_3(D)->i_queue = _14;
+  # DEBUG cb => cb_3(D)
+  if (_14 > 7)
+    goto <bb 4>;
+  else
+    goto <bb 3>;
+
+  <bb 3>:
+  pretmp_187 = cb_3(D)->i_bytes_outstanding;
+  goto <bb 21>;
+
+  <bb 4>:
+  _91 = _13 + 11;
+  out_92 = _11 >> _91;
+  # DEBUG out => out_92
+  _93 = 4 << _14;
+  _94 = _93 + -1;
+  _95 = _11 & _94;
+  cb_3(D)->i_low = _95;
+  _96 = _13 + 1;
+  cb_3(D)->i_queue = _96;
+  _97 = out_92 & 255;
+  if (_97 == 255)
+    goto <bb 5>;
+  else
+    goto <bb 6>;
+
+  <bb 5>:
+  _98 = cb_3(D)->i_bytes_outstanding;
+  _99 = _98 + 1;
+  cb_3(D)->i_bytes_outstanding = _99;
+  goto <bb 12>;
+
+  <bb 6>:
+  carry_100 = out_92 >> 8;
+  # DEBUG carry => carry_100
+  bytes_outstanding_101 = cb_3(D)->i_bytes_outstanding;
+  # DEBUG bytes_outstanding => bytes_outstanding_101
+  _102 = cb_3(D)->p;
+  _103 = MEM[(uint8_t *)_102 + -1B];
+  _104 = (unsigned char) carry_100;
+  _105 = _103 + _104;
+  MEM[(uint8_t *)_102 + -1B] = _105;
+  # DEBUG bytes_outstanding => bytes_outstanding_101
+  if (bytes_outstanding_101 > 0)
+    goto <bb 8>;
+  else
+    goto <bb 7>;
+
+  <bb 7>:
+  _111 = cb_3(D)->p;
+  _112 = _111 + 1;
+  cb_3(D)->p = _112;
+  _113 = (unsigned char) out_92;
+  *_111 = _113;
+  cb_3(D)->i_bytes_outstanding = 0;
+  pretmp_190 = cb_3(D)->i_queue;
+  pretmp_192 = cb_3(D)->i_low;
+  goto <bb 12>;
+
+  <bb 8>:
+  pretmp_196 = _104 + 255;
+
+  <bb 9>:
+  # bytes_outstanding_158 = PHI <bytes_outstanding_101(8), bytes_outstanding_110(11)>
+  # DEBUG bytes_outstanding => bytes_outstanding_158
+  _106 = cb_3(D)->p;
+  _107 = _106 + 1;
+  cb_3(D)->p = _107;
+  *_106 = pretmp_196;
+  bytes_outstanding_110 = bytes_outstanding_158 + -1;
+  # DEBUG bytes_outstanding => bytes_outstanding_110
+  # DEBUG bytes_outstanding => bytes_outstanding_110
+  if (bytes_outstanding_110 > 0)
+    goto <bb 11>;
+  else
+    goto <bb 10>;
+
+  <bb 10>:
+  goto <bb 7>;
+
+  <bb 11>:
+  goto <bb 9>;
+
+  <bb 12>:
+  # prephitmp_191 = PHI <_96(5), pretmp_190(7)>
+  # prephitmp_193 = PHI <_95(5), pretmp_192(7)>
+  # prephitmp_194 = PHI <_99(5), 0(7)>
+  # DEBUG cb => NULL
+  # DEBUG bytes_outstanding => NULL
+  # DEBUG carry => NULL
+  # DEBUG out => NULL
+  # DEBUG cb => cb_3(D)
+  if (prephitmp_191 > 7)
+    goto <bb 13>;
+  else
+    goto <bb 21>;
+
+  <bb 13>:
+  _67 = prephitmp_191 + 2;
+  out_68 = prephitmp_193 >> _67;
+  # DEBUG out => out_68
+  _69 = 4 << prephitmp_191;
+  _70 = _69 + -1;
+  _71 = _70 & prephitmp_193;
+  cb_3(D)->i_low = _71;
+  _72 = prephitmp_191 + -8;
+  cb_3(D)->i_queue = _72;
+  _73 = out_68 & 255;
+  if (_73 == 255)
+    goto <bb 14>;
+  else
+    goto <bb 15>;
+
+  <bb 14>:
+  _75 = prephitmp_194 + 1;
+  cb_3(D)->i_bytes_outstanding = _75;
+  goto <bb 21>;
+
+  <bb 15>:
+  carry_76 = out_68 >> 8;
+  # DEBUG carry => carry_76
+  # DEBUG D#12 => cb_3(D)->i_bytes_outstanding
+  # DEBUG bytes_outstanding => D#12
+  _78 = cb_3(D)->p;
+  _79 = MEM[(uint8_t *)_78 + -1B];
+  _80 = (unsigned char) carry_76;
+  _81 = _79 + _80;
+  MEM[(uint8_t *)_78 + -1B] = _81;
+  # DEBUG bytes_outstanding => D#12
+  if (prephitmp_194 > 0)
+    goto <bb 17>;
+  else
+    goto <bb 16>;
+
+  <bb 16>:
+  _87 = cb_3(D)->p;
+  _88 = _87 + 1;
+  cb_3(D)->p = _88;
+  _89 = (unsigned char) out_68;
+  *_87 = _89;
+  cb_3(D)->i_bytes_outstanding = 0;
+  pretmp_182 = cb_3(D)->i_low;
+  pretmp_184 = cb_3(D)->i_queue;
+  goto <bb 21>;
+
+  <bb 17>:
+  pretmp_195 = _80 + 255;
+
+  <bb 18>:
+  # bytes_outstanding_147 = PHI <prephitmp_194(17), bytes_outstanding_86(20)>
+  # DEBUG bytes_outstanding => bytes_outstanding_147
+  _82 = cb_3(D)->p;
+  _83 = _82 + 1;
+  cb_3(D)->p = _83;
+  *_82 = pretmp_195;
+  bytes_outstanding_86 = bytes_outstanding_147 + -1;
+  # DEBUG bytes_outstanding => bytes_outstanding_86
+  # DEBUG bytes_outstanding => bytes_outstanding_86
+  if (bytes_outstanding_86 > 0)
+    goto <bb 20>;
+  else
+    goto <bb 19>;
+
+  <bb 19>:
+  goto <bb 16>;
+
+  <bb 20>:
+  goto <bb 18>;
+
+  <bb 21>:
+  # prephitmp_183 = PHI <_71(14), prephitmp_193(12), pretmp_182(16), _11(3)>
+  # prephitmp_185 = PHI <_72(14), prephitmp_191(12), pretmp_184(16), _14(3)>
+  # prephitmp_188 = PHI <_75(14), prephitmp_194(12), 0(16), pretmp_187(3)>
+  # DEBUG cb => NULL
+  # DEBUG bytes_outstanding => NULL
+  # DEBUG carry => NULL
+  # DEBUG out => NULL
+  _20 = 8 - prephitmp_185;
+  _21 = prephitmp_183 << _20;
+  _24 = h_23(D)->i_frame;
+  _25 = _24 & 31;
+  _26 = 899998965 >> _25;
+  _27 = _26 & 1;
+  _28 = _27 << 10;
+  _29 = _21 | _28;
+  # DEBUG cb => cb_3(D)
+  out_44 = _29 >> 10;
+  # DEBUG out => out_44
+  _47 = _29 & 1023;
+  cb_3(D)->i_low = _47;
+  cb_3(D)->i_queue = 0;
+  _49 = out_44 & 255;
+  if (_49 == 255)
+    goto <bb 22>;
+  else
+    goto <bb 24>;
+
+  <bb 22>:
+  _51 = prephitmp_188 + 1;
+  cb_3(D)->i_bytes_outstanding = _51;
+  if (_51 > 0)
+    goto <bb 30>;
+  else
+    goto <bb 23>;
+
+  <bb 23>:
+  goto <bb 33>;
+
+  <bb 24>:
+  carry_52 = out_44 >> 8;
+  # DEBUG carry => carry_52
+  # DEBUG D#11 => cb_3(D)->i_bytes_outstanding
+  # DEBUG bytes_outstanding => D#11
+  _54 = cb_3(D)->p;
+  _55 = MEM[(uint8_t *)_54 + -1B];
+  _56 = (unsigned char) carry_52;
+  _57 = _55 + _56;
+  MEM[(uint8_t *)_54 + -1B] = _57;
+  # DEBUG bytes_outstanding => D#11
+  if (prephitmp_188 > 0)
+    goto <bb 26>;
+  else
+    goto <bb 25>;
+
+  <bb 25>:
+  _63 = cb_3(D)->p;
+  _64 = _63 + 1;
+  cb_3(D)->p = _64;
+  _65 = (unsigned char) out_44;
+  *_63 = _65;
+  cb_3(D)->i_bytes_outstanding = 0;
+  goto <bb 33>;
+
+  <bb 26>:
+  pretmp_189 = _56 + 255;
+
+  <bb 27>:
+  # bytes_outstanding_149 = PHI <prephitmp_188(26), bytes_outstanding_62(29)>
+  # DEBUG bytes_outstanding => bytes_outstanding_149
+  _58 = cb_3(D)->p;
+  _59 = _58 + 1;
+  cb_3(D)->p = _59;
+  *_58 = pretmp_189;
+  bytes_outstanding_62 = bytes_outstanding_149 + -1;
+  # DEBUG bytes_outstanding => bytes_outstanding_62
+  # DEBUG bytes_outstanding => bytes_outstanding_62
+  if (bytes_outstanding_62 > 0)
+    goto <bb 29>;
+  else
+    goto <bb 28>;
+
+  <bb 28>:
+  goto <bb 25>;
+
+  <bb 29>:
+  goto <bb 27>;
+
+  <bb 30>:
+
+  <bb 31>:
+  _34 = cb_3(D)->p;
+  _35 = _34 + 1;
+  cb_3(D)->p = _35;
+  *_34 = 255;
+  _38 = cb_3(D)->i_bytes_outstanding;
+  _39 = _38 + -1;
+  cb_3(D)->i_bytes_outstanding = _39;
+  if (_39 > 0)
+    goto <bb 32>;
+  else
+    goto <bb 34>;
+
+  <bb 34>:
+  goto <bb 23>;
+
+  <bb 32>:
+  goto <bb 31>;
+
+  <bb 33>:
+  return;
+
+}
+
+

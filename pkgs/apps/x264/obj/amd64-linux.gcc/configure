@@ -55,7 +55,7 @@ mp4_output="auto"
 pthread="auto"
 asm="yes"
 debug="no"
-gprof="no"
+gprof="yes"
 pic="no"
 vis="no"
 shared="no"
@@ -171,7 +171,7 @@ for opt do
             ;;
     esac
 done
-gprof="yes"
+
 if [ "x$host" = x ]; then
     host=`./config.guess`
 fi

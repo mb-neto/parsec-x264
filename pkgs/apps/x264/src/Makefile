@@ -6,7 +6,7 @@ all: default
 
 CFLAGS := $(CFLAGS) -pg
 LDFLAGS := $(LDFLAGS) -pg
-# gprof="yes"
+gprof="yes"
 
 SRCS = common/mc.c common/predict.c common/pixel.c common/macroblock.c \
        common/frame.c common/dct.c common/cpu.c common/cabac.c \
