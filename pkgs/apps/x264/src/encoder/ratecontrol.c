@@ -7,7 +7,7 @@
  *          Michael Niedermayer <michaelni@gmx.at>
  *          Gabriel Bouvigne <gabriel.bouvigne@joost.com>
  *          Jason Garrett-Glaser <darkshikari@gmail.com>
- *          Måns Rullgård <mru@mru.ath.cx>
+ *          Mï¿½ns Rullgï¿½rd <mru@mru.ath.cx>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,6 +27,7 @@
 #define _ISOC99_SOURCE
 #undef NDEBUG // always check asserts, the speed effect is far too small to disable them
 #include <math.h>
+#include <omp.h>
 #include <limits.h>
 #include <assert.h>
 
@@ -716,17 +717,15 @@ void x264_ratecontrol_delete( x264_t *h )
 
 void x264_ratecontrol_set_estimated_size( x264_t *h, int bits )
 {
-    x264_pthread_mutex_lock( &h->fenc->mutex );
+    #pragma omp critical
     h->rc->frame_size_estimated = bits;
-    x264_pthread_mutex_unlock( &h->fenc->mutex );
 }
 
 int x264_ratecontrol_get_estimated_size( x264_t const *h)
 {
     int size;
-    x264_pthread_mutex_lock( &h->fenc->mutex );
+    #pragma omp critical
     size = h->rc->frame_size_estimated;
-    x264_pthread_mutex_unlock( &h->fenc->mutex );
     return size;
 }
 

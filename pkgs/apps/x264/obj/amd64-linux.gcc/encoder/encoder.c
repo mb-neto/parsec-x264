@@ -23,6 +23,7 @@
  *****************************************************************************/
 
 #include <math.h>
+#include <omp.h>
 
 #include "common/common.h"
 #include "common/cpu.h"

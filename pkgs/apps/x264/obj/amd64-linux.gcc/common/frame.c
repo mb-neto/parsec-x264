@@ -23,6 +23,7 @@
  *****************************************************************************/
 
 #include "common.h"
+#include <omp.h>
 
 #define ALIGN(x,a) (((x)+((a)-1))&~((a)-1))
 
@@ -877,18 +878,16 @@ void x264_deblock_init( int cpu, x264_deblock_function_t *pf )
 /* threading */
 void x264_frame_cond_broadcast( x264_frame_t *frame, int i_lines_completed )
 {
-    x264_pthread_mutex_lock( &frame->mutex );
+    #pragma omp critical
     frame->i_lines_completed = i_lines_completed;
     x264_pthread_cond_broadcast( &frame->cv );
-    x264_pthread_mutex_unlock( &frame->mutex );
 }
 
 void x264_frame_cond_wait( x264_frame_t *frame, int i_lines_completed )
 {
-    x264_pthread_mutex_lock( &frame->mutex );
+    #pragma omp critical
     while( frame->i_lines_completed < i_lines_completed )
         x264_pthread_cond_wait( &frame->cv, &frame->mutex );
-    x264_pthread_mutex_unlock( &frame->mutex );
 }
 
 /* list operators */

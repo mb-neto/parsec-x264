@@ -23,6 +23,7 @@
  *****************************************************************************/
 
 #include <math.h>
+#include <omp.h>
 
 #include "common/common.h"
 #include "common/cpu.h"
@@ -1018,7 +1019,8 @@ static void x264_fdec_filter_row( x264_t *h, int mb_y )
 
     if( h->param.i_threads > 1 && h->fdec->b_kept_as_ref )
     {
-        x264_frame_cond_broadcast( h->fdec, mb_y*16 + (b_end ? 10000 : -(X264_THREAD_HEIGHT << h->sh.b_mbaff)) );
+        # pragma omp atomic
+        h->fdec -> i_lines_completed = mb_y *16 + ( b_end ? 10000 : -( X264_THREAD_HEIGHT << h->sh. b_mbaff ));
     }
 
     min_y = X264_MAX( min_y*16-8, 0 );
@@ -1584,7 +1586,8 @@ do_encode:
     /* Write frame */
     if( h->param.i_threads > 1 )
     {
-        x264_pthread_create( &h->thread_handle, NULL, (void*)x264_slices_write, h );
+        # pragma omp task out (*h) label ( x264_slices_write )
+        x264_slices_write (h);
         h->b_thread_active = 1;
     }
     else
@@ -1704,7 +1707,7 @@ static void x264_encoder_frame_end( x264_t *h, x264_t *thread_current,
 
     if( h->b_thread_active )
     {
-        x264_pthread_join( h->thread_handle, NULL );
+        #pragma omp taskwait on (*h)
         h->b_thread_active = 0;
     }
     if( !h->out.i_nal )

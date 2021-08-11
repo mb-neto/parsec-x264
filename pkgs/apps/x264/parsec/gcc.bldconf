@@ -3,5 +3,6 @@
 # gcc.bldconf - configuration file for PARSEC
 
 # Default parallelization is pthreads
-source ${PARSECDIR}/pkgs/apps/x264/parsec/gcc-pthreads.bldconf
+# Changed parallelization to OpenMP
+source ${PARSECDIR}/pkgs/apps/x264/parsec/gcc-openmp.bldconf
 

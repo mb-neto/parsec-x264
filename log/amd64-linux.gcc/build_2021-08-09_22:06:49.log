@@ -1,0 +1,16 @@
+[PARSEC] [========== PARSEC 3.0-beta-20150206 BUILD LOGFILE ==========]
+
+[PARSEC] Build amd64-linux.gcc started on Seg Ago 9 22:06:49 -03 2021.
+[PARSEC] Packages to build:  parsec.x264
+
+[PARSEC] [========== Building package parsec.x264 [1] ==========]
+[PARSEC] [---------- Analyzing package parsec.x264 ----------]
+[PARSEC] parsec.x264 does not depend on any other packages.
+[PARSEC] [---------- Building package parsec.x264 ----------]
+[PARSEC] Removing old build directory.
+[PARSEC] Copying source code of package parsec.x264.
+[PARSEC] Running 'env ./configure --prefix=/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/pkgs/apps/x264/inst/amd64-linux.gcc':
+Found no assembler
+Minimum version is yasm-0.6.1
+If you really want to compile without asm, configure with --disable-asm.
+[PARSEC] Error: 'env ./configure --prefix=/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/pkgs/apps/x264/inst/amd64-linux.gcc' failed.

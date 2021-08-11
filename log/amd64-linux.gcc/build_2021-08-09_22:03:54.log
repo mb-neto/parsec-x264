@@ -1,0 +1,10 @@
+[PARSEC] [========== PARSEC 3.0-beta-20150206 BUILD LOGFILE ==========]
+
+[PARSEC] Build amd64-linux.gcc started on Seg Ago 9 22:03:54 -03 2021.
+[PARSEC] Packages to build:  parsec.x264
+
+[PARSEC] [========== Building package parsec.x264 [1] ==========]
+[PARSEC] [---------- Analyzing package parsec.x264 ----------]
+[PARSEC] parsec.x264 does not depend on any other packages.
+[PARSEC] [---------- Building package parsec.x264 ----------]
+[PARSEC] Variable 'build_inplace' for package '' has not been set in file 'gcc.bldconf'.

@@ -6,9 +6,9 @@ includedir=${prefix}/include
 ARCH=X86_64
 SYS=LINUX
 CC=/usr/bin/gcc
-CFLAGS=-O4 -ffast-math  -O2 -g -ftree-vectorize -fdump-tree-vect-details -ftree-vectorizer-verbose=7 -fopt-info-vec-all -fopt-info-vec-missed -funroll-loops -fprefetch-loop-arrays -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206 -Wall -I.  -O2 -g -ftree-vectorize -fdump-tree-vect-details -ftree-vectorizer-verbose=7 -fopt-info-vec-all -fopt-info-vec-missed -funroll-loops -fprefetch-loop-arrays -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206 -DHAVE_MALLOC_H -DHAVE_MMX -DARCH_X86_64 -DSYS_LINUX -DHAVE_PTHREAD
+CFLAGS=-O4 -ffast-math  -O2 -g -fopenmp -funroll-loops -fprefetch-loop-arrays -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206 -fopenmp -Wall -I. -DHAVE_MALLOC_H -DHAVE_MMX -DARCH_X86_64 -DSYS_LINUX -DHAVE_PTHREAD
 ALTIVECFLAGS=
-LDFLAGS=-L/usr/lib64 -L/usr/lib -L/usr/lib64 -L/usr/lib  -lm -lpthread
+LDFLAGS=-L/usr/lib64 -L/usr/lib -lm -lpthread
 AS=yasm
 ASFLAGS=-f elf -m amd64
 EXE=
@@ -16,4 +16,4 @@ VIS=no
 HAVE_GETOPT_LONG=1
 DEVNULL=/dev/null
 ECHON=echo -n
-CONFIGURE_ARGS= '--enable-pthread' '--extra-asflags=' '--extra-cflags= -O2 -g -ftree-vectorize -fdump-tree-vect-details -ftree-vectorizer-verbose=7 -fopt-info-vec-all -fopt-info-vec-missed -funroll-loops -fprefetch-loop-arrays -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206' '--extra-ldflags=-L/usr/lib64 -L/usr/lib ' '--prefix=/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/pkgs/apps/x264/inst/amd64-linux.gcc'
+CONFIGURE_ARGS= '--prefix=/home/manoel/Documentos/Faculdade/PCD/parsec-3.0/pkgs/apps/x264/inst/amd64-linux.gcc'

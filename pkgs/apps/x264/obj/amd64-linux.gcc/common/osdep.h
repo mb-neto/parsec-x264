@@ -21,6 +21,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02111, USA.
  *****************************************************************************/
 
+#include <omp.h>
+
 #ifndef X264_OSDEP_H
 #define X264_OSDEP_H
 
