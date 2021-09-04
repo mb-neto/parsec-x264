@@ -40,6 +40,7 @@
 #include "common.h"
 #include "visualize.h"
 #include "display.h"
+#include <omp.h>
 
 typedef struct {
     int     i_type;
@@ -173,6 +174,7 @@ void x264_visualize_show( x264_t *h )
         disp_gray_zoom(0, frame, width, height, stride, "fdec", zoom);
     }
 
+    #pragma parallel for
     for( mb_xy = 0; mb_xy < h->sps->i_mb_width * h->sps->i_mb_height; mb_xy++ )
     {
         visualize_t *const v = (visualize_t*)h->visualize + mb_xy;

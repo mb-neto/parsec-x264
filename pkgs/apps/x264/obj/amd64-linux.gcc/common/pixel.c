@@ -182,6 +182,7 @@ static int pixel_satd_wxh( uint8_t *pix1, int i_pix1, uint8_t *pix2, int i_pix2,
     int x, y;
     int i_satd = 0;
 
+    #pragma parallel for
     for( y = 0; y < i_height; y += 4 )
     {
         for( x = 0; x < i_width; x += 4 )
@@ -250,6 +251,7 @@ static inline int pixel_sa8d_wxh( uint8_t *pix1, int i_pix1, uint8_t *pix2, int 
     int i_satd = 0;
     int x, y;
 
+    #pragma parallel for
     for( y = 0; y < i_height; y += 8 )
     {
         for( x = 0; x < i_width; x += 8 )
@@ -441,6 +443,8 @@ static void ssim_4x4x2_core( const uint8_t *pix1, int stride1,
                              int sums[2][4])
 {
     int x, y, z;
+
+    #pragma parallel for
     for(z=0; z<2; z++)
     {
         uint32_t s1=0, s2=0, ss=0, s12=0;
@@ -498,6 +502,7 @@ float x264_pixel_ssim_wxh( x264_pixel_function_t *pf,
     width >>= 2;
     height >>= 2;
     z = 0;
+    #pragma parallel for
     for( y = 1; y < height; y++ )
     {
         for( ; z <= y; z++ )
