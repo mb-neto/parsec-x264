@@ -137,7 +137,7 @@ static void hpel_filter( uint8_t *dsth, uint8_t *dstv, uint8_t *dstc, uint8_t *s
 {
     int16_t *buf = x264_malloc((width+5)*sizeof(int16_t));
     int x, y;
-    #pragma parallel for
+    #pragma omp parallel for
     for( y=0; y<height; y++ )
     {
         for( x=-2; x<width+3; x++ )
@@ -402,7 +402,7 @@ void x264_frame_filter( x264_t *h, x264_frame_t *frame, int mb_y, int b_end )
         if( b_end )
             height += PADV-8;
 
-        #pragma parallel for
+        #pragma omp for
         for( y = start; y < height; y++ )
         {
             uint8_t  *ref  = frame->plane[0] + y * stride - PADH;

@@ -25,6 +25,7 @@
 #include "x264.h"
 #include "matroska.h"
 #include "muxers.h"
+#include <omp.h>
 
 #ifndef _MSC_VER
 #include "config.h"
@@ -475,7 +476,8 @@ int read_frame_thread( x264_picture_t *p_pic, hnd_t handle, int i_frame )
 
     if( h->next_frame >= 0 )
     {
-        x264_pthread_join( h->tid, &stuff );
+        # pragma omp taskwait
+        //x264_pthread_join( h->tid, &stuff );
         ret |= h->next_args->status;
         h->in_progress = 0;
     }
@@ -494,8 +496,10 @@ int read_frame_thread( x264_picture_t *p_pic, hnd_t handle, int i_frame )
         h->next_frame =
         h->next_args->i_frame = i_frame+1;
         h->next_args->pic = &h->pic;
-        x264_pthread_create( &h->tid, NULL, (void*)read_frame_thread_int, h->next_args );
+        # pragma omp task out (*h) label (read_frame_thread_int)
+        //x264_pthread_create( &h->tid, NULL, (void*)read_frame_thread_int, h->next_args );
         h->in_progress = 1;
+        # pragma omp taskwait
     }
     else
         h->next_frame = -1;
@@ -509,7 +513,8 @@ int close_file_thread( hnd_t handle )
     h->p_close_infile( h->p_handle );
     x264_picture_clean( &h->pic );
     if( h->in_progress )
-        x264_pthread_join( h->tid, NULL );
+        #pragma omp taskwait
+        //x264_pthread_join( h->tid, NULL );
     free( h->next_args );
     free( h );
     return 0;

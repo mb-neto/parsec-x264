@@ -1589,6 +1589,7 @@ do_encode:
         # pragma omp task out (*h) label ( x264_slices_write )
         x264_slices_write (h);
         h->b_thread_active = 1;
+        #pragma omp taskwait
     }
     else
         x264_slices_write( h );
@@ -1885,7 +1886,8 @@ void    x264_encoder_close  ( x264_t *h )
         // don't strictly have to wait for the other threads, but it's simpler than canceling them
         if( h->thread[i]->b_thread_active )
         {
-            x264_pthread_join( h->thread[i]->thread_handle, NULL );
+            # pragma omp taskwait
+            //x264_pthread_join( h->thread[i]->thread_handle, NULL );
             assert( h->thread[i]->fenc->i_reference_count == 1 );
             x264_frame_delete( h->thread[i]->fenc );
         }

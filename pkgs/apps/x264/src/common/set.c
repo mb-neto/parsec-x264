@@ -80,7 +80,7 @@ int x264_cqm_init( x264_t *h )
                         32 - 11, 32 - 21 };
     int max_qp_err = -1;
 
-    #pragma parallel for
+    #pragma omp for
     for( i = 0; i < 6; i++ )
     {
         int size = i<4 ? 16 : 64;
@@ -110,7 +110,7 @@ int x264_cqm_init( x264_t *h )
             h->quant4_bias[i] = x264_malloc(52*size*sizeof(uint16_t) );
     }
 
-    #pragma parallel for
+    #pragma omp for
     for( q = 0; q < 6; q++ )
     {
         for( i = 0; i < 16; i++ )
@@ -127,7 +127,7 @@ int x264_cqm_init( x264_t *h )
         }
     }
 
-    #pragma parallel for
+    #pragma omp parallel for
     for( q = 0; q < 6; q++ )
     {
         for( i_list = 0; i_list < 4; i_list++ )
@@ -144,7 +144,7 @@ int x264_cqm_init( x264_t *h )
             }
     }
 
-    #pragma parallel for
+    #pragma omp for
     for( q = 0; q < 52; q++ )
     {
         for( i_list = 0; i_list < 4; i_list++ )
@@ -183,7 +183,7 @@ void x264_cqm_delete( x264_t *h )
 {
     int i, j;
     
-    #pragma parallel for
+    #pragma omp for
     for( i = 0; i < 6; i++ )
     {
         for( j = 0; j < i; j++ )

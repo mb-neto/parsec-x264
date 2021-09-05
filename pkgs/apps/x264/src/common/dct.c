@@ -431,7 +431,7 @@ void x264_dct_init( int cpu, x264_dct_function_t *dctf )
 void x264_dct_init_weights( void )
 {
     int i, j;
-    #pragma parallel for
+    #pragma omp parallel for
     for( j=0; j<2; j++ )
     {
         for( i=0; i<16; i++ )
