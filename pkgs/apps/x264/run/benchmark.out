@@ -1,8 +1,8 @@
 PARSEC Benchmark Suite Version 3.0-beta-20150206
 yuv4mpeg: 32x18@25/1fps, 0:0
 
-encoded 1 frames, 2004.01 fps, 165.00 kb/s
+encoded 1 frames, 3875.97 fps, 165.00 kb/s
 
-real	0m0.005s
-user	0m0.000s
-sys	0m0.005s
+real	0m0.145s
+user	0m0.007s
+sys	0m0.017s
