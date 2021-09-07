@@ -1019,7 +1019,7 @@ static void x264_fdec_filter_row( x264_t *h, int mb_y )
 
     if( h->param.i_threads > 1 && h->fdec->b_kept_as_ref )
     {
-        # pragma omp atomic
+        #pragma omp critical
         h->fdec -> i_lines_completed = mb_y *16 + ( b_end ? 10000 : -( X264_THREAD_HEIGHT << h->sh. b_mbaff ));
     }
 
@@ -1586,7 +1586,7 @@ do_encode:
     /* Write frame */
     if( h->param.i_threads > 1 )
     {
-        # pragma omp task out (*h) label ( x264_slices_write )
+        #pragma omp taskout (*h) label ( x264_slices_write )
         x264_slices_write (h);
         h->b_thread_active = 1;
         #pragma omp taskwait
@@ -1708,7 +1708,7 @@ static void x264_encoder_frame_end( x264_t *h, x264_t *thread_current,
 
     if( h->b_thread_active )
     {
-        #pragma omp taskwait on (*h)
+        #pragma omp taskwait
         h->b_thread_active = 0;
     }
     if( !h->out.i_nal )
@@ -1886,7 +1886,7 @@ void    x264_encoder_close  ( x264_t *h )
         // don't strictly have to wait for the other threads, but it's simpler than canceling them
         if( h->thread[i]->b_thread_active )
         {
-            # pragma omp taskwait
+            #pragma omp taskwait
             //x264_pthread_join( h->thread[i]->thread_handle, NULL );
             assert( h->thread[i]->fenc->i_reference_count == 1 );
             x264_frame_delete( h->thread[i]->fenc );

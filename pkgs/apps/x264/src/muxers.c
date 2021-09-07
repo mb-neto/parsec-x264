@@ -476,7 +476,7 @@ int read_frame_thread( x264_picture_t *p_pic, hnd_t handle, int i_frame )
 
     if( h->next_frame >= 0 )
     {
-        # pragma omp taskwait
+        #pragma omp taskwait
         ret |= h->next_args->status;
         h->in_progress = 0;
     }
@@ -495,7 +495,7 @@ int read_frame_thread( x264_picture_t *p_pic, hnd_t handle, int i_frame )
         h->next_frame =
         h->next_args->i_frame = i_frame+1;
         h->next_args->pic = &h->pic;
-        #pragma omp task label ( read_frame_thread_int )
+        #pragma omp taskout (*h) label ( read_frame_thread_int )
         read_frame_thread_int (h-> next_args );
         h->in_progress = 1;
     }
